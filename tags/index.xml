@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on OreChou</title>
+    <title>Tags on 奥力手记</title>
     <link>https://www.orechou.com/tags/</link>
-    <description>Recent content in Tags on OreChou</description>
+    <description>Recent content in Tags on 奥力手记</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Jan 2026 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 22:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.orechou.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Life</title>
+      <link>https://www.orechou.com/tags/life/</link>
+      <pubDate>Sun, 08 Feb 2026 22:00:00 +0000</pubDate>
+      <guid>https://www.orechou.com/tags/life/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Markdown</title>
       <link>https://www.orechou.com/tags/markdown/</link>
@@ -20,13 +27,6 @@
       <link>https://www.orechou.com/tags/test/</link>
       <pubDate>Sun, 25 Jan 2026 14:00:00 +0800</pubDate>
       <guid>https://www.orechou.com/tags/test/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Life</title>
-      <link>https://www.orechou.com/tags/life/</link>
-      <pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.orechou.com/tags/life/</guid>
       <description></description>
     </item>
     <item>

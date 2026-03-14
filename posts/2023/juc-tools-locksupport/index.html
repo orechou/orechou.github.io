@@ -13,14 +13,14 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> JUC 工具：LockSupport | OreChou</title>
+  <title> JUC 工具：LockSupport | 奥力手记</title>
   <link rel = 'canonical' href = 'https://www.orechou.com/posts/2023/juc-tools-locksupport/'>
   <meta name="description" content="所有的文字，均致十年后的自己.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2023/juc-tools-locksupport/">
-  <meta property="og:site_name" content="OreChou">
+  <meta property="og:site_name" content="奥力手记">
   <meta property="og:title" content="JUC 工具：LockSupport">
   <meta property="og:description" content="简介 LockSupport 是 Java 并发工具包 java.util.concurrent 中的一个用于创建锁和其他同步类的基本线程阻塞原语。LockSupport 提供了 park() 和 unpark() 方法来停止和恢复线程。这些方法比低级的 wait/notify 和 notifyAll 方法更容易使用，并且与 java.util.concurrent 的高级同步工具更好地互相配合。
 示例 在下面这个例子中，我们定义了两个线程。t1 打印数字，t2 打印字母。我们想要实现的效果是 t1 和 t2 交替打印，即输出结果为 “1A2B3C4D5E6F7G”。使用 LockSupport 的 park() 和 unpark() 方法，我们可以精确地控制线程的执行顺序，实现线程间的同步。
@@ -468,7 +468,7 @@
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2026  OreChou 
+    Copyright  &copy; 2026  奥力手记 
   </div>
   <div class="footer-right">
     <nav>

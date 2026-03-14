@@ -13,14 +13,14 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 自定义 Spring Security 鉴权 | OreChou</title>
+  <title> 自定义 Spring Security 鉴权 | 奥力手记</title>
   <link rel = 'canonical' href = 'https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/'>
   <meta name="description" content="所有的文字，均致十年后的自己.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/">
-  <meta property="og:site_name" content="OreChou">
+  <meta property="og:site_name" content="奥力手记">
   <meta property="og:title" content="自定义 Spring Security 鉴权">
   <meta property="og:description" content="背景 当我们使用 Spring 技术栈搭建单体的系统或服务时，若系统涉及到登录鉴权等功能，一般会使用 SpringSecurity 搭配一个 RBAC 的权限模型，很容易实现一套 OAuth2 鉴权、授权的流程。 随着业务扩展，单体的服务作为一个微服务并入一个大的系统之后。我们为保证其他业务能够调用该单体服务，但是又无法让其他系统来使用该服务已有鉴权，从而引入其他微服务都用基础的鉴权服务。根据业务场景的区分，当单体服务内部使用的时候走 SpringSecurity 的鉴权，单体服务外部调用的时候使用基础鉴权服务鉴权。
 基础 要根据不同的场景启用或绕过 SpringSecurity。我们可以首先想到能否通过 URL 来区分不同的场景，使用 HttpSecurity 的 permitAll() 和 authenticated() 来让不同路径的接口是否需要走鉴权。除此之外，可以去修改 SpringSecurity 的 Filter ，使用自定义 Filter 或者用动态代理对 Filter 进行增强。
@@ -521,7 +521,7 @@
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2026  OreChou 
+    Copyright  &copy; 2026  奥力手记 
   </div>
   <div class="footer-right">
     <nav>

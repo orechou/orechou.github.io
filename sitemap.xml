@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/tags/life/</loc>
+    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/</loc>
+    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/</loc>
+    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/a-passed-thing/</loc>
+    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/categories/</loc>
     <lastmod>2026-01-25T14:00:00+08:00</lastmod>
   </url><url>
@@ -11,23 +26,11 @@
     <loc>https://www.orechou.com/posts/2026/markdown-syntax-demo/</loc>
     <lastmod>2026-01-25T14:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://www.orechou.com/</loc>
-    <lastmod>2026-01-25T14:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/posts/</loc>
-    <lastmod>2026-01-25T14:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/</loc>
-    <lastmod>2026-01-25T14:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://www.orechou.com/tags/test/</loc>
     <lastmod>2026-01-25T14:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/categories/testing/</loc>
     <lastmod>2026-01-25T14:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/life/</loc>
-    <lastmod>2025-10-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2025/car-accident-recording/</loc>
     <lastmod>2025-10-26T00:00:00+00:00</lastmod>

@@ -13,14 +13,14 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 【DevOps】使用 Grafana 和 Prometheus 做服务监控 | OreChou</title>
+  <title> 【DevOps】使用 Grafana 和 Prometheus 做服务监控 | 奥力手记</title>
   <link rel = 'canonical' href = 'https://www.orechou.com/posts/2023/grafana-prometheus-practice/'>
   <meta name="description" content="所有的文字，均致十年后的自己.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2023/grafana-prometheus-practice/">
-  <meta property="og:site_name" content="OreChou">
+  <meta property="og:site_name" content="奥力手记">
   <meta property="og:title" content="【DevOps】使用 Grafana 和 Prometheus 做服务监控">
   <meta property="og:description" content="最近需要对自己的一些服务做监控，于是想要动手实践使用一下 Grafana 和 Prometheus。这篇文章就主要介绍搭建 Grafana 和 Prometheus 对 MySQL 做监控的过程。
 工具介绍 Prometheus 是一个开源的系统监控和警报工具包，由 SoundCloud 启动。它的设计目标是对大规模的服务容器和微服务体系结构提供稳健的可靠性和实时的度量。Prometheus 提供了多种数据收集机制，包括通过 HTTP 拉取目标应用程序暴露的 metrics，通过服务发现或者静态配置去发现新的目标，或者接受推送的时间序列数据。Prometheus 还提供了一种灵活的查询语言（PromQL），以便在其数据上进行切片和切块，生成聚合，预测等操作。 Prometheus 服务器以一个独立的服务器形式运行，它从被配置的位置定期拉取度量数据，将数据存储在它的时间序列数据库中，并运行定义的警报规则以生成新的警报。它的核心组件是一个多维数据模型和一套灵活的查询语言。在数据收集方面，它主要采用了一种拉模式的设计，也支持推模式的数据收集。
@@ -717,7 +717,7 @@ host = 192.168.52.59
 
   <footer id="footer">
   <div class="footer-left">
-    Copyright  &copy; 2026  OreChou 
+    Copyright  &copy; 2026  奥力手记 
   </div>
   <div class="footer-right">
     <nav>
