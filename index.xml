@@ -6,8 +6,15 @@
     <description>Recent content on 奥力手记</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 14 Mar 2026 22:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.orechou.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第一篇日记</title>
+      <link>https://www.orechou.com/diary/2026-03-19-the-first-diary/</link>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.orechou.com/diary/2026-03-19-the-first-diary/</guid>
+      <description>&lt;p&gt;Hugo 主题开发了 Diary 模块，这是我的第一篇日记。&lt;/p&gt;&#xA;&lt;p&gt;明天继续更新吧。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>8个月从零到第一！Claude Code为什么能颠覆AI编程界？</title>
       <link>https://www.orechou.com/posts/2026/why-claude-code-top-one/</link>
