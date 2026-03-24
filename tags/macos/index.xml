@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MacOS on 奥力手记</title>
+    <link>https://www.orechou.com/tags/macos/</link>
+    <description>Recent content in MacOS on 奥力手记</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Mar 2026 20:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.orechou.com/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何管理 macOS 应用更新</title>
+      <link>https://www.orechou.com/posts/2026/03-macos-app-upgrade/</link>
+      <pubDate>Tue, 24 Mar 2026 20:00:00 +0800</pubDate>
+      <guid>https://www.orechou.com/posts/2026/03-macos-app-upgrade/</guid>
+      <description>&lt;p&gt;我目前的主力生产电脑是 2023 年的 MacBook Pro，配置是 M2 Max，64GB 内存版本。我是一名 AI 软件工程师，所以平时折腾、安装各种软件也是高频的操作，并且我对数字产品有着更新洁癖：即总想要把所有的设备、以及设备中的软件都更新到最新的系统、版本。&lt;/p&gt;&#xA;&lt;h2 id=&#34;安装渠道&#34;&gt;安装渠道&lt;/h2&gt;&#xA;&lt;p&gt;对于 macOS 的软件安装我制定了以下的优先级：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;如果有网页版就使用网页版，不安装本地客户端；例如 ChatGPT、Google 日历等。&lt;/li&gt;&#xA;&lt;li&gt;如果 AppStore 支持下载，优先使用 AppStore 安装；例如 WeChat、Feishu 等；&lt;/li&gt;&#xA;&lt;li&gt;如果 homebrew 支持下载，其次使用 brew 安装；例如 Claude Code、Chrome 等；&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;除此之外的不考虑安装（除非是有调研需求，必须要尝试的除外）。按照这个规则，基本能够满足大部分的软件安装使用需求。&lt;/p&gt;&#xA;&lt;h2 id=&#34;更新方式&#34;&gt;更新方式&lt;/h2&gt;&#xA;&lt;p&gt;我希望时刻保持软件最新。&lt;/p&gt;&#xA;&lt;p&gt;对于 AppStore 安装的软件，因为 AppStore 的更新推送是&amp;quot;尽力而为&amp;quot;的后台机制，不是实时推送。因为你总要进到 AppStore 里面去主动刷新看是否有更新。这个操作路径实在是太复杂了。所以我安装了 mas (Mac App Store command-line interface)这个工具，它可以通过命令行指令的方式，来触发 AppStore 软件更新下载。&lt;/p&gt;&#xA;&lt;p&gt;对于 homebrew 安装的软件就更好办了，直接通过 brew 指令完成更新。&lt;/p&gt;&#xA;&lt;p&gt;最后，将所有的指令组合打包，实现一个命令完成所有软件的更新下载。在 zsh 或者 bash 的配置文件做这样一行设置：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;alias appupgrade=&amp;#34;mas list &amp;amp;&amp;amp; mas upgrade &amp;amp;&amp;amp; brew update &amp;amp;&amp;amp; brew outdated &amp;amp;&amp;amp; brew upgrade &amp;amp;&amp;amp; brew cu -a -y &amp;amp;&amp;amp; brew cleanup&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下：&#xA;&lt;img src=&#34;https://orechou.oss-cn-shenzhen.aliyuncs.com/images/appupgrade.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
