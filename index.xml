@@ -6,8 +6,15 @@
     <description>Recent content on 奥力手记</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Mar 2026 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.orechou.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些最近的事情</title>
+      <link>https://www.orechou.com/diary/2026/04-16-recent-things/</link>
+      <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.orechou.com/diary/2026/04-16-recent-things/</guid>
+      <description>&lt;p&gt;好久没写日记了，记录一下最近的事情。&lt;/p&gt;&#xA;&lt;p&gt;其一，最近 AI Coding 强度变大了，除了上班干活，自己的两个 Side Project 也在搞。一直在 Review 和 Command Coding Agent，精力消耗也是极其大的。现在使用的 Coding Agent &amp;amp; Coding IDE 包含：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Claude Code （搭配智谱和 Minimax 的 Coding Plan）&lt;/li&gt;&#xA;&lt;li&gt;Codex（20 刀的套餐）&lt;/li&gt;&#xA;&lt;li&gt;Zed（10 刀的学生套餐）&lt;/li&gt;&#xA;&lt;li&gt;vscode&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;其二，在准备 5.1 自驾甘南的小环线。该行程是波哥之前推荐的，我拿过来让 AI 改了改，准备 5.1 出行。为此我还专门更新了下特斯拉床垫，花了 800 块钱。&lt;/p&gt;&#xA;&lt;p&gt;其三，我准备留长发。一来我不喜欢剪头，二来我也想改变一下自己。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>如何管理 macOS 应用更新</title>
       <link>https://www.orechou.com/posts/2026/03-macos-app-upgrade/</link>
