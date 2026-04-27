@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/categories/ai/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/ai/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/chatgpt/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/claude/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/diary/</loc>
     <lastmod>2026-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/04-16-recent-things/</loc>
     <lastmod>2026-04-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.orechou.com/</loc>
-    <lastmod>2026-04-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/categories/</loc>
-    <lastmod>2026-03-24T20:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://www.orechou.com/categories/macos/</loc>
     <lastmod>2026-03-24T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/macos/</loc>
-    <lastmod>2026-03-24T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/posts/</loc>
-    <lastmod>2026-03-24T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/</loc>
     <lastmod>2026-03-24T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2026/03-macos-app-upgrade/</loc>
@@ -39,12 +54,6 @@
     <lastmod>2026-03-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2026/02-why-claude-code-top-one/</loc>
-    <lastmod>2026-03-14T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/categories/ai/</loc>
-    <lastmod>2026-03-14T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/ai/</loc>
     <lastmod>2026-03-14T22:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/claude-code/</loc>
@@ -114,9 +123,6 @@
     <lastmod>2023-06-18T23:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2023/use-chatgpt-program/</loc>
-    <lastmod>2023-06-14T18:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/chatgpt/</loc>
     <lastmod>2023-06-14T18:30:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/java/</loc>
