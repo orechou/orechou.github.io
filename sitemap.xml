@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/diary/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/diary/2026/05-10-about-daughter/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/categories/ai/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>
   </url><url>
@@ -25,12 +34,6 @@
   </url><url>
     <loc>https://www.orechou.com/tags/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/diary/</loc>
-    <lastmod>2026-04-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/04-27-about-reading-the-worlds-i-see/</loc>
     <lastmod>2026-04-27T00:00:00+00:00</lastmod>
