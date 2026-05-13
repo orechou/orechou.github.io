@@ -2,13 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/tags/book/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/reading/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/reading/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/software/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/05-about-reading-system/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/diary/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/05-10-about-daughter/</loc>
-    <lastmod>2026-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/categories/ai/</loc>
@@ -20,19 +44,10 @@
     <loc>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://www.orechou.com/categories/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://www.orechou.com/tags/chatgpt/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/claude/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/posts/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/04-27-about-reading-the-worlds-i-see/</loc>

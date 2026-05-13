@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+  <link rel="dns-prefetch" href="https://latest.cactus.chat">
+  <link rel="preconnect" href="https://latest.cactus.chat" crossorigin>
+
+  
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 放弃微信读书之后，我搭建了自己的读书系统 | 奥力手记</title>
+  <link rel = 'canonical' href = 'https://www.orechou.com/posts/2026/05-about-reading-system/'>
+  <meta name="description" content="所有的文字，均致十年后的自己.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://www.orechou.com/posts/2026/05-about-reading-system/">
+  <meta property="og:site_name" content="奥力手记">
+  <meta property="og:title" content="放弃微信读书之后，我搭建了自己的读书系统">
+  <meta property="og:description" content="近期，应该说是很久，没有玩游戏了。PS5、Switch 早已吃灰，手机上的 COC 也卸载了。家庭、工作之外的一点自我时间，除了鼓捣一些数码设备之外，其余的都投入到了阅读。这篇文章就分享一下我现在的读书系统。
+其实不想折腾的人就用微信读书这一个 app 就好了，体验非常好。但是很遗憾，它现在满足不了我的需求：
+有一些冷门书微信读书上是未上架的，一些新书上架也是比较慢的； 一些书畅销书是有删减的，比如《Nexus : A Brief History of Information Networks from the Stone Age to AI》； 这两个原因导致我无法再继续使用微信读书，于是我需要自己找书源、以及管理书籍，更重要的是要有一个比较好阅读体验。
+系统介绍 我的读书系统由以下部分组成：
+书源：z-library 管理：calibre 阅读：Readest &#43; kindle 书源 我只有一个书源 z-library，它是一个影子图书馆和开放获取文件分享计划，用户可以在上面下载期刊、文章以及各类书籍。当然，上面的材料基本都是没有版权的，所以我们只用于自身学习，切莫传播。另外一个要点是，z-lib 的假网站非常多，真的网站也因为版权等各种原因被投诉查封。所以我一般是先进入 wiki ，从 wiki 里面找到它最新的地址。 管理 目前管理书籍的 app，只有 calibre 的功能最强、插件最丰富。 导入书籍之后就可以在主页进行管理，还可以对书籍的元书籍进行更新、编辑。元数据的来源可以有豆瓣、Amazon 等可以配置。 当然 calibre 最大的问题是 UI 不好看，默认图标风格太丑。在设置里面对界面外观以及图标大小进行调整，调整成自己比较喜欢的样式即可。
+calibre 的插件很多，如果大家想知道 calibre 的一些更多用法，后续可以再写一篇文章分享
+阅读 Readest 我是苹果用户，之前是使用 Apple Books 来进行多端的阅读。但后来觉得多端同步需要依赖 iCloud，会占用我本身就少的可怜的 iCloud 空间。以及 Apple Books 的阅读体验我感觉不太好。所以我换成了 Readest 这个 app。它也是支持多平台的同步的，只是免费用户有 500M 的云存储限额，不过对于看文字电子书来说足够用了。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-13T18:00:00+08:00">
+    <meta property="article:modified_time" content="2026-05-13T18:00:00+08:00">
+    <meta property="article:tag" content="Book">
+    <meta property="article:tag" content="Reading">
+    <meta property="article:tag" content="Software">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="放弃微信读书之后，我搭建了自己的读书系统">
+  <meta name="twitter:description" content="近期，应该说是很久，没有玩游戏了。PS5、Switch 早已吃灰，手机上的 COC 也卸载了。家庭、工作之外的一点自我时间，除了鼓捣一些数码设备之外，其余的都投入到了阅读。这篇文章就分享一下我现在的读书系统。
+其实不想折腾的人就用微信读书这一个 app 就好了，体验非常好。但是很遗憾，它现在满足不了我的需求：
+有一些冷门书微信读书上是未上架的，一些新书上架也是比较慢的； 一些书畅销书是有删减的，比如《Nexus : A Brief History of Information Networks from the Stone Age to AI》； 这两个原因导致我无法再继续使用微信读书，于是我需要自己找书源、以及管理书籍，更重要的是要有一个比较好阅读体验。
+系统介绍 我的读书系统由以下部分组成：
+书源：z-library 管理：calibre 阅读：Readest &#43; kindle 书源 我只有一个书源 z-library，它是一个影子图书馆和开放获取文件分享计划，用户可以在上面下载期刊、文章以及各类书籍。当然，上面的材料基本都是没有版权的，所以我们只用于自身学习，切莫传播。另外一个要点是，z-lib 的假网站非常多，真的网站也因为版权等各种原因被投诉查封。所以我一般是先进入 wiki ，从 wiki 里面找到它最新的地址。 管理 目前管理书籍的 app，只有 calibre 的功能最强、插件最丰富。 导入书籍之后就可以在主页进行管理，还可以对书籍的元书籍进行更新、编辑。元数据的来源可以有豆瓣、Amazon 等可以配置。 当然 calibre 最大的问题是 UI 不好看，默认图标风格太丑。在设置里面对界面外观以及图标大小进行调整，调整成自己比较喜欢的样式即可。
+calibre 的插件很多，如果大家想知道 calibre 的一些更多用法，后续可以再写一篇文章分享
+阅读 Readest 我是苹果用户，之前是使用 Apple Books 来进行多端的阅读。但后来觉得多端同步需要依赖 iCloud，会占用我本身就少的可怜的 iCloud 空间。以及 Apple Books 的阅读体验我感觉不太好。所以我换成了 Readest 这个 app。它也是支持多平台的同步的，只是免费用户有 500M 的云存储限额，不过对于看文字电子书来说足够用了。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://www.orechou.com/css/styles.c8f5a8908097016c2478cc57746bc263f8fd168393957eec350939d245cebcbbcd9459bea5532242f4c917031e8edb7b3044bcf0324fe8d8de9dced1c2d7c52d.css" integrity="sha512-yPWokICXAWwkeMxXdGvCY/j9FoOTlX7sNQk50kXOvLvNlFm&#43;pVMiQvTJFwMejtt7MES88DJP6Njenc7RwtfFLQ=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  <link rel="icon" type="image/x-icon" href="https://www.orechou.com/images/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="https://www.orechou.com/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+
+  
+  <script>
+    (function() {
+      try {
+        
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = savedTheme || systemTheme;
+
+        
+        if (theme === 'white' || theme === 'classic') {
+          theme = 'light';
+          localStorage.setItem('theme', theme);
+        }
+
+        
+        if (theme && theme !== 'default') {
+          document.documentElement.classList.add('theme-' + theme);
+        }
+      } catch (e) {
+        
+      }
+    })();
+  </script>
+
+  
+  <script>
+    document.documentElement.dataset.copyLabel = "Copy";
+    document.documentElement.dataset.copiedLabel = "Copied!";
+  </script>
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  
+  <div class="theme-switcher">
+    
+  </div>
+
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/books">Books</a></li>
+         
+        <li><a href="/diary">Diary</a></li>
+         
+        <li><a href="/paintings">Paintings</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://www.orechou.com/diary/2026/05-10-about-daughter/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="toggleDisplay('i-prev')" onmouseout="toggleDisplay('i-prev')"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="toggleDisplay('i-top')" onmouseout="toggleDisplay('i-top')"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="toggleDisplay('i-share')" onmouseout="toggleDisplay('i-share')" onclick="toggleDisplay('share');return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&text=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&is_video=false&description=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&name=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f&description=%3cp%3e%e8%bf%91%e6%9c%9f%ef%bc%8c%e5%ba%94%e8%af%a5%e8%af%b4%e6%98%af%e5%be%88%e4%b9%85%ef%bc%8c%e6%b2%a1%e6%9c%89%e7%8e%a9%e6%b8%b8%e6%88%8f%e4%ba%86%e3%80%82PS5%e3%80%81Switch%20%e6%97%a9%e5%b7%b2%e5%90%83%e7%81%b0%ef%bc%8c%e6%89%8b%e6%9c%ba%e4%b8%8a%e7%9a%84%20COC%20%e4%b9%9f%e5%8d%b8%e8%bd%bd%e4%ba%86%e3%80%82%e5%ae%b6%e5%ba%ad%e3%80%81%e5%b7%a5%e4%bd%9c%e4%b9%8b%e5%a4%96%e7%9a%84%e4%b8%80%e7%82%b9%e8%87%aa%e6%88%91%e6%97%b6%e9%97%b4%ef%bc%8c%e9%99%a4%e4%ba%86%e9%bc%93%e6%8d%a3%e4%b8%80%e4%ba%9b%e6%95%b0%e7%a0%81%e8%ae%be%e5%a4%87%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b6%e4%bd%99%e7%9a%84%e9%83%bd%e6%8a%95%e5%85%a5%e5%88%b0%e4%ba%86%e9%98%85%e8%af%bb%e3%80%82%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%e5%b0%b1%e5%88%86%e4%ba%ab%e4%b8%80%e4%b8%8b%e6%88%91%e7%8e%b0%e5%9c%a8%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f%e3%80%82%3c%2fp%3e%0a%3cp%3e%e5%85%b6%e5%ae%9e%e4%b8%8d%e6%83%b3%e6%8a%98%e8%85%be%e7%9a%84%e4%ba%ba%e5%b0%b1%e7%94%a8%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e8%bf%99%e4%b8%80%e4%b8%aa%20app%20%e5%b0%b1%e5%a5%bd%e4%ba%86%ef%bc%8c%e4%bd%93%e9%aa%8c%e9%9d%9e%e5%b8%b8%e5%a5%bd%e3%80%82%e4%bd%86%e6%98%af%e5%be%88%e9%81%97%e6%86%be%ef%bc%8c%e5%ae%83%e7%8e%b0%e5%9c%a8%e6%bb%a1%e8%b6%b3%e4%b8%8d%e4%ba%86%e6%88%91%e7%9a%84%e9%9c%80%e6%b1%82%ef%bc%9a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%e6%9c%89%e4%b8%80%e4%ba%9b%e5%86%b7%e9%97%a8%e4%b9%a6%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b8%8a%e6%98%af%e6%9c%aa%e4%b8%8a%e6%9e%b6%e7%9a%84%ef%bc%8c%e4%b8%80%e4%ba%9b%e6%96%b0%e4%b9%a6%e4%b8%8a%e6%9e%b6%e4%b9%9f%e6%98%af%e6%af%94%e8%be%83%e6%85%a2%e7%9a%84%ef%bc%9b%3c%2fli%3e%0a%3cli%3e%e4%b8%80%e4%ba%9b%e4%b9%a6%e7%95%85%e9%94%80%e4%b9%a6%e6%98%af%e6%9c%89%e5%88%a0%e5%87%8f%e7%9a%84%ef%bc%8c%e6%af%94%e5%a6%82%e3%80%8aNexus%20%3a%20A%20Brief%20History%20of%20Information%20Networks%20from%20the%20Stone%20Age%20to%20AI%e3%80%8b%ef%bc%9b%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3e%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%8e%9f%e5%9b%a0%e5%af%bc%e8%87%b4%e6%88%91%e6%97%a0%e6%b3%95%e5%86%8d%e7%bb%a7%e7%bb%ad%e4%bd%bf%e7%94%a8%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%ef%bc%8c%e4%ba%8e%e6%98%af%e6%88%91%e9%9c%80%e8%a6%81%e8%87%aa%e5%b7%b1%e6%89%be%e4%b9%a6%e6%ba%90%e3%80%81%e4%bb%a5%e5%8f%8a%e7%ae%a1%e7%90%86%e4%b9%a6%e7%b1%8d%ef%bc%8c%e6%9b%b4%e9%87%8d%e8%a6%81%e7%9a%84%e6%98%af%e8%a6%81%e6%9c%89%e4%b8%80%e4%b8%aa%e6%af%94%e8%be%83%e5%a5%bd%e9%98%85%e8%af%bb%e4%bd%93%e9%aa%8c%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e7%b3%bb%e7%bb%9f%e4%bb%8b%e7%bb%8d%22%3e%e7%b3%bb%e7%bb%9f%e4%bb%8b%e7%bb%8d%3c%2fh2%3e%0a%3cp%3e%e6%88%91%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f%e7%94%b1%e4%bb%a5%e4%b8%8b%e9%83%a8%e5%88%86%e7%bb%84%e6%88%90%ef%bc%9a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%e4%b9%a6%e6%ba%90%ef%bc%9az-library%3c%2fli%3e%0a%3cli%3e%e7%ae%a1%e7%90%86%ef%bc%9acalibre%3c%2fli%3e%0a%3cli%3e%e9%98%85%e8%af%bb%ef%bc%9aReadest%20%2b%20kindle%3c%2fli%3e%0a%3c%2fol%3e%0a%3ch3%20id%3d%22%e4%b9%a6%e6%ba%90%22%3e%e4%b9%a6%e6%ba%90%3c%2fh3%3e%0a%3cp%3e%e6%88%91%e5%8f%aa%e6%9c%89%e4%b8%80%e4%b8%aa%e4%b9%a6%e6%ba%90%20z-library%ef%bc%8c%e5%ae%83%e6%98%af%e4%b8%80%e4%b8%aa%e5%bd%b1%e5%ad%90%e5%9b%be%e4%b9%a6%e9%a6%86%e5%92%8c%e5%bc%80%e6%94%be%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e5%88%86%e4%ba%ab%e8%ae%a1%e5%88%92%ef%bc%8c%e7%94%a8%e6%88%b7%e5%8f%af%e4%bb%a5%e5%9c%a8%e4%b8%8a%e9%9d%a2%e4%b8%8b%e8%bd%bd%e6%9c%9f%e5%88%8a%e3%80%81%e6%96%87%e7%ab%a0%e4%bb%a5%e5%8f%8a%e5%90%84%e7%b1%bb%e4%b9%a6%e7%b1%8d%e3%80%82%e5%bd%93%e7%84%b6%ef%bc%8c%e4%b8%8a%e9%9d%a2%e7%9a%84%e6%9d%90%e6%96%99%e5%9f%ba%e6%9c%ac%e9%83%bd%e6%98%af%e6%b2%a1%e6%9c%89%e7%89%88%e6%9d%83%e7%9a%84%ef%bc%8c%e6%89%80%e4%bb%a5%e6%88%91%e4%bb%ac%e5%8f%aa%e7%94%a8%e4%ba%8e%e8%87%aa%e8%ba%ab%e5%ad%a6%e4%b9%a0%ef%bc%8c%e5%88%87%e8%8e%ab%e4%bc%a0%e6%92%ad%e3%80%82%e5%8f%a6%e5%a4%96%e4%b8%80%e4%b8%aa%e8%a6%81%e7%82%b9%e6%98%af%ef%bc%8cz-lib%20%e7%9a%84%e5%81%87%e7%bd%91%e7%ab%99%e9%9d%9e%e5%b8%b8%e5%a4%9a%ef%bc%8c%e7%9c%9f%e7%9a%84%e7%bd%91%e7%ab%99%e4%b9%9f%e5%9b%a0%e4%b8%ba%e7%89%88%e6%9d%83%e7%ad%89%e5%90%84%e7%a7%8d%e5%8e%9f%e5%9b%a0%e8%a2%ab%e6%8a%95%e8%af%89%e6%9f%a5%e5%b0%81%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e4%b8%80%e8%88%ac%e6%98%af%e5%85%88%e8%bf%9b%e5%85%a5%20wiki%20%ef%bc%8c%e4%bb%8e%20wiki%20%e9%87%8c%e9%9d%a2%e6%89%be%e5%88%b0%e5%ae%83%e6%9c%80%e6%96%b0%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fz-%2520library.png%22%20alt%3d%22z-lib%22%3e%3c%2fp%3e%0a%3ch3%20id%3d%22%e7%ae%a1%e7%90%86%22%3e%e7%ae%a1%e7%90%86%3c%2fh3%3e%0a%3cp%3e%e7%9b%ae%e5%89%8d%e7%ae%a1%e7%90%86%e4%b9%a6%e7%b1%8d%e7%9a%84%20app%ef%bc%8c%e5%8f%aa%e6%9c%89%20calibre%20%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9c%80%e5%bc%ba%e3%80%81%e6%8f%92%e4%bb%b6%e6%9c%80%e4%b8%b0%e5%af%8c%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fcalibre.png%22%20alt%3d%22calibre%22%3e%0a%e5%af%bc%e5%85%a5%e4%b9%a6%e7%b1%8d%e4%b9%8b%e5%90%8e%e5%b0%b1%e5%8f%af%e4%bb%a5%e5%9c%a8%e4%b8%bb%e9%a1%b5%e8%bf%9b%e8%a1%8c%e7%ae%a1%e7%90%86%ef%bc%8c%e8%bf%98%e5%8f%af%e4%bb%a5%e5%af%b9%e4%b9%a6%e7%b1%8d%e7%9a%84%e5%85%83%e4%b9%a6%e7%b1%8d%e8%bf%9b%e8%a1%8c%e6%9b%b4%e6%96%b0%e3%80%81%e7%bc%96%e8%be%91%e3%80%82%e5%85%83%e6%95%b0%e6%8d%ae%e7%9a%84%e6%9d%a5%e6%ba%90%e5%8f%af%e4%bb%a5%e6%9c%89%e8%b1%86%e7%93%a3%e3%80%81Amazon%20%e7%ad%89%e5%8f%af%e4%bb%a5%e9%85%8d%e7%bd%ae%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fcalibre-metadata.png%22%20alt%3d%22calibre-metadata%22%3e%0a%e5%bd%93%e7%84%b6%20calibre%20%e6%9c%80%e5%a4%a7%e7%9a%84%e9%97%ae%e9%a2%98%e6%98%af%20UI%20%e4%b8%8d%e5%a5%bd%e7%9c%8b%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9b%be%e6%a0%87%e9%a3%8e%e6%a0%bc%e5%a4%aa%e4%b8%91%e3%80%82%e5%9c%a8%e8%ae%be%e7%bd%ae%e9%87%8c%e9%9d%a2%e5%af%b9%e7%95%8c%e9%9d%a2%e5%a4%96%e8%a7%82%e4%bb%a5%e5%8f%8a%e5%9b%be%e6%a0%87%e5%a4%a7%e5%b0%8f%e8%bf%9b%e8%a1%8c%e8%b0%83%e6%95%b4%ef%bc%8c%e8%b0%83%e6%95%b4%e6%88%90%e8%87%aa%e5%b7%b1%e6%af%94%e8%be%83%e5%96%9c%e6%ac%a2%e7%9a%84%e6%a0%b7%e5%bc%8f%e5%8d%b3%e5%8f%af%e3%80%82%3c%2fp%3e%0a%3cp%3ecalibre%20%e7%9a%84%e6%8f%92%e4%bb%b6%e5%be%88%e5%a4%9a%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%a4%a7%e5%ae%b6%e6%83%b3%e7%9f%a5%e9%81%93%20calibre%20%e7%9a%84%e4%b8%80%e4%ba%9b%e6%9b%b4%e5%a4%9a%e7%94%a8%e6%b3%95%ef%bc%8c%e5%90%8e%e7%bb%ad%e5%8f%af%e4%bb%a5%e5%86%8d%e5%86%99%e4%b8%80%e7%af%87%e6%96%87%e7%ab%a0%e5%88%86%e4%ba%ab%3c%2fp%3e%0a%3ch3%20id%3d%22%e9%98%85%e8%af%bb%22%3e%e9%98%85%e8%af%bb%3c%2fh3%3e%0a%3ch4%20id%3d%22readest%22%3eReadest%3c%2fh4%3e%0a%3cp%3e%e6%88%91%e6%98%af%e8%8b%b9%e6%9e%9c%e7%94%a8%e6%88%b7%ef%bc%8c%e4%b9%8b%e5%89%8d%e6%98%af%e4%bd%bf%e7%94%a8%20Apple%20Books%20%e6%9d%a5%e8%bf%9b%e8%a1%8c%e5%a4%9a%e7%ab%af%e7%9a%84%e9%98%85%e8%af%bb%e3%80%82%e4%bd%86%e5%90%8e%e6%9d%a5%e8%a7%89%e5%be%97%e5%a4%9a%e7%ab%af%e5%90%8c%e6%ad%a5%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%20iCloud%ef%bc%8c%e4%bc%9a%e5%8d%a0%e7%94%a8%e6%88%91%e6%9c%ac%e8%ba%ab%e5%b0%b1%e5%b0%91%e7%9a%84%e5%8f%af%e6%80%9c%e7%9a%84%20iCloud%20%e7%a9%ba%e9%97%b4%e3%80%82%e4%bb%a5%e5%8f%8a%20Apple%20Books%20%e7%9a%84%e9%98%85%e8%af%bb%e4%bd%93%e9%aa%8c%e6%88%91%e6%84%9f%e8%a7%89%e4%b8%8d%e5%a4%aa%e5%a5%bd%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e6%8d%a2%e6%88%90%e4%ba%86%20Readest%20%e8%bf%99%e4%b8%aa%20app%e3%80%82%e5%ae%83%e4%b9%9f%e6%98%af%e6%94%af%e6%8c%81%e5%a4%9a%e5%b9%b3%e5%8f%b0%e7%9a%84%e5%90%8c%e6%ad%a5%e7%9a%84%ef%bc%8c%e5%8f%aa%e6%98%af%e5%85%8d%e8%b4%b9%e7%94%a8%e6%88%b7%e6%9c%89%20500M%20%e7%9a%84%e4%ba%91%e5%ad%98%e5%82%a8%e9%99%90%e9%a2%9d%ef%bc%8c%e4%b8%8d%e8%bf%87%e5%af%b9%e4%ba%8e%e7%9c%8b%e6%96%87%e5%ad%97%e7%94%b5%e5%ad%90%e4%b9%a6%e6%9d%a5%e8%af%b4%e8%b6%b3%e5%a4%9f%e7%94%a8%e4%ba%86%e3%80%82%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&t=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统介绍">系统介绍</a>
+      <ul>
+        <li><a href="#书源">书源</a></li>
+        <li><a href="#管理">管理</a></li>
+        <li><a href="#阅读">阅读</a>
+          <ul>
+            <li><a href="#readest">Readest</a></li>
+            <li><a href="#kindle">Kindle</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#one-more-thing">One more thing</a></li>
+  </ul>
+</nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        放弃微信读书之后，我搭建了自己的读书系统
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2026-05-13 18:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-05-13</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          6 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/reading">Reading</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/book" rel="tag">Book</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/reading" rel="tag">Reading</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/software" rel="tag">Software</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>近期，应该说是很久，没有玩游戏了。PS5、Switch 早已吃灰，手机上的 COC 也卸载了。家庭、工作之外的一点自我时间，除了鼓捣一些数码设备之外，其余的都投入到了阅读。这篇文章就分享一下我现在的读书系统。</p>
+<p>其实不想折腾的人就用微信读书这一个 app 就好了，体验非常好。但是很遗憾，它现在满足不了我的需求：</p>
+<ol>
+<li>有一些冷门书微信读书上是未上架的，一些新书上架也是比较慢的；</li>
+<li>一些书畅销书是有删减的，比如《Nexus : A Brief History of Information Networks from the Stone Age to AI》；</li>
+</ol>
+<p>这两个原因导致我无法再继续使用微信读书，于是我需要自己找书源、以及管理书籍，更重要的是要有一个比较好阅读体验。</p>
+<h2 id="系统介绍">系统介绍</h2>
+<p>我的读书系统由以下部分组成：</p>
+<ol>
+<li>书源：z-library</li>
+<li>管理：calibre</li>
+<li>阅读：Readest + kindle</li>
+</ol>
+<h3 id="书源">书源</h3>
+<p>我只有一个书源 z-library，它是一个影子图书馆和开放获取文件分享计划，用户可以在上面下载期刊、文章以及各类书籍。当然，上面的材料基本都是没有版权的，所以我们只用于自身学习，切莫传播。另外一个要点是，z-lib 的假网站非常多，真的网站也因为版权等各种原因被投诉查封。所以我一般是先进入 wiki ，从 wiki 里面找到它最新的地址。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/z-%20library.png" alt="z-lib"></p>
+<h3 id="管理">管理</h3>
+<p>目前管理书籍的 app，只有 calibre 的功能最强、插件最丰富。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/calibre.png" alt="calibre">
+导入书籍之后就可以在主页进行管理，还可以对书籍的元书籍进行更新、编辑。元数据的来源可以有豆瓣、Amazon 等可以配置。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/calibre-metadata.png" alt="calibre-metadata">
+当然 calibre 最大的问题是 UI 不好看，默认图标风格太丑。在设置里面对界面外观以及图标大小进行调整，调整成自己比较喜欢的样式即可。</p>
+<p>calibre 的插件很多，如果大家想知道 calibre 的一些更多用法，后续可以再写一篇文章分享</p>
+<h3 id="阅读">阅读</h3>
+<h4 id="readest">Readest</h4>
+<p>我是苹果用户，之前是使用 Apple Books 来进行多端的阅读。但后来觉得多端同步需要依赖 iCloud，会占用我本身就少的可怜的 iCloud 空间。以及 Apple Books 的阅读体验我感觉不太好。所以我换成了 Readest 这个 app。它也是支持多平台的同步的，只是免费用户有 500M 的云存储限额，不过对于看文字电子书来说足够用了。</p>
+<p>Readest 的主页很简洁，就书籍的预览，以及一个上传按钮。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/readest-homepage.jpeg" alt="readest-homepage"></p>
+<p>Readest 的阅读界面也很清爽，也有主题可以切换，另外对于多种格式的电子书也渲染的很好。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/readest-reading.png" alt="readest-reading"></p>
+<p>Readest 是免费的，苹果用户可以直接在 AppStore 里面下载。另外它也是开源的，Github 上可以直接搜到相关源码。</p>
+<h4 id="kindle">Kindle</h4>
+<p>没错，我的 Kindle Voyage 复活了。10 多年前的产品，当时还是在亚马逊上购买的。随着 Kindle 退出中国，购买电子书不方便后，它放在角落里不知道落灰了多少个年头。现在拿出来看书，阅读体验也还是非常好的。厚度仅为 7.6mm，重量为 180g。轻便、小巧、翻页速度也挺快的。我现在拿它看完了整个《火影忍者》的漫画，找回了读初中时候的乐趣。</p>
+<p>calibre 就集成了对 Kindle 书库的管理，用 USB 连上电脑之后，传递书籍非常的方便。
+另外 Kindle 阅读最重要的一点是，能够让我足够的专注，不会被手机上各种 App 或者资讯所干扰。这是它最大的价值。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/kindle.jpg" alt="kindle"></p>
+<h2 id="one-more-thing">One more thing</h2>
+<p>以上就是我现在主要的阅读系统。当然，阅读的最佳状态，还是一本实体书捧在手上。于是，现在的我也会不断地购买纸质书籍。买那些经典的，值得留下去的书籍。</p>
+<p>我愈发觉得在如今 AI 普及、信息密度极高的时代，稳住自己的内心去看书，是非常重要的事情。于此，也是对我的小孩的一种言传身教。我希望她在未来不会丢失看书的能力，没有体会过书籍的乐趣。</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/books">Books</a></li>
+         
+          <li><a href="/diary">Diary</a></li>
+         
+          <li><a href="/paintings">Paintings</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统介绍">系统介绍</a>
+      <ul>
+        <li><a href="#书源">书源</a></li>
+        <li><a href="#管理">管理</a></li>
+        <li><a href="#阅读">阅读</a>
+          <ul>
+            <li><a href="#readest">Readest</a></li>
+            <li><a href="#kindle">Kindle</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#one-more-thing">One more thing</a></li>
+  </ul>
+</nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&text=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&is_video=false&description=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&title=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&name=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f&description=%3cp%3e%e8%bf%91%e6%9c%9f%ef%bc%8c%e5%ba%94%e8%af%a5%e8%af%b4%e6%98%af%e5%be%88%e4%b9%85%ef%bc%8c%e6%b2%a1%e6%9c%89%e7%8e%a9%e6%b8%b8%e6%88%8f%e4%ba%86%e3%80%82PS5%e3%80%81Switch%20%e6%97%a9%e5%b7%b2%e5%90%83%e7%81%b0%ef%bc%8c%e6%89%8b%e6%9c%ba%e4%b8%8a%e7%9a%84%20COC%20%e4%b9%9f%e5%8d%b8%e8%bd%bd%e4%ba%86%e3%80%82%e5%ae%b6%e5%ba%ad%e3%80%81%e5%b7%a5%e4%bd%9c%e4%b9%8b%e5%a4%96%e7%9a%84%e4%b8%80%e7%82%b9%e8%87%aa%e6%88%91%e6%97%b6%e9%97%b4%ef%bc%8c%e9%99%a4%e4%ba%86%e9%bc%93%e6%8d%a3%e4%b8%80%e4%ba%9b%e6%95%b0%e7%a0%81%e8%ae%be%e5%a4%87%e4%b9%8b%e5%a4%96%ef%bc%8c%e5%85%b6%e4%bd%99%e7%9a%84%e9%83%bd%e6%8a%95%e5%85%a5%e5%88%b0%e4%ba%86%e9%98%85%e8%af%bb%e3%80%82%e8%bf%99%e7%af%87%e6%96%87%e7%ab%a0%e5%b0%b1%e5%88%86%e4%ba%ab%e4%b8%80%e4%b8%8b%e6%88%91%e7%8e%b0%e5%9c%a8%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f%e3%80%82%3c%2fp%3e%0a%3cp%3e%e5%85%b6%e5%ae%9e%e4%b8%8d%e6%83%b3%e6%8a%98%e8%85%be%e7%9a%84%e4%ba%ba%e5%b0%b1%e7%94%a8%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e8%bf%99%e4%b8%80%e4%b8%aa%20app%20%e5%b0%b1%e5%a5%bd%e4%ba%86%ef%bc%8c%e4%bd%93%e9%aa%8c%e9%9d%9e%e5%b8%b8%e5%a5%bd%e3%80%82%e4%bd%86%e6%98%af%e5%be%88%e9%81%97%e6%86%be%ef%bc%8c%e5%ae%83%e7%8e%b0%e5%9c%a8%e6%bb%a1%e8%b6%b3%e4%b8%8d%e4%ba%86%e6%88%91%e7%9a%84%e9%9c%80%e6%b1%82%ef%bc%9a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%e6%9c%89%e4%b8%80%e4%ba%9b%e5%86%b7%e9%97%a8%e4%b9%a6%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b8%8a%e6%98%af%e6%9c%aa%e4%b8%8a%e6%9e%b6%e7%9a%84%ef%bc%8c%e4%b8%80%e4%ba%9b%e6%96%b0%e4%b9%a6%e4%b8%8a%e6%9e%b6%e4%b9%9f%e6%98%af%e6%af%94%e8%be%83%e6%85%a2%e7%9a%84%ef%bc%9b%3c%2fli%3e%0a%3cli%3e%e4%b8%80%e4%ba%9b%e4%b9%a6%e7%95%85%e9%94%80%e4%b9%a6%e6%98%af%e6%9c%89%e5%88%a0%e5%87%8f%e7%9a%84%ef%bc%8c%e6%af%94%e5%a6%82%e3%80%8aNexus%20%3a%20A%20Brief%20History%20of%20Information%20Networks%20from%20the%20Stone%20Age%20to%20AI%e3%80%8b%ef%bc%9b%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3e%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%8e%9f%e5%9b%a0%e5%af%bc%e8%87%b4%e6%88%91%e6%97%a0%e6%b3%95%e5%86%8d%e7%bb%a7%e7%bb%ad%e4%bd%bf%e7%94%a8%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%ef%bc%8c%e4%ba%8e%e6%98%af%e6%88%91%e9%9c%80%e8%a6%81%e8%87%aa%e5%b7%b1%e6%89%be%e4%b9%a6%e6%ba%90%e3%80%81%e4%bb%a5%e5%8f%8a%e7%ae%a1%e7%90%86%e4%b9%a6%e7%b1%8d%ef%bc%8c%e6%9b%b4%e9%87%8d%e8%a6%81%e7%9a%84%e6%98%af%e8%a6%81%e6%9c%89%e4%b8%80%e4%b8%aa%e6%af%94%e8%be%83%e5%a5%bd%e9%98%85%e8%af%bb%e4%bd%93%e9%aa%8c%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e7%b3%bb%e7%bb%9f%e4%bb%8b%e7%bb%8d%22%3e%e7%b3%bb%e7%bb%9f%e4%bb%8b%e7%bb%8d%3c%2fh2%3e%0a%3cp%3e%e6%88%91%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f%e7%94%b1%e4%bb%a5%e4%b8%8b%e9%83%a8%e5%88%86%e7%bb%84%e6%88%90%ef%bc%9a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%e4%b9%a6%e6%ba%90%ef%bc%9az-library%3c%2fli%3e%0a%3cli%3e%e7%ae%a1%e7%90%86%ef%bc%9acalibre%3c%2fli%3e%0a%3cli%3e%e9%98%85%e8%af%bb%ef%bc%9aReadest%20%2b%20kindle%3c%2fli%3e%0a%3c%2fol%3e%0a%3ch3%20id%3d%22%e4%b9%a6%e6%ba%90%22%3e%e4%b9%a6%e6%ba%90%3c%2fh3%3e%0a%3cp%3e%e6%88%91%e5%8f%aa%e6%9c%89%e4%b8%80%e4%b8%aa%e4%b9%a6%e6%ba%90%20z-library%ef%bc%8c%e5%ae%83%e6%98%af%e4%b8%80%e4%b8%aa%e5%bd%b1%e5%ad%90%e5%9b%be%e4%b9%a6%e9%a6%86%e5%92%8c%e5%bc%80%e6%94%be%e8%8e%b7%e5%8f%96%e6%96%87%e4%bb%b6%e5%88%86%e4%ba%ab%e8%ae%a1%e5%88%92%ef%bc%8c%e7%94%a8%e6%88%b7%e5%8f%af%e4%bb%a5%e5%9c%a8%e4%b8%8a%e9%9d%a2%e4%b8%8b%e8%bd%bd%e6%9c%9f%e5%88%8a%e3%80%81%e6%96%87%e7%ab%a0%e4%bb%a5%e5%8f%8a%e5%90%84%e7%b1%bb%e4%b9%a6%e7%b1%8d%e3%80%82%e5%bd%93%e7%84%b6%ef%bc%8c%e4%b8%8a%e9%9d%a2%e7%9a%84%e6%9d%90%e6%96%99%e5%9f%ba%e6%9c%ac%e9%83%bd%e6%98%af%e6%b2%a1%e6%9c%89%e7%89%88%e6%9d%83%e7%9a%84%ef%bc%8c%e6%89%80%e4%bb%a5%e6%88%91%e4%bb%ac%e5%8f%aa%e7%94%a8%e4%ba%8e%e8%87%aa%e8%ba%ab%e5%ad%a6%e4%b9%a0%ef%bc%8c%e5%88%87%e8%8e%ab%e4%bc%a0%e6%92%ad%e3%80%82%e5%8f%a6%e5%a4%96%e4%b8%80%e4%b8%aa%e8%a6%81%e7%82%b9%e6%98%af%ef%bc%8cz-lib%20%e7%9a%84%e5%81%87%e7%bd%91%e7%ab%99%e9%9d%9e%e5%b8%b8%e5%a4%9a%ef%bc%8c%e7%9c%9f%e7%9a%84%e7%bd%91%e7%ab%99%e4%b9%9f%e5%9b%a0%e4%b8%ba%e7%89%88%e6%9d%83%e7%ad%89%e5%90%84%e7%a7%8d%e5%8e%9f%e5%9b%a0%e8%a2%ab%e6%8a%95%e8%af%89%e6%9f%a5%e5%b0%81%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e4%b8%80%e8%88%ac%e6%98%af%e5%85%88%e8%bf%9b%e5%85%a5%20wiki%20%ef%bc%8c%e4%bb%8e%20wiki%20%e9%87%8c%e9%9d%a2%e6%89%be%e5%88%b0%e5%ae%83%e6%9c%80%e6%96%b0%e7%9a%84%e5%9c%b0%e5%9d%80%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fz-%2520library.png%22%20alt%3d%22z-lib%22%3e%3c%2fp%3e%0a%3ch3%20id%3d%22%e7%ae%a1%e7%90%86%22%3e%e7%ae%a1%e7%90%86%3c%2fh3%3e%0a%3cp%3e%e7%9b%ae%e5%89%8d%e7%ae%a1%e7%90%86%e4%b9%a6%e7%b1%8d%e7%9a%84%20app%ef%bc%8c%e5%8f%aa%e6%9c%89%20calibre%20%e7%9a%84%e5%8a%9f%e8%83%bd%e6%9c%80%e5%bc%ba%e3%80%81%e6%8f%92%e4%bb%b6%e6%9c%80%e4%b8%b0%e5%af%8c%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fcalibre.png%22%20alt%3d%22calibre%22%3e%0a%e5%af%bc%e5%85%a5%e4%b9%a6%e7%b1%8d%e4%b9%8b%e5%90%8e%e5%b0%b1%e5%8f%af%e4%bb%a5%e5%9c%a8%e4%b8%bb%e9%a1%b5%e8%bf%9b%e8%a1%8c%e7%ae%a1%e7%90%86%ef%bc%8c%e8%bf%98%e5%8f%af%e4%bb%a5%e5%af%b9%e4%b9%a6%e7%b1%8d%e7%9a%84%e5%85%83%e4%b9%a6%e7%b1%8d%e8%bf%9b%e8%a1%8c%e6%9b%b4%e6%96%b0%e3%80%81%e7%bc%96%e8%be%91%e3%80%82%e5%85%83%e6%95%b0%e6%8d%ae%e7%9a%84%e6%9d%a5%e6%ba%90%e5%8f%af%e4%bb%a5%e6%9c%89%e8%b1%86%e7%93%a3%e3%80%81Amazon%20%e7%ad%89%e5%8f%af%e4%bb%a5%e9%85%8d%e7%bd%ae%e3%80%82%0a%3cimg%20src%3d%22https%3a%2f%2forechou.oss-cn-shenzhen.aliyuncs.com%2fimages%2fcalibre-metadata.png%22%20alt%3d%22calibre-metadata%22%3e%0a%e5%bd%93%e7%84%b6%20calibre%20%e6%9c%80%e5%a4%a7%e7%9a%84%e9%97%ae%e9%a2%98%e6%98%af%20UI%20%e4%b8%8d%e5%a5%bd%e7%9c%8b%ef%bc%8c%e9%bb%98%e8%ae%a4%e5%9b%be%e6%a0%87%e9%a3%8e%e6%a0%bc%e5%a4%aa%e4%b8%91%e3%80%82%e5%9c%a8%e8%ae%be%e7%bd%ae%e9%87%8c%e9%9d%a2%e5%af%b9%e7%95%8c%e9%9d%a2%e5%a4%96%e8%a7%82%e4%bb%a5%e5%8f%8a%e5%9b%be%e6%a0%87%e5%a4%a7%e5%b0%8f%e8%bf%9b%e8%a1%8c%e8%b0%83%e6%95%b4%ef%bc%8c%e8%b0%83%e6%95%b4%e6%88%90%e8%87%aa%e5%b7%b1%e6%af%94%e8%be%83%e5%96%9c%e6%ac%a2%e7%9a%84%e6%a0%b7%e5%bc%8f%e5%8d%b3%e5%8f%af%e3%80%82%3c%2fp%3e%0a%3cp%3ecalibre%20%e7%9a%84%e6%8f%92%e4%bb%b6%e5%be%88%e5%a4%9a%ef%bc%8c%e5%a6%82%e6%9e%9c%e5%a4%a7%e5%ae%b6%e6%83%b3%e7%9f%a5%e9%81%93%20calibre%20%e7%9a%84%e4%b8%80%e4%ba%9b%e6%9b%b4%e5%a4%9a%e7%94%a8%e6%b3%95%ef%bc%8c%e5%90%8e%e7%bb%ad%e5%8f%af%e4%bb%a5%e5%86%8d%e5%86%99%e4%b8%80%e7%af%87%e6%96%87%e7%ab%a0%e5%88%86%e4%ba%ab%3c%2fp%3e%0a%3ch3%20id%3d%22%e9%98%85%e8%af%bb%22%3e%e9%98%85%e8%af%bb%3c%2fh3%3e%0a%3ch4%20id%3d%22readest%22%3eReadest%3c%2fh4%3e%0a%3cp%3e%e6%88%91%e6%98%af%e8%8b%b9%e6%9e%9c%e7%94%a8%e6%88%b7%ef%bc%8c%e4%b9%8b%e5%89%8d%e6%98%af%e4%bd%bf%e7%94%a8%20Apple%20Books%20%e6%9d%a5%e8%bf%9b%e8%a1%8c%e5%a4%9a%e7%ab%af%e7%9a%84%e9%98%85%e8%af%bb%e3%80%82%e4%bd%86%e5%90%8e%e6%9d%a5%e8%a7%89%e5%be%97%e5%a4%9a%e7%ab%af%e5%90%8c%e6%ad%a5%e9%9c%80%e8%a6%81%e4%be%9d%e8%b5%96%20iCloud%ef%bc%8c%e4%bc%9a%e5%8d%a0%e7%94%a8%e6%88%91%e6%9c%ac%e8%ba%ab%e5%b0%b1%e5%b0%91%e7%9a%84%e5%8f%af%e6%80%9c%e7%9a%84%20iCloud%20%e7%a9%ba%e9%97%b4%e3%80%82%e4%bb%a5%e5%8f%8a%20Apple%20Books%20%e7%9a%84%e9%98%85%e8%af%bb%e4%bd%93%e9%aa%8c%e6%88%91%e6%84%9f%e8%a7%89%e4%b8%8d%e5%a4%aa%e5%a5%bd%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e6%8d%a2%e6%88%90%e4%ba%86%20Readest%20%e8%bf%99%e4%b8%aa%20app%e3%80%82%e5%ae%83%e4%b9%9f%e6%98%af%e6%94%af%e6%8c%81%e5%a4%9a%e5%b9%b3%e5%8f%b0%e7%9a%84%e5%90%8c%e6%ad%a5%e7%9a%84%ef%bc%8c%e5%8f%aa%e6%98%af%e5%85%8d%e8%b4%b9%e7%94%a8%e6%88%b7%e6%9c%89%20500M%20%e7%9a%84%e4%ba%91%e5%ad%98%e5%82%a8%e9%99%90%e9%a2%9d%ef%bc%8c%e4%b8%8d%e8%bf%87%e5%af%b9%e4%ba%8e%e7%9c%8b%e6%96%87%e5%ad%97%e7%94%b5%e5%ad%90%e4%b9%a6%e6%9d%a5%e8%af%b4%e8%b6%b3%e5%a4%9f%e7%94%a8%e4%ba%86%e3%80%82%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2026%2f05-about-reading-system%2f&t=%e6%94%be%e5%bc%83%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e6%90%ad%e5%bb%ba%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e8%af%bb%e4%b9%a6%e7%b3%bb%e7%bb%9f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="toggleDisplay('nav-footer');return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="toggleDisplay('toc-footer');return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="toggleDisplay('share-footer');return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2026  奥力手记 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/books">Books</a></li>
+         
+        <li><a href="/diary">Diary</a></li>
+         
+        <li><a href="/paintings">Paintings</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/js/main.js defer></script>
+
+<script src=/js/code-copy.js defer></script>
+
+
+
+
+</html>
