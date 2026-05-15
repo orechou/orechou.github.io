@@ -52,7 +52,7 @@
     
   
   
-  <link rel="stylesheet" href="https://www.orechou.com/css/styles.c8f5a8908097016c2478cc57746bc263f8fd168393957eec350939d245cebcbbcd9459bea5532242f4c917031e8edb7b3044bcf0324fe8d8de9dced1c2d7c52d.css" integrity="sha512-yPWokICXAWwkeMxXdGvCY/j9FoOTlX7sNQk50kXOvLvNlFm&#43;pVMiQvTJFwMejtt7MES88DJP6Njenc7RwtfFLQ=="> 
+  <link rel="stylesheet" href="https://www.orechou.com/css/styles.4a603902cd2db9683f919378d582ac56efde0d2484d49e0cfba15aa483be7f82c1d107a1d0f649b0fd04148570a7ca949dce81b07d37df2993c6910702ba840e.css" integrity="sha512-SmA5As0tuWg/kZN41YKsVu/eDSSE1J4M&#43;6FapIO&#43;f4LB0Qeh0PZJsP0EFIVwp8qUnc6BsH033ymTxpEHArqEDg=="> 
 
   
   
@@ -112,161 +112,92 @@
 
   <div class="content index py4">
 
-  <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/books">Books</a></li>
-         
-        <li><a href="/diary">Diary</a></li>
-         
-        <li><a href="/paintings">Paintings</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" https://www.orechou.com/posts/2022/deadmans-gun/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="toggleDisplay('i-prev')" onmouseout="toggleDisplay('i-prev')"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="toggleDisplay('i-next')" onmouseout="toggleDisplay('i-next')"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="toggleDisplay('i-top')" onmouseout="toggleDisplay('i-top')"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="toggleDisplay('i-share')" onmouseout="toggleDisplay('i-share')" onclick="toggleDisplay('share');return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
+    <header id="header">
+  <a href="https://www.orechou.com/">
+  
+    <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>奥力手记</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
       
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&text=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&is_video=false&description=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&name=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f&description=%3cp%3e%e4%b8%8b%e9%9d%a2%e8%ae%b0%e5%bd%95%e4%b8%80%e4%ba%9b%e5%b9%b3%e6%97%b6%e6%94%b6%e5%bd%95%e7%9a%84%e4%b8%80%e4%ba%9b%e8%b5%84%e6%ba%90%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e8%b5%84%e6%ba%90%e7%ab%99%22%3e%e8%b5%84%e6%ba%90%e7%ab%99%3c%2fh2%3e%0a%3cp%3e%5b1%5d%3ca%20href%3d%22https%3a%2f%2fzh.jp1lib.org%2f%22%3eZ-Library%3c%2fa%3e%3a%20%e5%85%a8%e7%90%83%e6%9c%80%e5%a4%a7%e7%9a%84%e6%95%b0%e5%ad%97%e5%9b%be%e4%b9%a6%e9%a6%86%0a%e7%9b%ae%e5%89%8d%e5%af%b9%e4%ba%8e%e6%95%b0%e5%ad%97%e4%b9%a6%e7%b1%8d%ef%bc%8c%e5%b7%b2%e7%bb%8f%e5%bc%83%e5%9d%91%e4%ba%86%20kindle%20%e3%80%81%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e7%ad%89%e4%b8%80%e4%bc%97%e7%a1%ac%e8%bd%af%e4%bb%b6%e3%80%82%e7%9b%ae%e5%89%8d%e4%bd%bf%e7%94%a8%20epub%20%e6%a0%bc%e5%bc%8f%e7%94%b5%e5%ad%90%e4%b9%a6%20%2b%20iBooks%20%2b%20iCloud%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%20iPhone%e3%80%81iPad%20%e5%92%8c%20mac%20%e4%b8%8a%e6%97%a0%e7%bc%9d%e5%88%87%e6%8d%a2%ef%bc%8c%e5%90%8c%e6%ad%a5%e9%98%85%e8%af%bb%e8%ae%b0%e5%bd%95%e3%80%81%e8%bf%9b%e5%ba%a6%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e5%b0%8f%e5%b7%a5%e5%85%b7%22%3e%e5%b0%8f%e5%b7%a5%e5%85%b7%3c%2fh2%3e%0a%3cp%3e%5b1%5d%3ca%20href%3d%22https%3a%2f%2fbatname.vercel.app%2f%22%3eBatman-Logo%3c%2fa%3e%3a%20%e6%96%b0%e8%9d%99%e8%9d%a0%e4%be%a0%20Logo%20%e7%94%9f%e6%88%90%e5%99%a8%3c%2fp%3e%0a%3cp%3e%5b2%5d%3ca%20href%3d%22https%3a%2f%2fearth.fm%2f%22%3eearth.fm%3c%2fa%3e%3a%20%e8%81%86%e5%90%ac%e4%b8%96%e7%95%8c%e7%9a%84%e7%99%bd%e5%99%aa%e9%9f%b3%3c%2fp%3e%0a%3cp%3e%5b3%5d%3ca%20href%3d%22https%3a%2f%2fmuselink.cc%2f%22%3emuselink%3c%2fa%3e%3a%20%e6%9e%81%e7%ae%80%e6%95%b0%e5%ad%97%e5%90%8d%e7%89%87%ef%bc%8c%e5%8f%aa%e4%b8%ba%e5%88%9b%e4%bd%9c%e8%80%85%3c%2fp%3e%0a%3cp%3e%5b4%5d%3ca%20href%3d%22https%3a%2f%2fimgg.gg%2f%22%3eimgg%3c%2fa%3e%3a%20%e4%bb%a5%e5%9b%be%e7%89%87%e7%9a%84%e6%96%b9%e5%bc%8f%e6%88%aa%e5%8f%96%e5%b9%b6%e5%88%86%e4%ba%ab%e4%b8%87%e7%89%a9%ef%bc%8c%e7%ae%80%e5%8d%95%ef%bc%8c%e7%be%8e%e8%a7%82%e4%b8%94%e9%9a%90%e7%a7%81%e5%ae%89%e5%85%a8%3c%2fp%3e%0a%3cp%3e%5b5%5d%3ca%20href%3d%22https%3a%2f%2factivitywatch.net%2f%22%3eActivityWatch%3c%2fa%3e%3a%20%e4%b8%80%e6%ac%be%e5%85%8d%e8%b4%b9%e7%9a%84%e8%87%aa%e5%8a%a8%e8%bf%bd%e8%b8%aa%e5%9c%a8%e4%bd%a0%e8%ae%be%e5%a4%87%e4%b8%8a%e4%bd%bf%e7%94%a8%e6%97%b6%e9%97%b4%e7%9a%84%e8%bd%af%e4%bb%b6%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&t=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Posts</a></li>
+      
+        <li><a href="/books">Books</a></li>
+      
+        <li><a href="/diary">Diary</a></li>
+      
+        <li><a href="/paintings">Paintings</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
 
-    </div>
+
+
     
-    <div id="toc">
-      <nav id="TableOfContents">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 class="posttitle" itemprop="name headline">
+      【资源】Batcave Resources 第一期
+    </h1>
+    <div class="meta">
+      
+      <div class="postdate">
+        
+        <time datetime="2022-05-13 23:40:00 &#43;0000 UTC" itemprop="datePublished">2022-05-13</time>
+        
+      </div>
+      
+      
+      <div class="article-read-time">
+        <i class="far fa-clock"></i>
+        
+        1 minute read
+      </div>
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <div class="article-tag">
+          <i class="fas fa-tag"></i>
+          
+          
+          <a class="tag-link" href="/tags/other" rel="tag">Other</a>
+          
+      </div>
+      
+    </div>
+  </header>
+
+
+  
+  <div id="toc">
+    <nav id="TableOfContents">
   <ul>
     <li><a href="#资源站">资源站</a></li>
     <li><a href="#小工具">小工具</a></li>
   </ul>
 </nav>
-    </div>
-    
-  </span>
-</div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        【资源】Batcave Resources 第一期
-      </h1>
-      <div class="meta">
-        
-        <div class="postdate">
-          
-          <time datetime="2022-05-13 23:40:00 &#43;0000 UTC" itemprop="datePublished">2022-05-13</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          1 minute read
-        </div>
-        
-        
-        
-      </div>
-    </header>
-
+  </div>
   
-    
-    <div class="content" itemprop="articleBody">
-      <p>下面记录一些平时收录的一些资源。</p>
+  <div class="content" itemprop="articleBody">
+    <p>下面记录一些平时收录的一些资源。</p>
 <h2 id="资源站">资源站</h2>
 <p>[1]<a href="https://zh.jp1lib.org/">Z-Library</a>: 全球最大的数字图书馆
 目前对于数字书籍，已经弃坑了 kindle 、微信读书等一众硬软件。目前使用 epub 格式电子书 + iBooks + iCloud，可以在 iPhone、iPad 和 mac 上无缝切换，同步阅读记录、进度。</p>
@@ -277,125 +208,34 @@
 <p>[4]<a href="https://imgg.gg/">imgg</a>: 以图片的方式截取并分享万物，简单，美观且隐私安全</p>
 <p>[5]<a href="https://activitywatch.net/">ActivityWatch</a>: 一款免费的自动追踪在你设备上使用时间的软件</p>
 
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/posts">Posts</a></li>
-         
-          <li><a href="/books">Books</a></li>
-         
-          <li><a href="/diary">Diary</a></li>
-         
-          <li><a href="/paintings">Paintings</a></li>
-         
-          <li><a href="/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#资源站">资源站</a></li>
-    <li><a href="#小工具">小工具</a></li>
-  </ul>
-</nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&text=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&is_video=false&description=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&title=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&name=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f&description=%3cp%3e%e4%b8%8b%e9%9d%a2%e8%ae%b0%e5%bd%95%e4%b8%80%e4%ba%9b%e5%b9%b3%e6%97%b6%e6%94%b6%e5%bd%95%e7%9a%84%e4%b8%80%e4%ba%9b%e8%b5%84%e6%ba%90%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e8%b5%84%e6%ba%90%e7%ab%99%22%3e%e8%b5%84%e6%ba%90%e7%ab%99%3c%2fh2%3e%0a%3cp%3e%5b1%5d%3ca%20href%3d%22https%3a%2f%2fzh.jp1lib.org%2f%22%3eZ-Library%3c%2fa%3e%3a%20%e5%85%a8%e7%90%83%e6%9c%80%e5%a4%a7%e7%9a%84%e6%95%b0%e5%ad%97%e5%9b%be%e4%b9%a6%e9%a6%86%0a%e7%9b%ae%e5%89%8d%e5%af%b9%e4%ba%8e%e6%95%b0%e5%ad%97%e4%b9%a6%e7%b1%8d%ef%bc%8c%e5%b7%b2%e7%bb%8f%e5%bc%83%e5%9d%91%e4%ba%86%20kindle%20%e3%80%81%e5%be%ae%e4%bf%a1%e8%af%bb%e4%b9%a6%e7%ad%89%e4%b8%80%e4%bc%97%e7%a1%ac%e8%bd%af%e4%bb%b6%e3%80%82%e7%9b%ae%e5%89%8d%e4%bd%bf%e7%94%a8%20epub%20%e6%a0%bc%e5%bc%8f%e7%94%b5%e5%ad%90%e4%b9%a6%20%2b%20iBooks%20%2b%20iCloud%ef%bc%8c%e5%8f%af%e4%bb%a5%e5%9c%a8%20iPhone%e3%80%81iPad%20%e5%92%8c%20mac%20%e4%b8%8a%e6%97%a0%e7%bc%9d%e5%88%87%e6%8d%a2%ef%bc%8c%e5%90%8c%e6%ad%a5%e9%98%85%e8%af%bb%e8%ae%b0%e5%bd%95%e3%80%81%e8%bf%9b%e5%ba%a6%e3%80%82%3c%2fp%3e%0a%3ch2%20id%3d%22%e5%b0%8f%e5%b7%a5%e5%85%b7%22%3e%e5%b0%8f%e5%b7%a5%e5%85%b7%3c%2fh2%3e%0a%3cp%3e%5b1%5d%3ca%20href%3d%22https%3a%2f%2fbatname.vercel.app%2f%22%3eBatman-Logo%3c%2fa%3e%3a%20%e6%96%b0%e8%9d%99%e8%9d%a0%e4%be%a0%20Logo%20%e7%94%9f%e6%88%90%e5%99%a8%3c%2fp%3e%0a%3cp%3e%5b2%5d%3ca%20href%3d%22https%3a%2f%2fearth.fm%2f%22%3eearth.fm%3c%2fa%3e%3a%20%e8%81%86%e5%90%ac%e4%b8%96%e7%95%8c%e7%9a%84%e7%99%bd%e5%99%aa%e9%9f%b3%3c%2fp%3e%0a%3cp%3e%5b3%5d%3ca%20href%3d%22https%3a%2f%2fmuselink.cc%2f%22%3emuselink%3c%2fa%3e%3a%20%e6%9e%81%e7%ae%80%e6%95%b0%e5%ad%97%e5%90%8d%e7%89%87%ef%bc%8c%e5%8f%aa%e4%b8%ba%e5%88%9b%e4%bd%9c%e8%80%85%3c%2fp%3e%0a%3cp%3e%5b4%5d%3ca%20href%3d%22https%3a%2f%2fimgg.gg%2f%22%3eimgg%3c%2fa%3e%3a%20%e4%bb%a5%e5%9b%be%e7%89%87%e7%9a%84%e6%96%b9%e5%bc%8f%e6%88%aa%e5%8f%96%e5%b9%b6%e5%88%86%e4%ba%ab%e4%b8%87%e7%89%a9%ef%bc%8c%e7%ae%80%e5%8d%95%ef%bc%8c%e7%be%8e%e8%a7%82%e4%b8%94%e9%9a%90%e7%a7%81%e5%ae%89%e5%85%a8%3c%2fp%3e%0a%3cp%3e%5b5%5d%3ca%20href%3d%22https%3a%2f%2factivitywatch.net%2f%22%3eActivityWatch%3c%2fa%3e%3a%20%e4%b8%80%e6%ac%be%e5%85%8d%e8%b4%b9%e7%9a%84%e8%87%aa%e5%8a%a8%e8%bf%bd%e8%b8%aa%e5%9c%a8%e4%bd%a0%e8%ae%be%e5%a4%87%e4%b8%8a%e4%bd%bf%e7%94%a8%e6%97%b6%e9%97%b4%e7%9a%84%e8%bd%af%e4%bb%b6%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2022%2f%25E7%25BD%2591%25E7%25BB%259C%25E8%25B5%2584%25E6%25BA%2590%2f&t=%e3%80%90%e8%b5%84%e6%ba%90%e3%80%91Batcave%20Resources%20%e7%ac%ac%e4%b8%80%e6%9c%9f" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="toggleDisplay('nav-footer');return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="toggleDisplay('toc-footer');return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="toggleDisplay('share-footer');return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
   </div>
-</div>
+</article>
+
+<nav class="post-nav">
+  
+  <a class="post-nav-prev" href="https://www.orechou.com/posts/2022/deadmans-gun/">
+    <i class="fas fa-chevron-left"></i>
+    【歌曲】Deadman&#39;s Gun &amp;&amp; That&#39;s The Way It Is
+  </a>
+  
+  
+  <a class="post-nav-next" href="https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/">
+    自定义 Spring Security 鉴权
+    <i class="fas fa-chevron-right"></i>
+  </a>
+  
+</nav>
 
 
-  <footer id="footer">
+  
+
+
+
+
+
+
+
+    <footer id="footer">
   <div class="footer-left">
     Copyright  &copy; 2026  奥力手记 
   </div>
@@ -422,14 +262,19 @@
 
 
   </div>
+
 </body>
 
 <link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
 <script src=/js/main.js defer></script>
 
-<script src=/js/code-copy.js defer></script>
+
+
+<script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
+<audio id="music-player-audio" style="display:none"></audio>
+<script src=/js/music-player.js defer></script>
 
 
 
-
+<script src=/js/spa-router.js></script>
 </html>

@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/posts/2026/06-another-you/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/tags/book/</loc>
     <lastmod>2026-05-13T18:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/categories/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/life/</loc>
+    <lastmod>2026-05-13T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/life/</loc>
     <lastmod>2026-05-13T18:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/</loc>
@@ -79,9 +88,6 @@
   </url><url>
     <loc>https://www.orechou.com/tags/claude-code/</loc>
     <lastmod>2026-03-14T22:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/life/</loc>
-    <lastmod>2026-02-08T22:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2026/01-a-passed-thing/</loc>
     <lastmod>2026-02-08T22:00:00+00:00</lastmod>

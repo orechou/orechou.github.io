@@ -52,7 +52,7 @@ There and back again，开始新的故事。">
     
   
   
-  <link rel="stylesheet" href="https://www.orechou.com/css/styles.c8f5a8908097016c2478cc57746bc263f8fd168393957eec350939d245cebcbbcd9459bea5532242f4c917031e8edb7b3044bcf0324fe8d8de9dced1c2d7c52d.css" integrity="sha512-yPWokICXAWwkeMxXdGvCY/j9FoOTlX7sNQk50kXOvLvNlFm&#43;pVMiQvTJFwMejtt7MES88DJP6Njenc7RwtfFLQ=="> 
+  <link rel="stylesheet" href="https://www.orechou.com/css/styles.4a603902cd2db9683f919378d582ac56efde0d2484d49e0cfba15aa483be7f82c1d107a1d0f649b0fd04148570a7ca949dce81b07d37df2993c6910702ba840e.css" integrity="sha512-SmA5As0tuWg/kZN41YKsVu/eDSSE1J4M&#43;6FapIO&#43;f4LB0Qeh0PZJsP0EFIVwp8qUnc6BsH033ymTxpEHArqEDg=="> 
 
   
   
@@ -112,156 +112,87 @@ There and back again，开始新的故事。">
 
   <div class="content index py4">
 
-  <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/books">Books</a></li>
-         
-        <li><a href="/diary">Diary</a></li>
-         
-        <li><a href="/paintings">Paintings</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" https://www.orechou.com/posts/2023/mysql-master-slave-practice/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="toggleDisplay('i-prev')" onmouseout="toggleDisplay('i-prev')"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="https://www.orechou.com/posts/2023/49-the-practise-mock-api/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="toggleDisplay('i-next')" onmouseout="toggleDisplay('i-next')"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="toggleDisplay('i-top')" onmouseout="toggleDisplay('i-top')"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="toggleDisplay('i-share')" onmouseout="toggleDisplay('i-share')" onclick="toggleDisplay('share');return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
+    <header id="header">
+  <a href="https://www.orechou.com/">
+  
+    <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>奥力手记</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
       
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&text=There%20and%20back%20again" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&is_video=false&description=There%20and%20back%20again" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=There%20and%20back%20again&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&name=There%20and%20back%20again&description=%3cp%3e%e6%88%91%e4%bb%8e%e5%b0%8f%e7%94%9f%e6%b4%bb%e5%9c%a8%e9%87%8d%e5%ba%86%e7%9a%84%e4%b8%80%e4%b8%aa%e8%be%b9%e9%99%b2%e5%b0%8f%e5%8e%bf%e5%9f%8e%e9%87%8c%ef%bc%8c%e8%af%bb%e5%88%9d%e4%b8%ad%e4%b9%8b%e5%89%8d%e6%98%af%e5%9c%a8%e5%8e%bf%e9%87%8c%e7%9a%84%e4%b8%80%e4%b8%aa%e9%95%87%e4%b8%8a%ef%bc%8c%e4%b8%8a%e4%ba%86%e5%88%9d%e4%b8%ad%e5%88%b0%e4%ba%86%e5%8e%bf%e5%9f%8e%ef%bc%8c%e8%af%bb%e5%a4%a7%e5%ad%a6%e5%b0%b1%e5%88%b0%e4%ba%86%e5%b8%82%e9%87%8c%e3%80%82%e5%9c%a8%e9%95%87%e4%b8%8a%e7%9a%84%e9%82%a3%e5%8d%81%e5%a4%9a%e5%b9%b4%e6%88%91%e6%b4%bb%e5%8a%a8%e7%9a%84%e8%8c%83%e5%9b%b4%e5%b9%b6%e4%b8%8d%e5%a4%a7%ef%bc%8c%e5%b0%8f%e7%9a%84%e6%97%b6%e5%80%99%e5%8f%97%e6%88%91%e5%a6%88%e7%ae%a1%e6%9d%9f%e6%af%94%e8%be%83%e5%a4%9a%ef%bc%8c%e5%be%88%e5%a4%9a%e4%ba%8b%e6%83%85%e4%b8%8d%e8%ae%a9%e5%8e%bb%e5%81%9a%ef%bc%8c%e7%8e%b0%e5%9c%a8%e9%82%a3%e4%b8%aa%e9%95%87%e5%ad%90%e5%88%b0%e5%ba%95%e6%9c%89%e5%87%a0%e6%9d%a1%e8%a1%97%e6%88%91%e4%b9%9f%e5%9b%9e%e5%bf%86%e4%b8%8d%e8%b5%b7%e6%9d%a5%e4%ba%86%e3%80%82%e5%9c%a8%e5%8e%bf%e5%9f%8e%e8%af%bb%e4%b9%a6%e7%9a%84%e9%82%a3%e5%87%a0%e5%b9%b4%e5%80%92%e6%98%af%e8%87%aa%e7%94%b1%e4%ba%86%e4%b8%8d%e5%b0%91%ef%bc%8c%e9%82%a3%e6%97%b6%e5%80%99%e5%af%b9%e6%b8%b8%e6%88%8f%e5%8e%85%e5%92%8c%e7%bd%91%e5%90%a7%e5%a6%82%e6%95%b0%e5%ae%b6%e7%8f%8d%ef%bc%8c%e8%a7%89%e5%be%97%e5%88%b0%e7%bd%91%e5%90%a7%e9%87%8c%e9%9d%a2%e6%89%93%e6%b8%b8%e6%88%8f%e6%98%af%e6%9c%80%e5%bf%ab%e4%b9%90%e7%9a%84%e4%ba%8b%e6%83%85%ef%bc%8c%e5%a6%82%e6%9e%9c%e8%bf%98%e6%9c%89%e4%bd%99%e9%92%b1%e4%b9%b0%e4%b8%80%e7%93%b6%e5%8f%af%e4%b9%90%e5%b0%b1%e6%98%af%e7%8e%8b%e7%82%b8%e3%80%82%e9%82%a3%e4%b8%aa%e6%97%b6%e5%80%99%e4%ba%ba%e4%b8%8d%e5%a4%a7%ef%bc%8c%e6%b2%a1%e6%9c%89%e5%85%bb%e6%88%90%e8%87%aa%e5%b7%b1%e7%9a%84%e4%bb%b7%e5%80%bc%e8%a7%82%e3%80%81%e4%b8%96%e7%95%8c%e8%a7%82%ef%bc%8c%e5%af%b9%e8%87%aa%e5%b7%b1%e5%96%9c%e6%ac%a2%e7%9a%84%e5%b0%b1%e6%9b%b4%e8%bf%9b%e4%b8%80%e6%ad%a5%e6%8e%a2%e7%b4%a2%ef%bc%8c%e5%af%b9%e8%87%aa%e5%b7%b1%e4%b8%8d%e5%96%9c%e6%ac%a2%e7%9a%84%e5%b0%b1%e4%b8%bb%e5%8a%a8%e5%9b%9e%e9%81%bf%e3%80%82%e5%a5%bd%e7%ac%91%e7%9a%84%e4%ba%8b%e6%83%85%e6%98%af%ef%bc%8c%e5%88%9d%e4%b8%ad%e7%9c%8b%e5%88%b0%e6%9c%89%e4%ba%9b%e5%90%8c%e5%ad%a6%e6%8a%bd%e7%83%9f%ef%bc%8c%e5%9c%a8%e6%9f%90%e4%b8%aa%e5%ad%a6%e6%9c%9f%e5%bc%80%e5%ad%a6%e5%89%8d%e4%b8%80%e5%a4%a9%e6%88%91%e5%b0%b1%e4%b9%b0%e4%ba%86%e4%b8%80%e5%8c%85%e7%83%9f%e4%bd%93%e9%aa%8c%e4%bd%93%e9%aa%8c%ef%bc%8c%e4%b8%80%e4%b8%aa%e4%ba%ba%e5%9d%90%e5%9c%a8%e5%ae%a2%e5%8e%85%e9%87%8c%e9%9d%a2%e4%b8%80%e6%a0%b9%e6%8e%a5%e7%9d%80%e4%b8%80%e6%a0%b9%e7%82%ab%e5%ae%8c%e4%ba%86%e4%b8%80%e5%8c%85%ef%bc%8c%e8%a7%89%e5%be%97%e7%b4%a2%e7%84%b6%e6%97%a0%e5%91%b3%ef%bc%8c%e7%84%b6%e5%90%8e%e5%88%b0%e7%8e%b0%e5%9c%a8%e4%b9%9f%e5%b0%b1%e4%bb%8e%e4%b8%8d%e6%8a%bd%e7%83%9f%e4%ba%86%e3%80%82%e5%88%9d%e9%ab%98%e4%b8%ad%e6%88%91%e7%9a%84%e5%ad%a6%e4%b9%a0%e4%b8%80%e7%9b%b4%e4%b8%8d%e5%a5%bd%ef%bc%8c%e5%b9%b4%e7%ba%a7%e4%b8%ad%e4%b8%8b%e6%b8%b8%e5%be%98%e5%be%8a%e3%80%82%e9%82%a3%e6%97%b6%e5%80%99%e6%9b%b4%e5%a4%9a%e7%9a%84%e5%bf%83%e6%80%9d%e5%9c%a8%e7%8e%a9%e4%b8%8a%e9%9d%a2%ef%bc%8c%e7%88%b6%e4%ba%b2%e6%9c%ac%e6%89%93%e7%ae%97%e6%88%91%e8%80%83%e4%b8%aa%e4%ba%8c%e6%9c%ac%e8%af%bb%e4%b9%a6%e5%b0%b1%e7%ae%97%e4%ba%86%ef%bc%8c%e5%90%8e%e9%9d%a2%e6%88%91%e4%b9%9f%e6%b2%a1%e6%83%b3%e5%88%b0%e4%b8%8a%e4%ba%86%e6%9c%ac%e5%b8%82%e7%9a%84%e4%b8%80%e4%b8%aa%20985%e3%80%82%e5%88%b0%e7%8e%b0%e5%9c%a8%e6%88%91%e8%ae%b0%e4%b8%8d%e8%b5%b7%e5%9c%a8%e6%95%99%e5%ae%a4%e9%87%8c%e5%ad%a6%e4%b9%a0%e7%9a%84%e9%82%a3%e4%ba%9b%e7%94%bb%e9%9d%a2%ef%bc%8c%e4%bd%86%e5%af%b9%e6%af%8f%e6%ac%a1%e5%9c%a8%20PS2%20%e6%b8%b8%e6%88%8f%e5%8e%85%e5%87%ba%e6%9d%a5%e5%90%8e%ef%bc%8c%e5%8f%91%e7%8e%b0%e8%87%aa%e8%a1%8c%e8%bd%a6%e8%bd%ae%e8%83%8e%e8%a2%ab%e4%ba%ba%e6%94%be%e5%ae%8c%e6%b0%94%e7%9a%84%e6%8a%93%e7%8b%82%e5%8e%86%e5%8e%86%e5%9c%a8%e7%9b%ae%e3%80%82%3c%2fp%3e%0a%3cp%3e%e4%b8%80%e4%b8%aa%e5%a4%b1%e6%81%8b%e7%9a%84%e6%9a%91%e5%81%87%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e4%b8%80%e4%b8%aa%e4%ba%ba%e8%83%8c%e7%9d%80%e4%b8%80%e4%b8%aa%e5%8c%85%e5%b0%b1%e4%b8%8a%e4%ba%86%e5%a4%a7%e5%ad%a6%e3%80%82%e5%8e%bf%e5%9f%8e%e5%88%b0%e5%b8%82%e9%87%8c%ef%bc%8c%e5%bd%93%e6%97%b6%e6%98%af%204%20%e4%b8%aa%e5%b0%8f%e6%97%b6%e8%bd%a6%e7%a8%8b%ef%bc%8c%e8%b7%af%e4%b8%8a%e6%b2%a1%e6%9c%89%e4%bb%80%e4%b9%88%e9%a3%8e%e6%99%af%ef%bc%8c%e5%8f%aa%e6%9c%89%e7%bb%bf%e5%be%97%e5%8f%91%e4%ba%ae%e7%9a%84%e5%b1%b1%e3%80%82%e9%82%a3%e6%97%b6%e6%84%9f%e5%88%b0%e4%ba%86%e5%89%8d%e6%89%80%e6%9c%aa%e6%9c%89%e7%9a%84%e8%87%aa%e7%94%b1%ef%bc%8c%e5%94%af%e4%b8%80%e8%83%bd%e5%a4%9f%e7%ba%a6%e6%9d%9f%e5%88%b0%e6%88%91%e7%9a%84%e5%8f%aa%e6%9c%89%e6%b3%95%e5%be%8b%e5%92%8c%e4%b8%8a%e8%af%be%e6%97%b6%e7%9a%84%e7%82%b9%e5%90%8d%e3%80%82%e5%87%ba%e6%9d%a5%e4%b9%8b%e5%90%8e%e6%88%91%e5%be%88%e5%b0%91%e5%9b%9e%e5%ae%b6%ef%bc%8c%e5%8f%aa%e6%9c%89%e5%af%92%e6%9a%91%e5%81%87%e6%b2%a1%e6%9c%89%e7%94%9f%e6%b4%bb%e8%b4%b9%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%9b%9e%e5%8e%bb%e3%80%82%e6%b8%b8%e6%88%8f%e3%80%81%e7%94%b5%e5%bd%b1%e3%80%81%e5%90%8c%e5%ad%a6%e8%81%9a%e4%bc%9a%ef%bc%8c%e5%9c%a8%e5%9b%be%e4%b9%a6%e9%a6%86%e7%9c%8b%e4%b8%80%e4%ba%9b%e4%b8%93%e4%b8%9a%e6%97%a0%e5%85%b3%e7%9a%84%e4%b9%a6%ef%bc%8c%e6%9c%ac%e7%a7%91%e5%89%8d%e4%b8%a4%e4%b8%89%e5%b9%b4%e5%b0%b1%e6%98%af%e8%bf%99%e4%b9%88%e8%bf%87%e6%9d%a5%e7%9a%84%e3%80%82%e9%82%a3%e7%9c%9f%e7%9a%84%e6%98%af%e5%be%88%e7%be%8e%e5%a5%bd%e7%9a%84%e6%97%a5%e5%ad%90%ef%bc%8c%e5%9b%be%e4%b9%a6%e9%a6%86%e5%be%88%e5%ae%89%e9%9d%99%ef%bc%8c%e6%b9%96%e6%b0%b4%e5%be%88%e5%b9%b2%e5%87%80%ef%bc%8c%e4%ba%ba%e5%be%88%e5%b9%b4%e8%bd%bb%e3%80%82%e6%88%91%e4%b9%9f%e6%9c%89%e4%ba%86%e7%9b%b8%e5%bd%93%e5%a4%9a%e7%9a%84%e6%97%b6%e9%97%b4%e8%a7%82%e5%af%9f%e9%87%8d%e5%ba%86%e8%bf%99%e5%ba%a7%e5%9f%8e%e5%b8%82%ef%bc%8c%e5%bd%93%e6%97%b6%e6%b4%aa%e5%b4%96%e6%b4%9e%e6%b2%a1%e4%bb%80%e4%b9%88%e4%ba%ba%ef%bc%8c%e8%b7%af%e8%be%b9%e7%9a%84%e5%b0%8f%e9%9d%a2%e5%87%a0%e5%9d%97%e9%92%b1%ef%bc%8c%e5%9c%b0%e9%93%81%e5%8f%aa%e6%9c%89%e4%b8%89%e6%9d%a1%e7%ba%bf%ef%bc%8c%e9%81%93%e8%b7%af%e5%be%88%e6%8b%a5%e6%8c%a4%e3%80%82%e5%a4%a7%e5%ad%a6%e7%9a%84%e5%90%8c%e5%ad%a6%e6%9d%a5%e8%87%aa%e4%ba%94%e6%b9%96%e5%9b%9b%e6%b5%b7%ef%bc%8c%e5%90%8c%e5%ad%a6%e9%97%ae%e6%88%91%e6%9d%a5%e8%87%aa%e5%93%aa%e9%87%8c%e3%80%82%e6%88%91%ef%bc%8c%e6%9d%a5%e8%87%aa%e5%93%aa%e9%87%8c%ef%bc%9f%e9%82%a3%e6%97%b6%e7%ac%ac%e4%b8%80%e6%ac%a1%e6%9c%89%e4%ba%86%e4%b8%80%e7%a7%8d%e5%bd%92%e5%b1%9e%e6%84%9f%ef%bc%8c%e6%88%91%e6%9d%a5%e8%87%aa%e9%87%8d%e5%ba%86%e3%80%82%3c%2fp%3e%0a%3cp%3e%e6%88%91%e5%9c%a8%e5%ad%a6%e4%b8%9a%e4%b8%8a%e4%b8%80%e5%90%91%e4%b8%8d%e6%98%af%e5%be%88%e8%ae%a4%e7%9c%9f%ef%bc%8c%e7%bc%ba%e4%b9%8f%e7%a7%af%e6%9e%81%e6%80%a7%ef%bc%8c%e5%bd%93%e6%97%b6%e4%b8%ba%e4%ba%86%e5%a4%9a%e4%b8%80%e4%b8%aa%e7%a0%94%e7%a9%b6%e7%94%9f%e5%ad%a6%e5%8e%86%e5%b0%b1%e8%80%83%e4%ba%86%e6%9c%ac%e6%a0%a1%e7%9a%84%e7%a0%94%e3%80%82%e6%89%be%e5%b7%a5%e4%bd%9c%e9%82%a3%e4%bc%9a%ef%bc%8c%e5%a5%b3%e6%9c%8b%e5%8f%8b%ef%bc%88%e7%8e%b0%e5%9c%a8%e7%9a%84%e8%80%81%e5%a9%86%ef%bc%89%e5%9c%a8%e6%b7%b1%e5%9c%b3%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e5%8f%aa%e6%89%be%e6%b7%b1%e5%9c%b3%e7%9a%84%e5%b7%a5%e4%bd%9c%e3%80%82%e5%bd%93%e6%97%b6%e4%b8%bb%e8%a6%81%e6%83%b3%e5%8e%bb%e8%85%be%e8%ae%af%ef%bc%8c%e4%bd%86%e6%b2%a1%e5%8e%bb%e4%ba%86%e3%80%82%e8%8b%b1%e4%bc%9f%e8%be%be%e9%82%a3%e6%97%b6%e5%9c%a8%e6%b7%b1%e5%9c%b3%e6%9c%89%e4%b8%aa%20offer%ef%bc%8c%e5%b7%a5%e8%b5%84%e7%a8%8d%e5%be%ae%e4%bd%8e%e7%82%b9%ef%bc%8c%e6%88%91%e6%b2%a1%e6%9c%89%e5%8e%bb%e3%80%82%e7%8e%b0%e5%9c%a8%e6%83%b3%e6%83%b3%ef%bc%8c%e5%8f%af%e8%83%bd%e5%8e%bb%e4%ba%86%e6%9b%b4%e5%a5%bd%e3%80%82%e5%bd%93%e6%97%b6%e9%9d%a2%e8%af%95%e6%88%91%e7%9a%84%e9%82%a3%e4%b8%aa%20leader%20%e8%af%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e8%bf%99%e9%87%8c%e9%99%aa%e4%ba%a7%e5%81%87%203%20%e4%b8%aa%e6%9c%88%e3%80%82%e6%9f%90%e4%b8%aa%e9%9d%a2%e8%af%95%e5%ae%98%e8%af%b4%e4%bb%96%e6%94%b6%e5%85%a5%e4%b8%bb%e8%a6%81%e4%b9%b0%e5%85%ac%e5%8f%b8%e8%82%a1%e7%a5%a8%ef%bc%8c%e4%b8%8b%e5%8d%88%e8%a6%81%e5%8e%bb%e7%9c%8b%e6%88%bf%e3%80%82%e6%88%91%e5%bf%83%e9%87%8c%e6%83%b3%e7%9a%84%e6%98%af%e8%bf%99%e8%b7%9f%e6%88%91%e6%9c%89%e4%bb%80%e4%b9%88%e5%85%b3%e7%b3%bb%e3%80%82%e7%9c%9f%e6%98%af%e6%97%a0%e7%9f%a5%e3%80%82%3c%2fp%3e%0a%3cp%3e25%20%e5%b2%81%ef%bc%8c%e6%88%91%e7%a6%bb%e5%bc%80%e4%ba%86%e9%87%8d%e5%ba%86%e3%80%82%e5%88%b0%e4%ba%86%e6%b7%b1%e5%9c%b3%e3%80%82%e8%bf%99%e6%98%af%e4%b8%80%e5%ba%a7%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%8f%88%e6%96%b0%e5%8f%88%e7%a0%b4%e7%9a%84%e5%a4%a7%e5%9f%8e%e5%b8%82%ef%bc%8c%e9%ab%98%e6%a5%bc%e5%a4%a7%e5%8e%a6%e6%98%af%e6%96%b0%e7%9a%84%ef%bc%8c%e5%9f%8e%e4%b8%ad%e6%9d%91%e6%98%af%e7%a0%b4%e7%9a%84%e3%80%82%e6%9d%a5%e5%88%b0%e8%bf%99%e4%b8%aa%e5%9f%8e%e5%b8%82%ef%bc%8c%e4%bd%a0%e7%9a%84%e7%9b%ae%e7%9a%84%e6%98%af%e4%bb%80%e4%b9%88%e5%8f%af%e8%83%bd%e4%bd%a0%e5%b9%b6%e4%b8%8d%e7%9f%a5%e9%81%93%ef%bc%8c%e4%bd%86%e5%9f%8e%e5%b8%82%e7%9a%84%e7%9b%ae%e7%9a%84%e6%98%af%e8%ae%a9%e4%bd%a0%e5%88%9b%e9%80%a0%e4%bb%b7%e5%80%bc%e8%b4%a1%e7%8c%ae%20GDP%e3%80%82%e5%b7%a5%e4%bd%9c%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e7%9a%84%e8%ae%a4%e7%9f%a5%e6%98%af%e6%af%8f%e4%b8%aa%e6%89%93%e5%b7%a5%e4%ba%ba%e9%83%bd%e5%9c%a8%e4%b8%ba%e5%9b%bd%e5%ae%b6%e5%81%9a%e8%b4%a1%e7%8c%ae%e3%80%82%e8%bf%87%e5%8e%bb%2010%20%e5%a4%9a%e5%b9%b4%e7%a7%bb%e5%8a%a8%e4%ba%92%e8%81%94%e7%bd%91%e7%9a%84%e5%8f%91%e5%b1%95%ef%bc%8c%e8%ae%a9%e8%bf%99%e4%b8%aa%e8%a1%8c%e4%b8%9a%e7%9a%84%e6%94%b6%e5%85%a5%e6%b0%b4%e5%b9%b3%ef%bc%8c%e8%a6%81%e9%ab%98%e5%87%ba%e5%85%b6%e4%bb%96%e4%bc%a0%e7%bb%9f%e8%a1%8c%e4%b8%9a%e7%9a%84%e5%b9%b3%e5%9d%87%e6%b0%b4%e5%b9%b3%ef%bc%8c%e5%8a%a0%e4%b8%8a%e5%85%a5%e8%a1%8c%e7%9a%84%e9%97%a8%e6%a7%9b%e4%b9%9f%e6%af%94%e8%be%83%e4%bd%8e%e3%80%82%e6%89%80%e4%bb%a5%e7%a7%bb%e5%8a%a8%e4%ba%92%e8%81%94%e7%bd%91%e8%a1%8c%e4%b8%9a%e7%9a%84%e4%bb%8e%e4%b8%9a%e4%ba%ba%e5%91%98%ef%bc%8c%e4%b8%8d%e6%84%a7%e6%96%b0%e6%97%b6%e4%bb%a3%e6%b0%91%e5%b7%a5%e7%9a%84%e7%a7%b0%e8%b0%93%ef%bc%8c%e4%b8%ba%e5%9b%bd%e5%ae%b6%e7%9a%84%e7%a8%8e%e6%94%b6%e5%81%9a%e8%b6%b3%e4%ba%86%e8%b4%a1%e7%8c%ae%e3%80%82%3c%2fp%3e%0a%3cp%3e%e6%88%91%e6%84%9f%e8%a7%89%e9%80%8f%e6%94%af%e4%ba%86%e8%ba%ab%e4%bd%93%ef%bc%8c%e5%b7%a5%e4%bd%9c%e6%97%a5%e6%98%af%e9%ab%98%e5%bc%ba%e5%ba%a6%e7%9a%84%e4%b8%8a%e7%8f%ad%ef%bc%8c%e4%bc%91%e6%81%af%e6%97%a5%e9%82%a3%e5%b0%b1%e7%9c%9f%e7%9a%84%e6%98%af%e5%8f%aa%e6%83%b3%e5%9c%a8%e5%ae%b6%e4%bc%91%e6%81%af%e3%80%82%e5%af%b9%e4%ba%8e%e6%99%ae%e9%80%9a%e6%89%93%e5%b7%a5%e4%ba%ba%e6%9d%a5%e8%af%b4%ef%bc%8c%e6%b7%b1%e5%9c%b3%e7%9a%84%e6%88%bf%e4%bb%b7%e6%98%af%e4%b8%80%e9%a2%97%e5%b7%a8%e7%9f%b3%e6%8c%a1%e5%9c%a8%e4%bd%a0%e5%9c%a8%e6%b7%b1%e5%9c%b3%e5%ae%89%e5%ae%b6%e7%9a%84%e8%b7%af%e4%b8%8a%ef%bc%8c%e8%80%8c%e4%bd%a0%e6%89%8b%e4%b8%8a%e5%8f%aa%e6%9c%89%e4%b8%80%e6%8a%8a%e8%b4%b9%e5%8a%9b%e7%9a%84%e9%94%a4%e5%ad%90%e3%80%82%e9%82%a3%e4%b9%88%e6%98%af%e5%9b%be%e4%bb%80%e4%b9%88%e8%a6%81%e8%bf%99%e6%a0%b7%e4%b8%8a%e5%bc%ba%e5%ba%a6%e5%91%a2%ef%bc%9f%e5%8a%a0%e4%b8%8a%e8%bf%99%e5%87%a0%e5%b9%b4%e7%9a%84%e7%96%ab%e6%83%85%ef%bc%8c%e6%b7%b1%e5%9c%b3%e8%b4%a2%e5%a4%a7%e6%b0%94%e7%b2%97%e5%9c%b0%e5%bc%80%e5%b1%95%e5%85%a8%e9%9d%a2%e6%a0%b8%e9%85%b8%ef%bc%8c%e6%af%8f%e5%a4%a9%e8%ae%a9%e6%89%93%e5%b7%a5%e4%ba%ba%e4%b8%8b%e7%8f%ad%e4%b9%8b%e5%90%8e%e6%8e%92%e9%98%9f%e5%81%9a%e6%a3%80%e6%b5%8b%e3%80%82%e7%bb%99%e6%88%91%e7%9a%84%e6%84%9f%e5%8f%97%e5%b0%b1%e6%98%af%e4%b8%80%e4%b8%aa%e7%b4%af%e5%ad%97%e3%80%82%3c%2fp%3e%0a%3cp%3e%e7%bb%8f%e8%bf%87%e5%86%b3%e5%ae%9a%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e8%b7%9f%e8%80%81%e5%a9%86%e5%86%b3%e5%ae%9a%e5%9b%9e%e9%87%8d%e5%ba%86%e7%94%9f%e6%b4%bb%e3%80%827%e3%80%818%20%e6%9c%88%e4%bb%bd%e5%b0%b1%e5%9c%a8%e5%bc%84%e6%90%ac%e5%ae%b6%e4%ba%8b%e6%83%85%e3%80%82%e5%b9%b8%e8%bf%90%e7%9a%84%e6%98%af%ef%bc%8c%e6%88%91%e4%b8%80%e4%b8%aa%e4%ba%ba%e6%9d%a5%ef%bc%8c%e4%b8%89%e4%b8%aa%e4%ba%ba%e5%9b%9e%ef%bc%8c%e8%bf%98%e6%9c%89%e4%b8%a4%e5%8f%aa%e7%8c%ab%e5%92%aa%e3%80%82%e6%88%91%e5%be%88%e5%b9%b8%e8%bf%90%ef%bc%8c%e5%9c%a8%2030%20%e5%b2%81%e5%89%8d%e6%9c%89%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e5%ae%b6%e5%ba%ad%e3%80%82%e6%88%91%e4%b8%8d%e6%98%af%e9%82%a3%e7%a7%8d%e4%ba%89%e7%9a%84%e4%ba%ba%ef%bc%8c%e8%bf%99%e5%af%b9%e6%88%91%e5%b7%b2%e7%bb%8f%e5%a4%9f%e5%a5%bd%e4%ba%86%e3%80%82%e7%8e%b0%e5%9c%a8%e8%bd%ac%e5%9b%9e%e4%ba%86%e6%88%b7%e5%8f%a3%ef%bc%8c%e7%ad%be%e4%ba%86%e8%a3%85%e4%bf%ae%e8%ae%be%e8%ae%a1%e5%90%88%e5%90%8c%ef%bc%8c%e5%85%a5%e8%81%8c%e4%ba%86%e4%b8%80%e5%ae%b6%e6%96%b0%e7%9a%84%e5%85%ac%e5%8f%b8%ef%bc%8c%e6%98%8e%e7%a1%ae%e8%87%aa%e5%b7%b1%e6%83%b3%e8%a6%81%e7%9a%84%e7%94%9f%e6%b4%bb%e3%80%82%3c%2fp%3e%0a%3cp%3eThere%20and%20back%20again%ef%bc%8c%e5%bc%80%e5%a7%8b%e6%96%b0%e7%9a%84%e6%95%85%e4%ba%8b%e3%80%82%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&t=There%20and%20back%20again" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
-</div>
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Posts</a></li>
+      
+        <li><a href="/books">Books</a></li>
+      
+        <li><a href="/diary">Diary</a></li>
+      
+        <li><a href="/paintings">Paintings</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
 
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        There and back again
-      </h1>
-      <div class="meta">
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 class="posttitle" itemprop="name headline">
+      There and back again
+    </h1>
+    <div class="meta">
+      
+      <div class="postdate">
         
-        <div class="postdate">
-          
-          <time datetime="2023-08-23 23:30:00 &#43;0000 UTC" itemprop="datePublished">2023-08-23</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          6 minute read
-        </div>
-        
-        
+        <time datetime="2023-08-23 23:30:00 &#43;0000 UTC" itemprop="datePublished">2023-08-23</time>
         
       </div>
-    </header>
+      
+      
+      <div class="article-read-time">
+        <i class="far fa-clock"></i>
+        
+        6 minute read
+      </div>
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <div class="article-tag">
+          <i class="fas fa-tag"></i>
+          
+          
+          <a class="tag-link" href="/tags/life" rel="tag">Life</a>
+          
+      </div>
+      
+    </div>
+  </header>
+
 
   
-    
-    <div class="content" itemprop="articleBody">
-      <p>我从小生活在重庆的一个边陲小县城里，读初中之前是在县里的一个镇上，上了初中到了县城，读大学就到了市里。在镇上的那十多年我活动的范围并不大，小的时候受我妈管束比较多，很多事情不让去做，现在那个镇子到底有几条街我也回忆不起来了。在县城读书的那几年倒是自由了不少，那时候对游戏厅和网吧如数家珍，觉得到网吧里面打游戏是最快乐的事情，如果还有余钱买一瓶可乐就是王炸。那个时候人不大，没有养成自己的价值观、世界观，对自己喜欢的就更进一步探索，对自己不喜欢的就主动回避。好笑的事情是，初中看到有些同学抽烟，在某个学期开学前一天我就买了一包烟体验体验，一个人坐在客厅里面一根接着一根炫完了一包，觉得索然无味，然后到现在也就从不抽烟了。初高中我的学习一直不好，年级中下游徘徊。那时候更多的心思在玩上面，父亲本打算我考个二本读书就算了，后面我也没想到上了本市的一个 985。到现在我记不起在教室里学习的那些画面，但对每次在 PS2 游戏厅出来后，发现自行车轮胎被人放完气的抓狂历历在目。</p>
+  <div id="toc">
+    <nav id="TableOfContents"></nav>
+  </div>
+  
+  <div class="content" itemprop="articleBody">
+    <p>我从小生活在重庆的一个边陲小县城里，读初中之前是在县里的一个镇上，上了初中到了县城，读大学就到了市里。在镇上的那十多年我活动的范围并不大，小的时候受我妈管束比较多，很多事情不让去做，现在那个镇子到底有几条街我也回忆不起来了。在县城读书的那几年倒是自由了不少，那时候对游戏厅和网吧如数家珍，觉得到网吧里面打游戏是最快乐的事情，如果还有余钱买一瓶可乐就是王炸。那个时候人不大，没有养成自己的价值观、世界观，对自己喜欢的就更进一步探索，对自己不喜欢的就主动回避。好笑的事情是，初中看到有些同学抽烟，在某个学期开学前一天我就买了一包烟体验体验，一个人坐在客厅里面一根接着一根炫完了一包，觉得索然无味，然后到现在也就从不抽烟了。初高中我的学习一直不好，年级中下游徘徊。那时候更多的心思在玩上面，父亲本打算我考个二本读书就算了，后面我也没想到上了本市的一个 985。到现在我记不起在教室里学习的那些画面，但对每次在 PS2 游戏厅出来后，发现自行车轮胎被人放完气的抓狂历历在目。</p>
 <p>一个失恋的暑假之后，我一个人背着一个包就上了大学。县城到市里，当时是 4 个小时车程，路上没有什么风景，只有绿得发亮的山。那时感到了前所未有的自由，唯一能够约束到我的只有法律和上课时的点名。出来之后我很少回家，只有寒暑假没有生活费之后才会回去。游戏、电影、同学聚会，在图书馆看一些专业无关的书，本科前两三年就是这么过来的。那真的是很美好的日子，图书馆很安静，湖水很干净，人很年轻。我也有了相当多的时间观察重庆这座城市，当时洪崖洞没什么人，路边的小面几块钱，地铁只有三条线，道路很拥挤。大学的同学来自五湖四海，同学问我来自哪里。我，来自哪里？那时第一次有了一种归属感，我来自重庆。</p>
 <p>我在学业上一向不是很认真，缺乏积极性，当时为了多一个研究生学历就考了本校的研。找工作那会，女朋友（现在的老婆）在深圳。所以我只找深圳的工作。当时主要想去腾讯，但没去了。英伟达那时在深圳有个 offer，工资稍微低点，我没有去。现在想想，可能去了更好。当时面试我的那个 leader 说，我们这里陪产假 3 个月。某个面试官说他收入主要买公司股票，下午要去看房。我心里想的是这跟我有什么关系。真是无知。</p>
 <p>25 岁，我离开了重庆。到了深圳。这是一座看起来又新又破的大城市，高楼大厦是新的，城中村是破的。来到这个城市，你的目的是什么可能你并不知道，但城市的目的是让你创造价值贡献 GDP。工作之后，我的认知是每个打工人都在为国家做贡献。过去 10 多年移动互联网的发展，让这个行业的收入水平，要高出其他传统行业的平均水平，加上入行的门槛也比较低。所以移动互联网行业的从业人员，不愧新时代民工的称谓，为国家的税收做足了贡献。</p>
@@ -269,120 +200,34 @@ There and back again，开始新的故事。">
 <p>经过决定之后，我跟老婆决定回重庆生活。7、8 月份就在弄搬家事情。幸运的是，我一个人来，三个人回，还有两只猫咪。我很幸运，在 30 岁前有了自己的家庭。我不是那种争的人，这对我已经够好了。现在转回了户口，签了装修设计合同，入职了一家新的公司，明确自己想要的生活。</p>
 <p>There and back again，开始新的故事。</p>
 
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/posts">Posts</a></li>
-         
-          <li><a href="/books">Books</a></li>
-         
-          <li><a href="/diary">Diary</a></li>
-         
-          <li><a href="/paintings">Paintings</a></li>
-         
-          <li><a href="/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&text=There%20and%20back%20again" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&is_video=false&description=There%20and%20back%20again" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=There%20and%20back%20again&body=Check out this article: https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&title=There%20and%20back%20again" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&name=There%20and%20back%20again&description=%3cp%3e%e6%88%91%e4%bb%8e%e5%b0%8f%e7%94%9f%e6%b4%bb%e5%9c%a8%e9%87%8d%e5%ba%86%e7%9a%84%e4%b8%80%e4%b8%aa%e8%be%b9%e9%99%b2%e5%b0%8f%e5%8e%bf%e5%9f%8e%e9%87%8c%ef%bc%8c%e8%af%bb%e5%88%9d%e4%b8%ad%e4%b9%8b%e5%89%8d%e6%98%af%e5%9c%a8%e5%8e%bf%e9%87%8c%e7%9a%84%e4%b8%80%e4%b8%aa%e9%95%87%e4%b8%8a%ef%bc%8c%e4%b8%8a%e4%ba%86%e5%88%9d%e4%b8%ad%e5%88%b0%e4%ba%86%e5%8e%bf%e5%9f%8e%ef%bc%8c%e8%af%bb%e5%a4%a7%e5%ad%a6%e5%b0%b1%e5%88%b0%e4%ba%86%e5%b8%82%e9%87%8c%e3%80%82%e5%9c%a8%e9%95%87%e4%b8%8a%e7%9a%84%e9%82%a3%e5%8d%81%e5%a4%9a%e5%b9%b4%e6%88%91%e6%b4%bb%e5%8a%a8%e7%9a%84%e8%8c%83%e5%9b%b4%e5%b9%b6%e4%b8%8d%e5%a4%a7%ef%bc%8c%e5%b0%8f%e7%9a%84%e6%97%b6%e5%80%99%e5%8f%97%e6%88%91%e5%a6%88%e7%ae%a1%e6%9d%9f%e6%af%94%e8%be%83%e5%a4%9a%ef%bc%8c%e5%be%88%e5%a4%9a%e4%ba%8b%e6%83%85%e4%b8%8d%e8%ae%a9%e5%8e%bb%e5%81%9a%ef%bc%8c%e7%8e%b0%e5%9c%a8%e9%82%a3%e4%b8%aa%e9%95%87%e5%ad%90%e5%88%b0%e5%ba%95%e6%9c%89%e5%87%a0%e6%9d%a1%e8%a1%97%e6%88%91%e4%b9%9f%e5%9b%9e%e5%bf%86%e4%b8%8d%e8%b5%b7%e6%9d%a5%e4%ba%86%e3%80%82%e5%9c%a8%e5%8e%bf%e5%9f%8e%e8%af%bb%e4%b9%a6%e7%9a%84%e9%82%a3%e5%87%a0%e5%b9%b4%e5%80%92%e6%98%af%e8%87%aa%e7%94%b1%e4%ba%86%e4%b8%8d%e5%b0%91%ef%bc%8c%e9%82%a3%e6%97%b6%e5%80%99%e5%af%b9%e6%b8%b8%e6%88%8f%e5%8e%85%e5%92%8c%e7%bd%91%e5%90%a7%e5%a6%82%e6%95%b0%e5%ae%b6%e7%8f%8d%ef%bc%8c%e8%a7%89%e5%be%97%e5%88%b0%e7%bd%91%e5%90%a7%e9%87%8c%e9%9d%a2%e6%89%93%e6%b8%b8%e6%88%8f%e6%98%af%e6%9c%80%e5%bf%ab%e4%b9%90%e7%9a%84%e4%ba%8b%e6%83%85%ef%bc%8c%e5%a6%82%e6%9e%9c%e8%bf%98%e6%9c%89%e4%bd%99%e9%92%b1%e4%b9%b0%e4%b8%80%e7%93%b6%e5%8f%af%e4%b9%90%e5%b0%b1%e6%98%af%e7%8e%8b%e7%82%b8%e3%80%82%e9%82%a3%e4%b8%aa%e6%97%b6%e5%80%99%e4%ba%ba%e4%b8%8d%e5%a4%a7%ef%bc%8c%e6%b2%a1%e6%9c%89%e5%85%bb%e6%88%90%e8%87%aa%e5%b7%b1%e7%9a%84%e4%bb%b7%e5%80%bc%e8%a7%82%e3%80%81%e4%b8%96%e7%95%8c%e8%a7%82%ef%bc%8c%e5%af%b9%e8%87%aa%e5%b7%b1%e5%96%9c%e6%ac%a2%e7%9a%84%e5%b0%b1%e6%9b%b4%e8%bf%9b%e4%b8%80%e6%ad%a5%e6%8e%a2%e7%b4%a2%ef%bc%8c%e5%af%b9%e8%87%aa%e5%b7%b1%e4%b8%8d%e5%96%9c%e6%ac%a2%e7%9a%84%e5%b0%b1%e4%b8%bb%e5%8a%a8%e5%9b%9e%e9%81%bf%e3%80%82%e5%a5%bd%e7%ac%91%e7%9a%84%e4%ba%8b%e6%83%85%e6%98%af%ef%bc%8c%e5%88%9d%e4%b8%ad%e7%9c%8b%e5%88%b0%e6%9c%89%e4%ba%9b%e5%90%8c%e5%ad%a6%e6%8a%bd%e7%83%9f%ef%bc%8c%e5%9c%a8%e6%9f%90%e4%b8%aa%e5%ad%a6%e6%9c%9f%e5%bc%80%e5%ad%a6%e5%89%8d%e4%b8%80%e5%a4%a9%e6%88%91%e5%b0%b1%e4%b9%b0%e4%ba%86%e4%b8%80%e5%8c%85%e7%83%9f%e4%bd%93%e9%aa%8c%e4%bd%93%e9%aa%8c%ef%bc%8c%e4%b8%80%e4%b8%aa%e4%ba%ba%e5%9d%90%e5%9c%a8%e5%ae%a2%e5%8e%85%e9%87%8c%e9%9d%a2%e4%b8%80%e6%a0%b9%e6%8e%a5%e7%9d%80%e4%b8%80%e6%a0%b9%e7%82%ab%e5%ae%8c%e4%ba%86%e4%b8%80%e5%8c%85%ef%bc%8c%e8%a7%89%e5%be%97%e7%b4%a2%e7%84%b6%e6%97%a0%e5%91%b3%ef%bc%8c%e7%84%b6%e5%90%8e%e5%88%b0%e7%8e%b0%e5%9c%a8%e4%b9%9f%e5%b0%b1%e4%bb%8e%e4%b8%8d%e6%8a%bd%e7%83%9f%e4%ba%86%e3%80%82%e5%88%9d%e9%ab%98%e4%b8%ad%e6%88%91%e7%9a%84%e5%ad%a6%e4%b9%a0%e4%b8%80%e7%9b%b4%e4%b8%8d%e5%a5%bd%ef%bc%8c%e5%b9%b4%e7%ba%a7%e4%b8%ad%e4%b8%8b%e6%b8%b8%e5%be%98%e5%be%8a%e3%80%82%e9%82%a3%e6%97%b6%e5%80%99%e6%9b%b4%e5%a4%9a%e7%9a%84%e5%bf%83%e6%80%9d%e5%9c%a8%e7%8e%a9%e4%b8%8a%e9%9d%a2%ef%bc%8c%e7%88%b6%e4%ba%b2%e6%9c%ac%e6%89%93%e7%ae%97%e6%88%91%e8%80%83%e4%b8%aa%e4%ba%8c%e6%9c%ac%e8%af%bb%e4%b9%a6%e5%b0%b1%e7%ae%97%e4%ba%86%ef%bc%8c%e5%90%8e%e9%9d%a2%e6%88%91%e4%b9%9f%e6%b2%a1%e6%83%b3%e5%88%b0%e4%b8%8a%e4%ba%86%e6%9c%ac%e5%b8%82%e7%9a%84%e4%b8%80%e4%b8%aa%20985%e3%80%82%e5%88%b0%e7%8e%b0%e5%9c%a8%e6%88%91%e8%ae%b0%e4%b8%8d%e8%b5%b7%e5%9c%a8%e6%95%99%e5%ae%a4%e9%87%8c%e5%ad%a6%e4%b9%a0%e7%9a%84%e9%82%a3%e4%ba%9b%e7%94%bb%e9%9d%a2%ef%bc%8c%e4%bd%86%e5%af%b9%e6%af%8f%e6%ac%a1%e5%9c%a8%20PS2%20%e6%b8%b8%e6%88%8f%e5%8e%85%e5%87%ba%e6%9d%a5%e5%90%8e%ef%bc%8c%e5%8f%91%e7%8e%b0%e8%87%aa%e8%a1%8c%e8%bd%a6%e8%bd%ae%e8%83%8e%e8%a2%ab%e4%ba%ba%e6%94%be%e5%ae%8c%e6%b0%94%e7%9a%84%e6%8a%93%e7%8b%82%e5%8e%86%e5%8e%86%e5%9c%a8%e7%9b%ae%e3%80%82%3c%2fp%3e%0a%3cp%3e%e4%b8%80%e4%b8%aa%e5%a4%b1%e6%81%8b%e7%9a%84%e6%9a%91%e5%81%87%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e4%b8%80%e4%b8%aa%e4%ba%ba%e8%83%8c%e7%9d%80%e4%b8%80%e4%b8%aa%e5%8c%85%e5%b0%b1%e4%b8%8a%e4%ba%86%e5%a4%a7%e5%ad%a6%e3%80%82%e5%8e%bf%e5%9f%8e%e5%88%b0%e5%b8%82%e9%87%8c%ef%bc%8c%e5%bd%93%e6%97%b6%e6%98%af%204%20%e4%b8%aa%e5%b0%8f%e6%97%b6%e8%bd%a6%e7%a8%8b%ef%bc%8c%e8%b7%af%e4%b8%8a%e6%b2%a1%e6%9c%89%e4%bb%80%e4%b9%88%e9%a3%8e%e6%99%af%ef%bc%8c%e5%8f%aa%e6%9c%89%e7%bb%bf%e5%be%97%e5%8f%91%e4%ba%ae%e7%9a%84%e5%b1%b1%e3%80%82%e9%82%a3%e6%97%b6%e6%84%9f%e5%88%b0%e4%ba%86%e5%89%8d%e6%89%80%e6%9c%aa%e6%9c%89%e7%9a%84%e8%87%aa%e7%94%b1%ef%bc%8c%e5%94%af%e4%b8%80%e8%83%bd%e5%a4%9f%e7%ba%a6%e6%9d%9f%e5%88%b0%e6%88%91%e7%9a%84%e5%8f%aa%e6%9c%89%e6%b3%95%e5%be%8b%e5%92%8c%e4%b8%8a%e8%af%be%e6%97%b6%e7%9a%84%e7%82%b9%e5%90%8d%e3%80%82%e5%87%ba%e6%9d%a5%e4%b9%8b%e5%90%8e%e6%88%91%e5%be%88%e5%b0%91%e5%9b%9e%e5%ae%b6%ef%bc%8c%e5%8f%aa%e6%9c%89%e5%af%92%e6%9a%91%e5%81%87%e6%b2%a1%e6%9c%89%e7%94%9f%e6%b4%bb%e8%b4%b9%e4%b9%8b%e5%90%8e%e6%89%8d%e4%bc%9a%e5%9b%9e%e5%8e%bb%e3%80%82%e6%b8%b8%e6%88%8f%e3%80%81%e7%94%b5%e5%bd%b1%e3%80%81%e5%90%8c%e5%ad%a6%e8%81%9a%e4%bc%9a%ef%bc%8c%e5%9c%a8%e5%9b%be%e4%b9%a6%e9%a6%86%e7%9c%8b%e4%b8%80%e4%ba%9b%e4%b8%93%e4%b8%9a%e6%97%a0%e5%85%b3%e7%9a%84%e4%b9%a6%ef%bc%8c%e6%9c%ac%e7%a7%91%e5%89%8d%e4%b8%a4%e4%b8%89%e5%b9%b4%e5%b0%b1%e6%98%af%e8%bf%99%e4%b9%88%e8%bf%87%e6%9d%a5%e7%9a%84%e3%80%82%e9%82%a3%e7%9c%9f%e7%9a%84%e6%98%af%e5%be%88%e7%be%8e%e5%a5%bd%e7%9a%84%e6%97%a5%e5%ad%90%ef%bc%8c%e5%9b%be%e4%b9%a6%e9%a6%86%e5%be%88%e5%ae%89%e9%9d%99%ef%bc%8c%e6%b9%96%e6%b0%b4%e5%be%88%e5%b9%b2%e5%87%80%ef%bc%8c%e4%ba%ba%e5%be%88%e5%b9%b4%e8%bd%bb%e3%80%82%e6%88%91%e4%b9%9f%e6%9c%89%e4%ba%86%e7%9b%b8%e5%bd%93%e5%a4%9a%e7%9a%84%e6%97%b6%e9%97%b4%e8%a7%82%e5%af%9f%e9%87%8d%e5%ba%86%e8%bf%99%e5%ba%a7%e5%9f%8e%e5%b8%82%ef%bc%8c%e5%bd%93%e6%97%b6%e6%b4%aa%e5%b4%96%e6%b4%9e%e6%b2%a1%e4%bb%80%e4%b9%88%e4%ba%ba%ef%bc%8c%e8%b7%af%e8%be%b9%e7%9a%84%e5%b0%8f%e9%9d%a2%e5%87%a0%e5%9d%97%e9%92%b1%ef%bc%8c%e5%9c%b0%e9%93%81%e5%8f%aa%e6%9c%89%e4%b8%89%e6%9d%a1%e7%ba%bf%ef%bc%8c%e9%81%93%e8%b7%af%e5%be%88%e6%8b%a5%e6%8c%a4%e3%80%82%e5%a4%a7%e5%ad%a6%e7%9a%84%e5%90%8c%e5%ad%a6%e6%9d%a5%e8%87%aa%e4%ba%94%e6%b9%96%e5%9b%9b%e6%b5%b7%ef%bc%8c%e5%90%8c%e5%ad%a6%e9%97%ae%e6%88%91%e6%9d%a5%e8%87%aa%e5%93%aa%e9%87%8c%e3%80%82%e6%88%91%ef%bc%8c%e6%9d%a5%e8%87%aa%e5%93%aa%e9%87%8c%ef%bc%9f%e9%82%a3%e6%97%b6%e7%ac%ac%e4%b8%80%e6%ac%a1%e6%9c%89%e4%ba%86%e4%b8%80%e7%a7%8d%e5%bd%92%e5%b1%9e%e6%84%9f%ef%bc%8c%e6%88%91%e6%9d%a5%e8%87%aa%e9%87%8d%e5%ba%86%e3%80%82%3c%2fp%3e%0a%3cp%3e%e6%88%91%e5%9c%a8%e5%ad%a6%e4%b8%9a%e4%b8%8a%e4%b8%80%e5%90%91%e4%b8%8d%e6%98%af%e5%be%88%e8%ae%a4%e7%9c%9f%ef%bc%8c%e7%bc%ba%e4%b9%8f%e7%a7%af%e6%9e%81%e6%80%a7%ef%bc%8c%e5%bd%93%e6%97%b6%e4%b8%ba%e4%ba%86%e5%a4%9a%e4%b8%80%e4%b8%aa%e7%a0%94%e7%a9%b6%e7%94%9f%e5%ad%a6%e5%8e%86%e5%b0%b1%e8%80%83%e4%ba%86%e6%9c%ac%e6%a0%a1%e7%9a%84%e7%a0%94%e3%80%82%e6%89%be%e5%b7%a5%e4%bd%9c%e9%82%a3%e4%bc%9a%ef%bc%8c%e5%a5%b3%e6%9c%8b%e5%8f%8b%ef%bc%88%e7%8e%b0%e5%9c%a8%e7%9a%84%e8%80%81%e5%a9%86%ef%bc%89%e5%9c%a8%e6%b7%b1%e5%9c%b3%e3%80%82%e6%89%80%e4%bb%a5%e6%88%91%e5%8f%aa%e6%89%be%e6%b7%b1%e5%9c%b3%e7%9a%84%e5%b7%a5%e4%bd%9c%e3%80%82%e5%bd%93%e6%97%b6%e4%b8%bb%e8%a6%81%e6%83%b3%e5%8e%bb%e8%85%be%e8%ae%af%ef%bc%8c%e4%bd%86%e6%b2%a1%e5%8e%bb%e4%ba%86%e3%80%82%e8%8b%b1%e4%bc%9f%e8%be%be%e9%82%a3%e6%97%b6%e5%9c%a8%e6%b7%b1%e5%9c%b3%e6%9c%89%e4%b8%aa%20offer%ef%bc%8c%e5%b7%a5%e8%b5%84%e7%a8%8d%e5%be%ae%e4%bd%8e%e7%82%b9%ef%bc%8c%e6%88%91%e6%b2%a1%e6%9c%89%e5%8e%bb%e3%80%82%e7%8e%b0%e5%9c%a8%e6%83%b3%e6%83%b3%ef%bc%8c%e5%8f%af%e8%83%bd%e5%8e%bb%e4%ba%86%e6%9b%b4%e5%a5%bd%e3%80%82%e5%bd%93%e6%97%b6%e9%9d%a2%e8%af%95%e6%88%91%e7%9a%84%e9%82%a3%e4%b8%aa%20leader%20%e8%af%b4%ef%bc%8c%e6%88%91%e4%bb%ac%e8%bf%99%e9%87%8c%e9%99%aa%e4%ba%a7%e5%81%87%203%20%e4%b8%aa%e6%9c%88%e3%80%82%e6%9f%90%e4%b8%aa%e9%9d%a2%e8%af%95%e5%ae%98%e8%af%b4%e4%bb%96%e6%94%b6%e5%85%a5%e4%b8%bb%e8%a6%81%e4%b9%b0%e5%85%ac%e5%8f%b8%e8%82%a1%e7%a5%a8%ef%bc%8c%e4%b8%8b%e5%8d%88%e8%a6%81%e5%8e%bb%e7%9c%8b%e6%88%bf%e3%80%82%e6%88%91%e5%bf%83%e9%87%8c%e6%83%b3%e7%9a%84%e6%98%af%e8%bf%99%e8%b7%9f%e6%88%91%e6%9c%89%e4%bb%80%e4%b9%88%e5%85%b3%e7%b3%bb%e3%80%82%e7%9c%9f%e6%98%af%e6%97%a0%e7%9f%a5%e3%80%82%3c%2fp%3e%0a%3cp%3e25%20%e5%b2%81%ef%bc%8c%e6%88%91%e7%a6%bb%e5%bc%80%e4%ba%86%e9%87%8d%e5%ba%86%e3%80%82%e5%88%b0%e4%ba%86%e6%b7%b1%e5%9c%b3%e3%80%82%e8%bf%99%e6%98%af%e4%b8%80%e5%ba%a7%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%8f%88%e6%96%b0%e5%8f%88%e7%a0%b4%e7%9a%84%e5%a4%a7%e5%9f%8e%e5%b8%82%ef%bc%8c%e9%ab%98%e6%a5%bc%e5%a4%a7%e5%8e%a6%e6%98%af%e6%96%b0%e7%9a%84%ef%bc%8c%e5%9f%8e%e4%b8%ad%e6%9d%91%e6%98%af%e7%a0%b4%e7%9a%84%e3%80%82%e6%9d%a5%e5%88%b0%e8%bf%99%e4%b8%aa%e5%9f%8e%e5%b8%82%ef%bc%8c%e4%bd%a0%e7%9a%84%e7%9b%ae%e7%9a%84%e6%98%af%e4%bb%80%e4%b9%88%e5%8f%af%e8%83%bd%e4%bd%a0%e5%b9%b6%e4%b8%8d%e7%9f%a5%e9%81%93%ef%bc%8c%e4%bd%86%e5%9f%8e%e5%b8%82%e7%9a%84%e7%9b%ae%e7%9a%84%e6%98%af%e8%ae%a9%e4%bd%a0%e5%88%9b%e9%80%a0%e4%bb%b7%e5%80%bc%e8%b4%a1%e7%8c%ae%20GDP%e3%80%82%e5%b7%a5%e4%bd%9c%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e7%9a%84%e8%ae%a4%e7%9f%a5%e6%98%af%e6%af%8f%e4%b8%aa%e6%89%93%e5%b7%a5%e4%ba%ba%e9%83%bd%e5%9c%a8%e4%b8%ba%e5%9b%bd%e5%ae%b6%e5%81%9a%e8%b4%a1%e7%8c%ae%e3%80%82%e8%bf%87%e5%8e%bb%2010%20%e5%a4%9a%e5%b9%b4%e7%a7%bb%e5%8a%a8%e4%ba%92%e8%81%94%e7%bd%91%e7%9a%84%e5%8f%91%e5%b1%95%ef%bc%8c%e8%ae%a9%e8%bf%99%e4%b8%aa%e8%a1%8c%e4%b8%9a%e7%9a%84%e6%94%b6%e5%85%a5%e6%b0%b4%e5%b9%b3%ef%bc%8c%e8%a6%81%e9%ab%98%e5%87%ba%e5%85%b6%e4%bb%96%e4%bc%a0%e7%bb%9f%e8%a1%8c%e4%b8%9a%e7%9a%84%e5%b9%b3%e5%9d%87%e6%b0%b4%e5%b9%b3%ef%bc%8c%e5%8a%a0%e4%b8%8a%e5%85%a5%e8%a1%8c%e7%9a%84%e9%97%a8%e6%a7%9b%e4%b9%9f%e6%af%94%e8%be%83%e4%bd%8e%e3%80%82%e6%89%80%e4%bb%a5%e7%a7%bb%e5%8a%a8%e4%ba%92%e8%81%94%e7%bd%91%e8%a1%8c%e4%b8%9a%e7%9a%84%e4%bb%8e%e4%b8%9a%e4%ba%ba%e5%91%98%ef%bc%8c%e4%b8%8d%e6%84%a7%e6%96%b0%e6%97%b6%e4%bb%a3%e6%b0%91%e5%b7%a5%e7%9a%84%e7%a7%b0%e8%b0%93%ef%bc%8c%e4%b8%ba%e5%9b%bd%e5%ae%b6%e7%9a%84%e7%a8%8e%e6%94%b6%e5%81%9a%e8%b6%b3%e4%ba%86%e8%b4%a1%e7%8c%ae%e3%80%82%3c%2fp%3e%0a%3cp%3e%e6%88%91%e6%84%9f%e8%a7%89%e9%80%8f%e6%94%af%e4%ba%86%e8%ba%ab%e4%bd%93%ef%bc%8c%e5%b7%a5%e4%bd%9c%e6%97%a5%e6%98%af%e9%ab%98%e5%bc%ba%e5%ba%a6%e7%9a%84%e4%b8%8a%e7%8f%ad%ef%bc%8c%e4%bc%91%e6%81%af%e6%97%a5%e9%82%a3%e5%b0%b1%e7%9c%9f%e7%9a%84%e6%98%af%e5%8f%aa%e6%83%b3%e5%9c%a8%e5%ae%b6%e4%bc%91%e6%81%af%e3%80%82%e5%af%b9%e4%ba%8e%e6%99%ae%e9%80%9a%e6%89%93%e5%b7%a5%e4%ba%ba%e6%9d%a5%e8%af%b4%ef%bc%8c%e6%b7%b1%e5%9c%b3%e7%9a%84%e6%88%bf%e4%bb%b7%e6%98%af%e4%b8%80%e9%a2%97%e5%b7%a8%e7%9f%b3%e6%8c%a1%e5%9c%a8%e4%bd%a0%e5%9c%a8%e6%b7%b1%e5%9c%b3%e5%ae%89%e5%ae%b6%e7%9a%84%e8%b7%af%e4%b8%8a%ef%bc%8c%e8%80%8c%e4%bd%a0%e6%89%8b%e4%b8%8a%e5%8f%aa%e6%9c%89%e4%b8%80%e6%8a%8a%e8%b4%b9%e5%8a%9b%e7%9a%84%e9%94%a4%e5%ad%90%e3%80%82%e9%82%a3%e4%b9%88%e6%98%af%e5%9b%be%e4%bb%80%e4%b9%88%e8%a6%81%e8%bf%99%e6%a0%b7%e4%b8%8a%e5%bc%ba%e5%ba%a6%e5%91%a2%ef%bc%9f%e5%8a%a0%e4%b8%8a%e8%bf%99%e5%87%a0%e5%b9%b4%e7%9a%84%e7%96%ab%e6%83%85%ef%bc%8c%e6%b7%b1%e5%9c%b3%e8%b4%a2%e5%a4%a7%e6%b0%94%e7%b2%97%e5%9c%b0%e5%bc%80%e5%b1%95%e5%85%a8%e9%9d%a2%e6%a0%b8%e9%85%b8%ef%bc%8c%e6%af%8f%e5%a4%a9%e8%ae%a9%e6%89%93%e5%b7%a5%e4%ba%ba%e4%b8%8b%e7%8f%ad%e4%b9%8b%e5%90%8e%e6%8e%92%e9%98%9f%e5%81%9a%e6%a3%80%e6%b5%8b%e3%80%82%e7%bb%99%e6%88%91%e7%9a%84%e6%84%9f%e5%8f%97%e5%b0%b1%e6%98%af%e4%b8%80%e4%b8%aa%e7%b4%af%e5%ad%97%e3%80%82%3c%2fp%3e%0a%3cp%3e%e7%bb%8f%e8%bf%87%e5%86%b3%e5%ae%9a%e4%b9%8b%e5%90%8e%ef%bc%8c%e6%88%91%e8%b7%9f%e8%80%81%e5%a9%86%e5%86%b3%e5%ae%9a%e5%9b%9e%e9%87%8d%e5%ba%86%e7%94%9f%e6%b4%bb%e3%80%827%e3%80%818%20%e6%9c%88%e4%bb%bd%e5%b0%b1%e5%9c%a8%e5%bc%84%e6%90%ac%e5%ae%b6%e4%ba%8b%e6%83%85%e3%80%82%e5%b9%b8%e8%bf%90%e7%9a%84%e6%98%af%ef%bc%8c%e6%88%91%e4%b8%80%e4%b8%aa%e4%ba%ba%e6%9d%a5%ef%bc%8c%e4%b8%89%e4%b8%aa%e4%ba%ba%e5%9b%9e%ef%bc%8c%e8%bf%98%e6%9c%89%e4%b8%a4%e5%8f%aa%e7%8c%ab%e5%92%aa%e3%80%82%e6%88%91%e5%be%88%e5%b9%b8%e8%bf%90%ef%bc%8c%e5%9c%a8%2030%20%e5%b2%81%e5%89%8d%e6%9c%89%e4%ba%86%e8%87%aa%e5%b7%b1%e7%9a%84%e5%ae%b6%e5%ba%ad%e3%80%82%e6%88%91%e4%b8%8d%e6%98%af%e9%82%a3%e7%a7%8d%e4%ba%89%e7%9a%84%e4%ba%ba%ef%bc%8c%e8%bf%99%e5%af%b9%e6%88%91%e5%b7%b2%e7%bb%8f%e5%a4%9f%e5%a5%bd%e4%ba%86%e3%80%82%e7%8e%b0%e5%9c%a8%e8%bd%ac%e5%9b%9e%e4%ba%86%e6%88%b7%e5%8f%a3%ef%bc%8c%e7%ad%be%e4%ba%86%e8%a3%85%e4%bf%ae%e8%ae%be%e8%ae%a1%e5%90%88%e5%90%8c%ef%bc%8c%e5%85%a5%e8%81%8c%e4%ba%86%e4%b8%80%e5%ae%b6%e6%96%b0%e7%9a%84%e5%85%ac%e5%8f%b8%ef%bc%8c%e6%98%8e%e7%a1%ae%e8%87%aa%e5%b7%b1%e6%83%b3%e8%a6%81%e7%9a%84%e7%94%9f%e6%b4%bb%e3%80%82%3c%2fp%3e%0a%3cp%3eThere%20and%20back%20again%ef%bc%8c%e5%bc%80%e5%a7%8b%e6%96%b0%e7%9a%84%e6%95%85%e4%ba%8b%e3%80%82%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fwww.orechou.com%2fposts%2f2023%2f48-there-and-back-again%2f&t=There%20and%20back%20again" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="toggleDisplay('nav-footer');return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="toggleDisplay('toc-footer');return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="toggleDisplay('share-footer');return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
   </div>
-</div>
+</article>
+
+<nav class="post-nav">
+  
+  <a class="post-nav-prev" href="https://www.orechou.com/posts/2023/mysql-master-slave-practice/">
+    <i class="fas fa-chevron-left"></i>
+    【DevOps】使用 Docker 搭建 MySQL 主从复制架构
+  </a>
+  
+  
+  <a class="post-nav-next" href="https://www.orechou.com/posts/2023/49-the-practise-mock-api/">
+    关于接口 mock 的技术实现
+    <i class="fas fa-chevron-right"></i>
+  </a>
+  
+</nav>
 
 
-  <footer id="footer">
+  
+
+
+
+
+
+
+
+    <footer id="footer">
   <div class="footer-left">
     Copyright  &copy; 2026  奥力手记 
   </div>
@@ -409,14 +254,19 @@ There and back again，开始新的故事。">
 
 
   </div>
+
 </body>
 
 <link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
 <script src=/js/main.js defer></script>
 
-<script src=/js/code-copy.js defer></script>
+
+
+<script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
+<audio id="music-player-audio" style="display:none"></audio>
+<script src=/js/music-player.js defer></script>
 
 
 
-
+<script src=/js/spa-router.js></script>
 </html>

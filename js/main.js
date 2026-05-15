@@ -63,16 +63,6 @@
   }
 
   /**
-   * Toggle helper function
-   */
-  function toggleDisplay(elementId) {
-    const el = document.getElementById(elementId);
-    if (el) {
-      el.style.display = el.style.display === 'none' ? 'block' : 'none';
-    }
-  }
-
-  /**
    * Mobile navigation toggle
    */
   function initMobileNav() {
@@ -84,102 +74,6 @@
           nav.classList.toggle('responsive');
         }
       });
-    }
-  }
-
-  /**
-   * Post page navigation logic
-   */
-  function initPostNavigation() {
-    const post = document.querySelector('.post');
-    if (!post) return;
-
-    const menu = document.getElementById('menu');
-    const nav = menu ? menu.querySelector('#nav') : null;
-    const menuIcon = document.querySelector('#menu-icon, #menu-icon-tablet');
-
-    // Display menu on hi-res desktops
-    if (window.innerWidth >= 1440 && menu) {
-      menu.style.visibility = 'visible';
-      if (menuIcon) menuIcon.classList.add('active');
-    }
-
-    // Menu icon toggle
-    if (menuIcon) {
-      menuIcon.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (menu && menu.style.visibility === 'hidden') {
-          menu.style.visibility = 'visible';
-          menuIcon.classList.add('active');
-        } else if (menu) {
-          menu.style.visibility = 'hidden';
-          menuIcon.classList.remove('active');
-        }
-      });
-    }
-
-    // Scroll handler for desktop/tablet navigation
-    if (menu) {
-      window.addEventListener('scroll', throttle(function() {
-        const topDistance = menu.offsetTop;
-
-        // Hide/show desktop navigation
-        if (nav) {
-          const navStyle = window.getComputedStyle(nav);
-          if (navStyle.display === 'none' && topDistance < 50) {
-            nav.style.display = 'block';
-          } else if (navStyle.display === 'block' && topDistance > 100) {
-            nav.style.display = 'none';
-          }
-        }
-
-        // Tablet icons
-        const menuIconDesktop = document.getElementById('menu-icon');
-        const menuIconTablet = document.getElementById('menu-icon-tablet');
-        const topIconTablet = document.getElementById('top-icon-tablet');
-
-        if (menuIconDesktop && menuIconTablet && topIconTablet) {
-          const desktopStyle = window.getComputedStyle(menuIconDesktop);
-
-          if (desktopStyle.display === 'none' && topDistance < 50) {
-            menuIconTablet.style.display = 'block';
-            topIconTablet.style.display = 'none';
-          } else if (desktopStyle.display === 'none' && topDistance > 100) {
-            menuIconTablet.style.display = 'none';
-            topIconTablet.style.display = 'block';
-          }
-        }
-      }, 100));
-    }
-
-    // Mobile footer navigation
-    const footerPost = document.getElementById('footer-post');
-    if (footerPost) {
-      let lastScrollTop = 0;
-
-      window.addEventListener('scroll', throttle(function() {
-        const topDistance = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (topDistance > lastScrollTop) {
-          // downscroll
-          footerPost.style.display = 'none';
-        } else {
-          // upscroll
-          footerPost.style.display = 'block';
-        }
-        lastScrollTop = topDistance;
-
-        // close all submenus on scroll
-        toggleDisplay('nav-footer');
-        toggleDisplay('toc-footer');
-        toggleDisplay('share-footer');
-
-        // show/hide top icon
-        const topIcon = document.querySelector('#actions-footer > #top');
-        if (topIcon) {
-          topIcon.style.display = topDistance < 50 ? 'none' : 'block';
-        }
-      }, 100));
     }
   }
 
@@ -370,10 +264,11 @@
     initThemeSwitcher();
     initGallery();
     initMobileNav();
-    initPostNavigation();
   });
 
-  // Export toggle function for inline onclick handlers
-  window.toggleDisplay = toggleDisplay;
+  // Reinitialize after SPA navigation
+  window.addEventListener('spa-content-loaded', function() {
+    initGallery();
+  });
 
 })();
