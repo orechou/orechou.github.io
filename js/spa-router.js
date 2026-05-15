@@ -4,6 +4,20 @@
   var CONTENT_SELECTOR = '.content.index.py4';
   var isInitialLoad = true;
 
+  function normalizeUrl(url) {
+    try {
+      var u = new URL(url, location.origin);
+      var path = u.pathname;
+      if (/\.\w+$/.test(path) && !path.endsWith('/')) return url;
+      if (!path.endsWith('/')) {
+        u.pathname = path + '/';
+      }
+      return u.pathname + u.search + u.hash;
+    } catch (e) {
+      return url;
+    }
+  }
+
   function isInternalLink(href) {
     if (!href) return false;
     if (href.startsWith('/') && !href.startsWith('//')) return true;
@@ -32,6 +46,7 @@
   }
 
   function navigateTo(url, isPop) {
+    url = normalizeUrl(url);
     if (!isPop) {
       history.pushState({}, '', url);
     }
