@@ -2,25 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.orechou.com/posts/2026/06-another-you/</loc>
-    <lastmod>2026-05-14T22:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://www.orechou.com/categories/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/writing/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/writing/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/07-how-to-build-a-self-host-blog/</loc>
+    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/06-another-you/</loc>
     <lastmod>2026-05-14T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/categories/life/</loc>
     <lastmod>2026-05-14T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/life/</loc>
-    <lastmod>2026-05-14T22:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/posts/</loc>
-    <lastmod>2026-05-14T22:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/</loc>
-    <lastmod>2026-05-14T22:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/</loc>
     <lastmod>2026-05-14T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/tags/book/</loc>

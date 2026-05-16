@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+  <link rel="dns-prefetch" href="https://latest.cactus.chat">
+  <link rel="preconnect" href="https://latest.cactus.chat" crossorigin>
+
+  
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 如何搭建一个存在于世界终结的博客 | 奥力手记</title>
+  <link rel = 'canonical' href = 'https://www.orechou.com/posts/2026/07-how-to-build-a-self-host-blog/'>
+  <meta name="description" content="所有的文字，均致十年后的自己.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://www.orechou.com/posts/2026/07-how-to-build-a-self-host-blog/">
+  <meta property="og:site_name" content="奥力手记">
+  <meta property="og:title" content="如何搭建一个存在于世界终结的博客">
+  <meta property="og:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
+而这篇文章就是介绍如何搭建一个这样的 self-host 博客。
+方案 构建方案涉及到 4 个技术：Hugo、Github Pages、GoDaddy 以及 Cloudflare。
+Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 HTML 网页。它是目前最快的静态网站生成器，建一个站只需要几秒。 GitHub Pages：负责托管。把生成的网页文件放到 GitHub 仓库里，GitHub 自动变成一个可以访问的网站。 GoDaddy：全球最大的互联网域名注册商和网络托管服务提供商。其实任何一家域名注册商都行，不同的提供商可能有不同的价格优惠，但流程大同小异。 Cloudflare：负责 DNS 解析和加速。买了域名之后，需要告诉全世界这个域名指向哪里，Cloudflare 做的就是这件事，同时还能给网站加 CDN 加速和 HTTPS。 搭建本地站点 安装 Hugo macOS 用户 如果你是苹果电脑，那么安装非常简单，打开终端 app，直接用 brew 安装即可:
+1 brew install hugo 安装完，验证一下：
+1 hugo version 能看到版本号就说明安装好了。
+非 macOS 用户 如果是非苹果电脑用户，直接去官网上下载对应的安装包手动安装。下载链接 其它平台我没操作过，大家就自行浏览官方的文档吧。
+创建博客站点 打开终端 app，进入你想放博客的目录，然后输入命令：
+1 2 3 hugo new site &lt;your-site-name&gt; cd &lt;your-site-name&gt; git init 这三条命令分别做了：创建一个新的 Hugo 站点、进入站点目录、初始化 Git 仓库。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-16T14:30:00+08:00">
+    <meta property="article:modified_time" content="2026-05-16T14:30:00+08:00">
+    <meta property="article:tag" content="Writing">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何搭建一个存在于世界终结的博客">
+  <meta name="twitter:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
+而这篇文章就是介绍如何搭建一个这样的 self-host 博客。
+方案 构建方案涉及到 4 个技术：Hugo、Github Pages、GoDaddy 以及 Cloudflare。
+Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 HTML 网页。它是目前最快的静态网站生成器，建一个站只需要几秒。 GitHub Pages：负责托管。把生成的网页文件放到 GitHub 仓库里，GitHub 自动变成一个可以访问的网站。 GoDaddy：全球最大的互联网域名注册商和网络托管服务提供商。其实任何一家域名注册商都行，不同的提供商可能有不同的价格优惠，但流程大同小异。 Cloudflare：负责 DNS 解析和加速。买了域名之后，需要告诉全世界这个域名指向哪里，Cloudflare 做的就是这件事，同时还能给网站加 CDN 加速和 HTTPS。 搭建本地站点 安装 Hugo macOS 用户 如果你是苹果电脑，那么安装非常简单，打开终端 app，直接用 brew 安装即可:
+1 brew install hugo 安装完，验证一下：
+1 hugo version 能看到版本号就说明安装好了。
+非 macOS 用户 如果是非苹果电脑用户，直接去官网上下载对应的安装包手动安装。下载链接 其它平台我没操作过，大家就自行浏览官方的文档吧。
+创建博客站点 打开终端 app，进入你想放博客的目录，然后输入命令：
+1 2 3 hugo new site &lt;your-site-name&gt; cd &lt;your-site-name&gt; git init 这三条命令分别做了：创建一个新的 Hugo 站点、进入站点目录、初始化 Git 仓库。">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://www.orechou.com/css/styles.4a603902cd2db9683f919378d582ac56efde0d2484d49e0cfba15aa483be7f82c1d107a1d0f649b0fd04148570a7ca949dce81b07d37df2993c6910702ba840e.css" integrity="sha512-SmA5As0tuWg/kZN41YKsVu/eDSSE1J4M&#43;6FapIO&#43;f4LB0Qeh0PZJsP0EFIVwp8qUnc6BsH033ymTxpEHArqEDg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  <link rel="icon" type="image/x-icon" href="https://www.orechou.com/images/favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="https://www.orechou.com/images/favicon.ico" />
+
+  
+  
+  
+  
+  
+
+  
+  <script>
+    (function() {
+      try {
+        
+        var savedTheme = localStorage.getItem('theme');
+        var systemTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        var theme = savedTheme || systemTheme;
+
+        
+        if (theme === 'white' || theme === 'classic') {
+          theme = 'light';
+          localStorage.setItem('theme', theme);
+        }
+
+        
+        if (theme && theme !== 'default') {
+          document.documentElement.classList.add('theme-' + theme);
+        }
+      } catch (e) {
+        
+      }
+    })();
+  </script>
+
+  
+  <script>
+    document.documentElement.dataset.copyLabel = "Copy";
+    document.documentElement.dataset.copiedLabel = "Copied!";
+  </script>
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  
+  <div class="theme-switcher">
+    
+  </div>
+
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://www.orechou.com/">
+  
+    <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>奥力手记</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/posts">Posts</a></li>
+      
+        <li><a href="/books">Books</a></li>
+      
+        <li><a href="/diary">Diary</a></li>
+      
+        <li><a href="/paintings">Paintings</a></li>
+      
+        <li><a href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 class="posttitle" itemprop="name headline">
+      如何搭建一个存在于世界终结的博客
+    </h1>
+    <div class="meta">
+      
+      <div class="postdate">
+        
+        <time datetime="2026-05-16 14:30:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-05-16</time>
+        
+      </div>
+      
+      
+      <div class="article-read-time">
+        <i class="far fa-clock"></i>
+        
+        10 minute read
+      </div>
+      
+      
+      
+        
+      
+      
+      <div class="article-category">
+          <i class="fas fa-archive"></i>
+          
+          
+          <a class="category-link" href="/categories/writing">Writing</a>
+          
+      </div>
+      
+      
+      
+        
+      
+      
+      <div class="article-tag">
+          <i class="fas fa-tag"></i>
+          
+          
+          <a class="tag-link" href="/tags/writing" rel="tag">Writing</a>
+          
+      </div>
+      
+    </div>
+  </header>
+
+
+  
+  <div id="toc">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#方案">方案</a></li>
+    <li><a href="#搭建本地站点">搭建本地站点</a>
+      <ul>
+        <li><a href="#安装-hugo">安装 Hugo</a>
+          <ul>
+            <li><a href="#macos-用户">macOS 用户</a></li>
+            <li><a href="#非-macos-用户">非 macOS 用户</a></li>
+          </ul>
+        </li>
+        <li><a href="#创建博客站点">创建博客站点</a></li>
+        <li><a href="#安装博客主题">安装博客主题</a></li>
+        <li><a href="#写博客">写博客</a></li>
+      </ul>
+    </li>
+    <li><a href="#搭建远程站点">搭建远程站点</a>
+      <ul>
+        <li><a href="#创建-github-仓库">创建 Github 仓库</a></li>
+        <li><a href="#配置自动部署">配置自动部署</a></li>
+        <li><a href="#推送你的本地博客到-github">推送你的本地博客到 GitHub</a></li>
+        <li><a href="#开启-github-pages">开启 Github Pages</a></li>
+        <li><a href="#同步本地站点到远程站点">同步本地站点到远程站点</a></li>
+      </ul>
+    </li>
+    <li><a href="#域名">域名</a>
+      <ul>
+        <li><a href="#购买域名">购买域名</a></li>
+        <li><a href="#配置域名">配置域名</a>
+          <ul>
+            <li><a href="#配置-github-pages-域名">配置 Github Pages 域名</a></li>
+            <li><a href="#配置-dns">配置 DNS</a></li>
+            <li><a href="#配置-https">配置 HTTPS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#最后">最后</a></li>
+  </ul>
+</nav>
+  </div>
+  
+  <div class="content" itemprop="articleBody">
+    <p>我的博客 <code>orechou.com</code>，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。</p>
+<p>而这篇文章就是介绍如何搭建一个这样的 self-host 博客。</p>
+<h2 id="方案">方案</h2>
+<p>构建方案涉及到 4 个技术：Hugo、Github Pages、GoDaddy 以及 Cloudflare。</p>
+<ol>
+<li>Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 HTML 网页。它是目前最快的静态网站生成器，建一个站只需要几秒。</li>
+<li>GitHub Pages：负责托管。把生成的网页文件放到 GitHub 仓库里，GitHub 自动变成一个可以访问的网站。</li>
+<li>GoDaddy：全球最大的互联网域名注册商和网络托管服务提供商。其实任何一家域名注册商都行，不同的提供商可能有不同的价格优惠，但流程大同小异。</li>
+<li>Cloudflare：负责 DNS 解析和加速。买了域名之后，需要告诉全世界这个域名指向哪里，Cloudflare 做的就是这件事，同时还能给网站加 CDN 加速和 HTTPS。</li>
+</ol>
+<h2 id="搭建本地站点">搭建本地站点</h2>
+<h3 id="安装-hugo">安装 Hugo</h3>
+<h4 id="macos-用户">macOS 用户</h4>
+<p>如果你是苹果电脑，那么安装非常简单，打开终端 app，直接用 brew 安装即可:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install hugo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完，验证一下：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>能看到版本号就说明安装好了。</p>
+<h4 id="非-macos-用户">非 macOS 用户</h4>
+<p>如果是非苹果电脑用户，直接去官网上下载对应的安装包手动安装。<a href="https://gohugo.io/installation/">下载链接</a>
+其它平台我没操作过，大家就自行浏览官方的文档吧。</p>
+<h3 id="创建博客站点">创建博客站点</h3>
+<p>打开终端 app，进入你想放博客的目录，然后输入命令：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site &lt;your-site-name&gt;
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> &lt;your-site-name&gt;
+</span></span><span style="display:flex;"><span>git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这三条命令分别做了：创建一个新的 Hugo 站点、进入站点目录、初始化 Git 仓库。</p>
+<p>现在你的站点已经存在了，但它还是个空壳，没有任何主题和内容。</p>
+<h3 id="安装博客主题">安装博客主题</h3>
+<p>Hugo 官网上已经有很多开发者提交的很多主题了，<a href="https://themes.gohugo.io/">地址</a></p>
+<p>当然也可以使用我自己开发的一个主题，<a href="https://github.com/orechou/hugo-theme-cactus-plus">hugo-theme-cactus-plus</a>。因为是自己用，我也在不断地增加新的功能例如：画册、音乐播放等。</p>
+<p>安装方法也很简单，直接克隆到你的站点目录即可：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/orechou/hugo-theme-cactus-plus.git themes/cactus-plus
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>后续如果如果我的主题功能有更新，使用命令拉去最新的代码即可：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> themes/hugo-theme-cactus-plus
+</span></span><span style="display:flex;"><span>git pull
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，需要在 <code>config.toml</code> 中指定主题：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>theme = <span style="color:#f1fa8c">&#34;hugo-theme-cactus-plus&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这样我们就可以看看效果了，继续在终端里面执行：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>浏览器打开 <code>http://localhost:1313/</code> 就可以看到你的博客了。</p>
+<h3 id="写博客">写博客</h3>
+<p>我们的任何一篇博客，都是在在 <code>content/posts/</code> 目录下创建一个新的 Markdown 文件。可以手动创建，也可以用 Hugo 的指令创建：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/&lt;your-post-name&gt;.md
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建的 Markdown 文件的顶部有部分内容叫 Front Matter，它是用来配置博文元数据的。你可以在这个部分填写博文的标题、日期、作者等信息。例如：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">title</span>: <span style="color:#f1fa8c">&#34;我的第一篇文章&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">date</span>: 2026-05-14
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">draft</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="搭建远程站点">搭建远程站点</h2>
+<h3 id="创建-github-仓库">创建 Github 仓库</h3>
+<p>如果没有帐号的，先创建一个 Github 帐号。</p>
+<p>创建完 Github 帐号之后，登陆。然后再创建一个仓库。仓库的名称建议用 <code>&lt;your-username&gt;.github.io</code> 这样的格式，<code>&lt;your-username&gt;</code> 就是你的 Github 用户名。例如我的 Github 用户名是 orechou，那我创建的仓库是 <code>orechou.github.io</code>。这样即使我不走后续的流程购买域名，我在互联网上也已经有一个域名可以访问我的博客，即：<code>https://orechou.github.io</code>。</p>
+<h3 id="配置自动部署">配置自动部署</h3>
+<p>在我们本地的站点目录创建一个文件夹 <code>.github/workflows</code>，里面创建一个文件 <code>deploy.yml</code>，内容如下：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#ff79c6">name</span>: Deploy to GitHub Pages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">push</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">schedule</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Runs everyday at 8:00 AM</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ff79c6">cron</span>: <span style="color:#f1fa8c">&#34;0 0 * * *&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">runs-on</span>: ubuntu-latest
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Checkout
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: actions/checkout@v2
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">submodules</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">fetch-depth</span>: <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Setup Hugo
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: peaceiris/actions-hugo@v2
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">hugo-version</span>: <span style="color:#f1fa8c">&#34;latest&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Build Web
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">run</span>: hugo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Recreate CNAME
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">run</span>: echo &#39;www.orechou.com&#39; &gt; public/CNAME  <span style="color:#6272a4"># 注意：这里使用你的自定义域名</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ff79c6">name</span>: Deploy Web
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">uses</span>: peaceiris/actions-gh-pages@v3
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">personal_token</span>: ${{ secrets.PERSONAL_TOKEN }}
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">EXTERNAL_REPOSITORY</span>: OreChou/orechou.github.io <span style="color:#6272a4"># 注意：这里使用你自己的仓库地址</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">PUBLISH_BRANCH</span>: master
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">PUBLISH_DIR</span>: ./public
+</span></span><span style="display:flex;"><span>          <span style="color:#6272a4"># commit_message: publish blog content</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">commit_message</span>: ${{ github.event.head_commit.message }}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="推送你的本地博客到-github">推送你的本地博客到 GitHub</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;Initial commit&#34;</span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/&lt;your-username&gt;/&lt;your-username&gt;.github.io.git
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="开启-github-pages">开启 Github Pages</h3>
+<p>进入仓库页面 → Settings → Pages：</p>
+<ol>
+<li>把 Source 设置成 Deploy from a branch</li>
+<li>把 Branch 设置成 master（现在新创建的仓库应该是 main）</li>
+</ol>
+<p>然后保存。</p>
+<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/github-pages-deploy.png" alt="Github Pages Deploy"></p>
+<p>这样我们每次将本地站点内容同步到远程站点之后，GitHub Pages 就会自动构建并部署。</p>
+<p>成功后状态会变绿，你的博客就能通过 <code>https://&lt;your-username&gt;.github.io</code> 访问了。</p>
+<h3 id="同步本地站点到远程站点">同步本地站点到远程站点</h3>
+<p>我们要将本地站点（一个 Git 仓库）同步到远程站点（GitHub Pages 仓库），只需要在本地站点的文件目录下执行：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;Update&#34;</span>
+</span></span><span style="display:flex;"><span>git push
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>就可以了。这样就会完成站点的内容更新。</p>
+<h2 id="域名">域名</h2>
+<h3 id="购买域名">购买域名</h3>
+<p>在 GoDaddy 注册一个账号之后就可以购买域名了。输入并选择一个心仪的域名即可。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/godaddy.png" alt="GoDaddy">
+如果有中意的域名购买之后，记得开上自动续费。避免后续因为忘记续费而导致域名过期被其他人注册。</p>
+<h3 id="配置域名">配置域名</h3>
+<h4 id="配置-github-pages-域名">配置 Github Pages 域名</h4>
+<p>首先在，进入仓库 → Settings → Pages → Custom domain，填入你的域名（比如 <code>&lt;your-username&gt;.com</code>），保存。</p>
+<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/github-custom-domain.png" alt="Github Pages Custom Domain"></p>
+<h4 id="配置-dns">配置 DNS</h4>
+<p>在 Cloudflare 注册一个账号。注册成功后，进入 Cloudflare 控制台，添加你的域名。</p>
+<p>然后回到 GoDaddy 的管理页面，把你的域名的 nameserver 改成 Cloudflare 提供的。这里改完生效需要等待全球节点的同步，大概 2 分钟。</p>
+<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/godaddy-dns-nameserver.png" alt="GoDaddy DNS Nameserver"></p>
+<p>等待 DNS 生效后，回到 Cloudflare 的 DNS 管理页面，添加记录：
+添加四条 A 记录，名称填 <code>@</code>，分别指向 GitHub Pages 的四个 IP：</p>
+<ul>
+<li>185.199.108.153</li>
+<li>185.199.109.153</li>
+<li>185.199.110.153</li>
+<li>185.199.111.153</li>
+</ul>
+<p>再添加一条 CNAME 记录，名称填 <code>www</code>，指向 <code>username.github.io</code>。</p>
+<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/cloudflare-dns.png" alt="Cloudflare DNS Settings"></p>
+<h4 id="配置-https">配置 HTTPS</h4>
+<p>在 Cloudflare 的 SSL/TLS 设置里面，在概述页面设置加密模式。我设置的 flexible，适合源站没有证书的情况，仅加密访客到 Cloudflare 的流量。</p>
+<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/cloudflare-flexible.png" alt="Cloudflare HTTPS Flexible"></p>
+<p>最后再开启始终使用 HTTPS，就做完了最后一步了。
+<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/cloudflare-enforce-https.png" alt="Cloudflare Enforce HTTPS"></p>
+<h2 id="最后">最后</h2>
+<p>最后，属于你自己的博客就搭建完成了。你讲有两个域名可以访问你的站点：</p>
+<ol>
+<li><code>https://&lt;your-username&gt;.github.io</code></li>
+<li><code>https://&lt;your-domain&gt;.com</code></li>
+</ol>
+<p>如果你不主动删除，它会留存在这个世界直至终结或者 AI 天网统治世界的那一天。</p>
+<p>创作愉快。</p>
+<p>以上。</p>
+
+  </div>
+</article>
+
+<nav class="post-nav">
+  
+  <a class="post-nav-prev" href="https://www.orechou.com/posts/2026/06-another-you/">
+    <i class="fas fa-chevron-left"></i>
+    《生活在别处的你》（Another me）
+  </a>
+  
+  
+</nav>
+
+
+  
+
+
+
+
+
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2026  奥力手记 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/books">Books</a></li>
+         
+        <li><a href="/diary">Diary</a></li>
+         
+        <li><a href="/paintings">Paintings</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/js/main.js defer></script>
+
+
+
+<script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
+<audio id="music-player-audio" style="display:none"></audio>
+<script src=/js/music-player.js defer></script>
+
+
+
+<script src=/js/spa-router.js></script>
+</html>
