@@ -2,23 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.orechou.com/diary/</loc>
-    <lastmod>2026-05-17T00:00:00+00:00</lastmod>
+    <loc>https://www.orechou.com/categories/ai/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/ai/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/categories/macbook/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/ollama/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/tags/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/</loc>
+    <lastmod>2026-05-21T16:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/diary/</loc>
     <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/05-17-naturo/</loc>
     <lastmod>2026-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/categories/</loc>
-    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/posts/</loc>
-    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/</loc>
-    <lastmod>2026-05-16T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/categories/writing/</loc>
     <lastmod>2026-05-16T14:30:00+08:00</lastmod>
@@ -55,12 +70,6 @@
   </url><url>
     <loc>https://www.orechou.com/diary/2026/05-10-about-daughter/</loc>
     <lastmod>2026-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/categories/ai/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/tags/ai/</loc>
-    <lastmod>2026-04-27T20:00:00+08:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</loc>
     <lastmod>2026-04-27T20:00:00+08:00</lastmod>

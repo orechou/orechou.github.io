@@ -6,8 +6,22 @@
     <description>Recent content in Tags on 奥力手记</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 May 2026 14:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 May 2026 16:00:00 +0800</lastBuildDate>
     <atom:link href="https://www.orechou.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://www.orechou.com/tags/ai/</link>
+      <pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
+      <guid>https://www.orechou.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>https://www.orechou.com/tags/ollama/</link>
+      <pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
+      <guid>https://www.orechou.com/tags/ollama/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Writing</title>
       <link>https://www.orechou.com/tags/writing/</link>
@@ -41,13 +55,6 @@
       <link>https://www.orechou.com/tags/software/</link>
       <pubDate>Wed, 13 May 2026 18:00:00 +0800</pubDate>
       <guid>https://www.orechou.com/tags/software/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI</title>
-      <link>https://www.orechou.com/tags/ai/</link>
-      <pubDate>Mon, 27 Apr 2026 20:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
