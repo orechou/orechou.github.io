@@ -20,23 +20,23 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2021/mysql_%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BD%AE%E9%A1%B6/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="【MySQL】实现列表数据置顶">
-  <meta property="og:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="【MySQL】实现列表数据置顶">
+	<meta property="og:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
 例如有一张表有 id 和 name 两个字段。数据表如下。
 id name 1 1_name 2 2_name 3 3_name 4 4_name 5 5_name 6 6_name 7 7_name 8 8_name 9 9_name 10 10_name 若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：
 SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2021-08-16T14:46:00+00:00">
-    <meta property="article:modified_time" content="2021-08-16T14:46:00+00:00">
-    <meta property="article:tag" content="MySQL">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-08-16T14:46:00+00:00">
+		<meta property="article:modified_time" content="2021-08-16T14:46:00+00:00">
+		<meta property="article:tag" content="MySQL">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="【MySQL】实现列表数据置顶">
-  <meta name="twitter:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="【MySQL】实现列表数据置顶">
+	<meta name="twitter:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
 例如有一张表有 id 和 name 两个字段。数据表如下。
 id name 1 1_name 2 2_name 3 3_name 4 4_name 5 5_name 6 6_name 7 7_name 8 8_name 9 9_name 10 10_name 若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：
 SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5">
@@ -189,54 +189,54 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
     <p>有的列表获取的业务场景，需要根据一些条件将数据置顶。</p>
 <p>例如有一张表有 id 和 name 两个字段。数据表如下。</p>
 <table>
-  <thead>
-      <tr>
-          <th>id</th>
-          <th>name</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>1_name</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>2_name</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>3_name</td>
-      </tr>
-      <tr>
-          <td>4</td>
-          <td>4_name</td>
-      </tr>
-      <tr>
-          <td>5</td>
-          <td>5_name</td>
-      </tr>
-      <tr>
-          <td>6</td>
-          <td>6_name</td>
-      </tr>
-      <tr>
-          <td>7</td>
-          <td>7_name</td>
-      </tr>
-      <tr>
-          <td>8</td>
-          <td>8_name</td>
-      </tr>
-      <tr>
-          <td>9</td>
-          <td>9_name</td>
-      </tr>
-      <tr>
-          <td>10</td>
-          <td>10_name</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>id</th>
+					<th>name</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>1_name</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>2_name</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>3_name</td>
+			</tr>
+			<tr>
+					<td>4</td>
+					<td>4_name</td>
+			</tr>
+			<tr>
+					<td>5</td>
+					<td>5_name</td>
+			</tr>
+			<tr>
+					<td>6</td>
+					<td>6_name</td>
+			</tr>
+			<tr>
+					<td>7</td>
+					<td>7_name</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>8_name</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>9_name</td>
+			</tr>
+			<tr>
+					<td>10</td>
+					<td>10_name</td>
+			</tr>
+	</tbody>
 </table>
 <p>若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：</p>
 <pre tabindex="0"><code>SELECT * FROM goods ORDER BY 

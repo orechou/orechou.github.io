@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Other on 奥力手记</title>
-    <link>https://www.orechou.com/tags/other/</link>
-    <description>Recent content in Other on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 13 May 2022 23:40:00 +0000</lastBuildDate>
-    <atom:link href="https://www.orechou.com/tags/other/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>【资源】Batcave Resources 第一期</title>
-      <link>https://www.orechou.com/posts/2022/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/</link>
-      <pubDate>Fri, 13 May 2022 23:40:00 +0000</pubDate>
-      <guid>https://www.orechou.com/posts/2022/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/</guid>
-      <description>&lt;p&gt;下面记录一些平时收录的一些资源。&lt;/p&gt;&#xA;&lt;h2 id=&#34;资源站&#34;&gt;资源站&lt;/h2&gt;&#xA;&lt;p&gt;[1]&lt;a href=&#34;https://zh.jp1lib.org/&#34;&gt;Z-Library&lt;/a&gt;: 全球最大的数字图书馆&#xA;目前对于数字书籍，已经弃坑了 kindle 、微信读书等一众硬软件。目前使用 epub 格式电子书 + iBooks + iCloud，可以在 iPhone、iPad 和 mac 上无缝切换，同步阅读记录、进度。&lt;/p&gt;&#xA;&lt;h2 id=&#34;小工具&#34;&gt;小工具&lt;/h2&gt;&#xA;&lt;p&gt;[1]&lt;a href=&#34;https://batname.vercel.app/&#34;&gt;Batman-Logo&lt;/a&gt;: 新蝙蝠侠 Logo 生成器&lt;/p&gt;&#xA;&lt;p&gt;[2]&lt;a href=&#34;https://earth.fm/&#34;&gt;earth.fm&lt;/a&gt;: 聆听世界的白噪音&lt;/p&gt;&#xA;&lt;p&gt;[3]&lt;a href=&#34;https://muselink.cc/&#34;&gt;muselink&lt;/a&gt;: 极简数字名片，只为创作者&lt;/p&gt;&#xA;&lt;p&gt;[4]&lt;a href=&#34;https://imgg.gg/&#34;&gt;imgg&lt;/a&gt;: 以图片的方式截取并分享万物，简单，美观且隐私安全&lt;/p&gt;&#xA;&lt;p&gt;[5]&lt;a href=&#34;https://activitywatch.net/&#34;&gt;ActivityWatch&lt;/a&gt;: 一款免费的自动追踪在你设备上使用时间的软件&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Other on 奥力手记</title>
+		<link>https://www.orechou.com/tags/other/</link>
+		<description>Recent content in Other on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 13 May 2022 23:40:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/tags/other/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>【资源】Batcave Resources 第一期</title>
+				<link>https://www.orechou.com/posts/2022/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/</link>
+				<pubDate>Fri, 13 May 2022 23:40:00 +0000</pubDate>
+				<guid>https://www.orechou.com/posts/2022/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90/</guid>
+				<description>&lt;p&gt;下面记录一些平时收录的一些资源。&lt;/p&gt;&#xA;&lt;h2 id=&#34;资源站&#34;&gt;资源站&lt;/h2&gt;&#xA;&lt;p&gt;[1]&lt;a href=&#34;https://zh.jp1lib.org/&#34;&gt;Z-Library&lt;/a&gt;: 全球最大的数字图书馆&#xA;目前对于数字书籍，已经弃坑了 kindle 、微信读书等一众硬软件。目前使用 epub 格式电子书 + iBooks + iCloud，可以在 iPhone、iPad 和 mac 上无缝切换，同步阅读记录、进度。&lt;/p&gt;&#xA;&lt;h2 id=&#34;小工具&#34;&gt;小工具&lt;/h2&gt;&#xA;&lt;p&gt;[1]&lt;a href=&#34;https://batname.vercel.app/&#34;&gt;Batman-Logo&lt;/a&gt;: 新蝙蝠侠 Logo 生成器&lt;/p&gt;&#xA;&lt;p&gt;[2]&lt;a href=&#34;https://earth.fm/&#34;&gt;earth.fm&lt;/a&gt;: 聆听世界的白噪音&lt;/p&gt;&#xA;&lt;p&gt;[3]&lt;a href=&#34;https://muselink.cc/&#34;&gt;muselink&lt;/a&gt;: 极简数字名片，只为创作者&lt;/p&gt;&#xA;&lt;p&gt;[4]&lt;a href=&#34;https://imgg.gg/&#34;&gt;imgg&lt;/a&gt;: 以图片的方式截取并分享万物，简单，美观且隐私安全&lt;/p&gt;&#xA;&lt;p&gt;[5]&lt;a href=&#34;https://activitywatch.net/&#34;&gt;ActivityWatch&lt;/a&gt;: 一款免费的自动追踪在你设备上使用时间的软件&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

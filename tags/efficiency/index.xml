@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Efficiency on 奥力手记</title>
-    <link>https://www.orechou.com/tags/efficiency/</link>
-    <description>Recent content in Efficiency on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 25 Jan 2023 22:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.orechou.com/tags/efficiency/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>【效率】关于记录的工具及流程</title>
-      <link>https://www.orechou.com/posts/2023/%E5%85%B3%E4%BA%8E%E8%AE%B0%E5%BD%95%E7%9A%84%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%B5%81%E7%A8%8B/</link>
-      <pubDate>Wed, 25 Jan 2023 22:00:00 +0000</pubDate>
-      <guid>https://www.orechou.com/posts/2023/%E5%85%B3%E4%BA%8E%E8%AE%B0%E5%BD%95%E7%9A%84%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%B5%81%E7%A8%8B/</guid>
-      <description>&lt;p&gt;一直以来我对知识的整理记录主要以摘录为主，久而久之发现其检索和提取的十分不方便，发展到最后就是很难坚持。所以我也有看一些关于写作、知识管理、工具推荐的书籍和文章。启发最大的两本书是《卡片笔记写作法》和《写作这回事：创作生涯回忆录》，前者让我学习到一种知识的收集整理方法，后者让我找到一种坚持写作记录的信念。算是找到了一套比较符合我自己的工具和流程。现总结如下，因为自身是 Apple 生态的用户，所以工具的选择主要是考虑到跨设备，其次再考虑跨平台。&lt;/p&gt;&#xA;&lt;h1 id=&#34;知识管理&#34;&gt;知识管理&lt;/h1&gt;&#xA;&lt;p&gt;知识管理：Obsidian + Dropbox 。Obsidian 是一个基于文件的 Markdown 编辑器，特点是支持笔记的双向链接，其次能够使用很多三方插件对软件自身的功能进行补齐。相比于 Notion ，Obsidian 最大的优点是数据存储在本地，在如今的互联网时代，自身对数据拥有绝对自主权是最大的优势。当然使用 Obsidian 也需要考虑多端同步的问题，使用云存储服务的免费方案是很好的选择，例如 Dropbox 的免费 1 GB 的容量，对于纯文本笔记已经绰绰有余了。当然对于图片的需求，可以搭建免费（Github）的图床或收费的 OSS 服务（云服务厂商）。&#xA;使用 Obsidian 完成知识管理，形成第二大脑，把内容和思维在工具上外显，主要注意以下几点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;使用文件目录分类，这主要是保留我之前的记录习惯。&lt;/li&gt;&#xA;&lt;li&gt;所有的输入在 Obsidian 中进行，目的是将思维过程外显。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;内容积累&#34;&gt;内容积累&lt;/h1&gt;&#xA;&lt;p&gt;内容积累：Drafts。Drafts 是一个便捷的文本记录工具，文本格式支持普通文本和 Markdown，设备支持 Mac、iPhone、iPad，甚至还有 iWatch 应用。使用 iCloud 同步的体验非常好。另外 iWatch 的录音转文本的功能，可以在很多非通用场景下做文字记录。&#xA;使用 Drafts 主要是完成卡片笔记的第一步，材料的收集，在收集的过程中主要注意以下几点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;非摘录内容必须用自己的话转述，这样才能确保内容已理解。&lt;/li&gt;&#xA;&lt;li&gt;摘录的内容必须注明出处，这样才能方便后续知识管理的整理和引用。&lt;/li&gt;&#xA;&lt;li&gt;记录的内容必须打上 Tag，方便后续提取和归纳。&lt;/li&gt;&#xA;&lt;li&gt;每周定期回顾 Inbox 的内容，整理到 Obsidian 之中。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;日记&#34;&gt;日记&lt;/h1&gt;&#xA;&lt;p&gt;日常记录：Notes。Notes 是 Apple 原生的备忘录软件。其实日记有一款叫 iDaily 的软件很好，其还有插入定位和天气的功能，但这款软件已经从买断制变成了订阅制，订阅的费用不菲。对于我来说就没什么必要了，我用 Notes 搭配 iCloud 记录一些生活上的日记，能够上传图片即可。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Efficiency on 奥力手记</title>
+		<link>https://www.orechou.com/tags/efficiency/</link>
+		<description>Recent content in Efficiency on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 25 Jan 2023 22:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/tags/efficiency/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>【效率】关于记录的工具及流程</title>
+				<link>https://www.orechou.com/posts/2023/%E5%85%B3%E4%BA%8E%E8%AE%B0%E5%BD%95%E7%9A%84%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%B5%81%E7%A8%8B/</link>
+				<pubDate>Wed, 25 Jan 2023 22:00:00 +0000</pubDate>
+				<guid>https://www.orechou.com/posts/2023/%E5%85%B3%E4%BA%8E%E8%AE%B0%E5%BD%95%E7%9A%84%E5%B7%A5%E5%85%B7%E5%8F%8A%E6%B5%81%E7%A8%8B/</guid>
+				<description>&lt;p&gt;一直以来我对知识的整理记录主要以摘录为主，久而久之发现其检索和提取的十分不方便，发展到最后就是很难坚持。所以我也有看一些关于写作、知识管理、工具推荐的书籍和文章。启发最大的两本书是《卡片笔记写作法》和《写作这回事：创作生涯回忆录》，前者让我学习到一种知识的收集整理方法，后者让我找到一种坚持写作记录的信念。算是找到了一套比较符合我自己的工具和流程。现总结如下，因为自身是 Apple 生态的用户，所以工具的选择主要是考虑到跨设备，其次再考虑跨平台。&lt;/p&gt;&#xA;&lt;h1 id=&#34;知识管理&#34;&gt;知识管理&lt;/h1&gt;&#xA;&lt;p&gt;知识管理：Obsidian + Dropbox 。Obsidian 是一个基于文件的 Markdown 编辑器，特点是支持笔记的双向链接，其次能够使用很多三方插件对软件自身的功能进行补齐。相比于 Notion ，Obsidian 最大的优点是数据存储在本地，在如今的互联网时代，自身对数据拥有绝对自主权是最大的优势。当然使用 Obsidian 也需要考虑多端同步的问题，使用云存储服务的免费方案是很好的选择，例如 Dropbox 的免费 1 GB 的容量，对于纯文本笔记已经绰绰有余了。当然对于图片的需求，可以搭建免费（Github）的图床或收费的 OSS 服务（云服务厂商）。&#xA;使用 Obsidian 完成知识管理，形成第二大脑，把内容和思维在工具上外显，主要注意以下几点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;使用文件目录分类，这主要是保留我之前的记录习惯。&lt;/li&gt;&#xA;&lt;li&gt;所有的输入在 Obsidian 中进行，目的是将思维过程外显。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;内容积累&#34;&gt;内容积累&lt;/h1&gt;&#xA;&lt;p&gt;内容积累：Drafts。Drafts 是一个便捷的文本记录工具，文本格式支持普通文本和 Markdown，设备支持 Mac、iPhone、iPad，甚至还有 iWatch 应用。使用 iCloud 同步的体验非常好。另外 iWatch 的录音转文本的功能，可以在很多非通用场景下做文字记录。&#xA;使用 Drafts 主要是完成卡片笔记的第一步，材料的收集，在收集的过程中主要注意以下几点：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;非摘录内容必须用自己的话转述，这样才能确保内容已理解。&lt;/li&gt;&#xA;&lt;li&gt;摘录的内容必须注明出处，这样才能方便后续知识管理的整理和引用。&lt;/li&gt;&#xA;&lt;li&gt;记录的内容必须打上 Tag，方便后续提取和归纳。&lt;/li&gt;&#xA;&lt;li&gt;每周定期回顾 Inbox 的内容，整理到 Obsidian 之中。&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;日记&#34;&gt;日记&lt;/h1&gt;&#xA;&lt;p&gt;日常记录：Notes。Notes 是 Apple 原生的备忘录软件。其实日记有一款叫 iDaily 的软件很好，其还有插入定位和天气的功能，但这款软件已经从买断制变成了订阅制，订阅的费用不菲。对于我来说就没什么必要了，我用 Notes 搭配 iCloud 记录一些生活上的日记，能够上传图片即可。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

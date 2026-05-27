@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mockjs on 奥力手记</title>
-    <link>https://www.orechou.com/tags/mockjs/</link>
-    <description>Recent content in Mockjs on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 11 Sep 2023 20:50:00 +0000</lastBuildDate>
-    <atom:link href="https://www.orechou.com/tags/mockjs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>关于接口 mock 的技术实现</title>
-      <link>https://www.orechou.com/posts/2023/49-the-practise-mock-api/</link>
-      <pubDate>Mon, 11 Sep 2023 20:50:00 +0000</pubDate>
-      <guid>https://www.orechou.com/posts/2023/49-the-practise-mock-api/</guid>
-      <description>&lt;p&gt;最近在做接口 mock 的功能，用到了一些新的技术，主要有 OpenAPI 规范、JsonSchema 和 mockjs。这里简单的记录下技术方案，以及过程中曾踩到的坑。&lt;/p&gt;&#xA;&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;&#xA;&lt;p&gt;整个的原理比较简单，首先 OpenAPI 定义了一套接口规范，按照这个规范我们可以准确的描述一个接口，比如接口的方法类型、出入参格式和内容描述。这是 OpenAPI 规范中文版的&lt;a href=&#34;https://openapi.apifox.cn/&#34;&gt;文档地址&lt;/a&gt;。Apifox、Postman 等接口管理工具对接口的定义也是以这个规范进行存储的。我们可以通过这个&lt;a href=&#34;https://editor.swagger.io/&#34;&gt;地址&lt;/a&gt;很直观的观察一份 OpenAPI 规范的接口数据是什么样的。&lt;/p&gt;&#xA;&lt;p&gt;当我们拥有了接口定义之后，我们就知道了接口的返回体的结构，大部分的服务接口通常将数据以 JSON 的格式进行返回，而描述这个 JSON 格式的就是 JSON Schema。JSON Schema 是 JSON 数据的模式描述语言，用来定义 JSON 数据结构和格式约束。JSON Schema提供了一套验证 JSON 数据有效性的规则集。这是 JSON Schema 规范中文版的&lt;a href=&#34;https://json-schema.apifox.cn/&#34;&gt;文档地址&lt;/a&gt;。如果你仔细看的话，就会发现 OpenAPI 规范里面对 JSON 类型的请求体或返回体的就是用 JSON Schema 进行描述的。&lt;/p&gt;&#xA;&lt;p&gt;最后要做的事情，就是解析 JSON Schema 的定义，将其转换成 mockjs 的模板，让 mockjs 能够 mock 出对应的 JSON。当然我们 Java 微服务要使用 mockjs，需要使用到 ScriptEngine。&lt;/p&gt;&#xA;&lt;h1 id=&#34;踩坑&#34;&gt;踩坑&lt;/h1&gt;&#xA;&lt;h2 id=&#34;openapi-扩展字段的存储&#34;&gt;OpenAPI 扩展字段的存储&lt;/h2&gt;&#xA;&lt;p&gt;为了前端能够直接使用 mockjs 的预制变量，我们对接口定义增加了一个名为 mock 的属性，用以存储预制变量。后面联调的时候发现 mock 属性虽然能够转换到 OpenAPI 格式中，但是读取不出来。最后排查是因为 OpenAPI 的扩展字段需要增加 x- 前缀，且通过 OpenAPIV3Parser.java 解析出来的时候，结构会有变化，不会放在存储的层级结构下，而是放在 extensions 属性字段下面。&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Mockjs on 奥力手记</title>
+		<link>https://www.orechou.com/tags/mockjs/</link>
+		<description>Recent content in Mockjs on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 11 Sep 2023 20:50:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/tags/mockjs/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>关于接口 mock 的技术实现</title>
+				<link>https://www.orechou.com/posts/2023/49-the-practise-mock-api/</link>
+				<pubDate>Mon, 11 Sep 2023 20:50:00 +0000</pubDate>
+				<guid>https://www.orechou.com/posts/2023/49-the-practise-mock-api/</guid>
+				<description>&lt;p&gt;最近在做接口 mock 的功能，用到了一些新的技术，主要有 OpenAPI 规范、JsonSchema 和 mockjs。这里简单的记录下技术方案，以及过程中曾踩到的坑。&lt;/p&gt;&#xA;&lt;h1 id=&#34;原理&#34;&gt;原理&lt;/h1&gt;&#xA;&lt;p&gt;整个的原理比较简单，首先 OpenAPI 定义了一套接口规范，按照这个规范我们可以准确的描述一个接口，比如接口的方法类型、出入参格式和内容描述。这是 OpenAPI 规范中文版的&lt;a href=&#34;https://openapi.apifox.cn/&#34;&gt;文档地址&lt;/a&gt;。Apifox、Postman 等接口管理工具对接口的定义也是以这个规范进行存储的。我们可以通过这个&lt;a href=&#34;https://editor.swagger.io/&#34;&gt;地址&lt;/a&gt;很直观的观察一份 OpenAPI 规范的接口数据是什么样的。&lt;/p&gt;&#xA;&lt;p&gt;当我们拥有了接口定义之后，我们就知道了接口的返回体的结构，大部分的服务接口通常将数据以 JSON 的格式进行返回，而描述这个 JSON 格式的就是 JSON Schema。JSON Schema 是 JSON 数据的模式描述语言，用来定义 JSON 数据结构和格式约束。JSON Schema提供了一套验证 JSON 数据有效性的规则集。这是 JSON Schema 规范中文版的&lt;a href=&#34;https://json-schema.apifox.cn/&#34;&gt;文档地址&lt;/a&gt;。如果你仔细看的话，就会发现 OpenAPI 规范里面对 JSON 类型的请求体或返回体的就是用 JSON Schema 进行描述的。&lt;/p&gt;&#xA;&lt;p&gt;最后要做的事情，就是解析 JSON Schema 的定义，将其转换成 mockjs 的模板，让 mockjs 能够 mock 出对应的 JSON。当然我们 Java 微服务要使用 mockjs，需要使用到 ScriptEngine。&lt;/p&gt;&#xA;&lt;h1 id=&#34;踩坑&#34;&gt;踩坑&lt;/h1&gt;&#xA;&lt;h2 id=&#34;openapi-扩展字段的存储&#34;&gt;OpenAPI 扩展字段的存储&lt;/h2&gt;&#xA;&lt;p&gt;为了前端能够直接使用 mockjs 的预制变量，我们对接口定义增加了一个名为 mock 的属性，用以存储预制变量。后面联调的时候发现 mock 属性虽然能够转换到 OpenAPI 格式中，但是读取不出来。最后排查是因为 OpenAPI 的扩展字段需要增加 x- 前缀，且通过 OpenAPIV3Parser.java 解析出来的时候，结构会有变化，不会放在存储的层级结构下，而是放在 extensions 属性字段下面。&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

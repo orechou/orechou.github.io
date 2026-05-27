@@ -20,9 +20,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2023/use-chatgpt-program/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="【AI 赋能小日常】使用 ChatGPT 辅助编程">
-  <meta property="og:description" content="最近半导体和 AI 概念股狂涨，在二级市场没有搭上这趟车的我坐不住了。不敢追高的我只能写一写博客来缓解郁闷的心情。这篇文章是我作为程序员，介绍一下日常工作里，如何使用 ChatGPT 简化我的工作。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="【AI 赋能小日常】使用 ChatGPT 辅助编程">
+	<meta property="og:description" content="最近半导体和 AI 概念股狂涨，在二级市场没有搭上这趟车的我坐不住了。不敢追高的我只能写一写博客来缓解郁闷的心情。这篇文章是我作为程序员，介绍一下日常工作里，如何使用 ChatGPT 简化我的工作。
 分析需求 比如本周有一个需求：对含有文件下载 URL 链接的 Excel 文件进行处理，将每一行中的链接的文件下载下来后进行打包，打包后的文件名使用该行的某几个属性值命名。 举一个例子，比如 Excel 的文件如下
 表头1 表头2 表头3 表头4 A B https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf 需要将表头 3 和表头 4 的 pdf 下载下来，并打包成一个压缩包，压缩包以表头 1 和表头 2 命名，例如第一行就是 A_B.zip
 ChatGPT 的交互 回合 1 定义角色 首先给 ChatGPT 一个角色，Prompt 如下：
@@ -33,18 +33,18 @@ ChatGPT 会欣然答应，立即进入角色：
 我有一个需求：对含有文件 URL 下载链接的 Excel 文件进行处理，将每一行中的链接的文件下载下来后进行打包成 zip 文件，打包后的文件名使用该行的某几个属性值命名。注意这里每一行最终都是不同的 ZIP 文件。 我要你设计一个方法完成这个功能，方法的入参为 excel 的文件路径，下载链接所在的列索引列表，命名所需要指定的列索引列表，压缩包的存储路径（非必传，不传的话在执行路径下生成）。 你将使用 Python3 来实现这个需求功能。
 ChatGPT 会很快给出相关的代码及说明：
 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 import os import requests import pandas as pd from zipfile import ZipFile def process_excel(excel_path, link_columns, name_columns, zip_dir=None): df = pd.read_excel(excel_path) # Use current directory if zip_dir is not specified if zip_dir is None: zip_dir = os.getcwd() for index, row in df.iterrows(): # Create a directory for each row to store downloaded files row_dir = os.path.join(zip_dir, f&#34;row_{index}&#34;) os.makedirs(row_dir, exist_ok=True) # Download each file in link_columns for col in link_columns: url = row[col] filename = os.path.join(row_dir, url.split(&#34;/&#34;)[-1]) response = requests.get(url) with open(filename, &#39;wb&#39;) as f: f.write(response.content) # Create a zip file for each row zip_filename = &#34;_&#34;.join([str(row[col]) for col in name_columns]) &#43; &#34;.zip&#34; zip_path = os.path.join(zip_dir, zip_filename) with ZipFile(zip_path, &#39;w&#39;) as zipf: for foldername, subfolders, filenames in os.walk(row_dir): for filename in filenames: zipf.write(os.path.join(foldername, filename), arcname = filename) # Clean up downloaded files for filename in os.listdir(row_dir): os.remove(os.path.join(row_dir, filename)) os.rmdir(row_dir) 这是一个相对复杂的任务，以下是我设计的一个函数以完成此任务。在这个函数中，我使用了以下Python库：">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-06-14T18:30:00+00:00">
-    <meta property="article:modified_time" content="2023-06-14T18:30:00+00:00">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="ChatGPT">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2023-06-14T18:30:00+00:00">
+		<meta property="article:modified_time" content="2023-06-14T18:30:00+00:00">
+		<meta property="article:tag" content="AI">
+		<meta property="article:tag" content="ChatGPT">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="【AI 赋能小日常】使用 ChatGPT 辅助编程">
-  <meta name="twitter:description" content="最近半导体和 AI 概念股狂涨，在二级市场没有搭上这趟车的我坐不住了。不敢追高的我只能写一写博客来缓解郁闷的心情。这篇文章是我作为程序员，介绍一下日常工作里，如何使用 ChatGPT 简化我的工作。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="【AI 赋能小日常】使用 ChatGPT 辅助编程">
+	<meta name="twitter:description" content="最近半导体和 AI 概念股狂涨，在二级市场没有搭上这趟车的我坐不住了。不敢追高的我只能写一写博客来缓解郁闷的心情。这篇文章是我作为程序员，介绍一下日常工作里，如何使用 ChatGPT 简化我的工作。
 分析需求 比如本周有一个需求：对含有文件下载 URL 链接的 Excel 文件进行处理，将每一行中的链接的文件下载下来后进行打包，打包后的文件名使用该行的某几个属性值命名。 举一个例子，比如 Excel 的文件如下
 表头1 表头2 表头3 表头4 A B https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf 需要将表头 3 和表头 4 的 pdf 下载下来，并打包成一个压缩包，压缩包以表头 1 和表头 2 命名，例如第一行就是 A_B.zip
 ChatGPT 的交互 回合 1 定义角色 首先给 ChatGPT 一个角色，Prompt 如下：
@@ -220,22 +220,22 @@ ChatGPT 会很快给出相关的代码及说明：
 <p>比如本周有一个需求：对含有文件下载 URL 链接的 Excel 文件进行处理，将每一行中的链接的文件下载下来后进行打包，打包后的文件名使用该行的某几个属性值命名。
 举一个例子，比如 Excel 的文件如下</p>
 <table>
-  <thead>
-      <tr>
-          <th>表头1</th>
-          <th>表头2</th>
-          <th>表头3</th>
-          <th>表头4</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>A</td>
-          <td>B</td>
-          <td><a href="https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf">https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf</a></td>
-          <td><a href="https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf">https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf</a></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>表头1</th>
+					<th>表头2</th>
+					<th>表头3</th>
+					<th>表头4</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>A</td>
+					<td>B</td>
+					<td><a href="https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf">https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf</a></td>
+					<td><a href="https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf">https://www.apple.com.cn/privacy/docs/A_Day_in_the_Life_of_Your_Data.pdf</a></td>
+			</tr>
+	</tbody>
 </table>
 <p>需要将表头 3 和表头 4 的 pdf 下载下来，并打包成一个压缩包，压缩包以表头 1 和表头 2 命名，例如第一行就是 A_B.zip</p>
 <h2 id="chatgpt-的交互">ChatGPT 的交互</h2>

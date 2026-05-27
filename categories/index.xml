@@ -1,54 +1,59 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Categories on 奥力手记</title>
-    <link>https://www.orechou.com/categories/</link>
-    <description>Recent content in Categories on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Thu, 21 May 2026 16:00:00 +0800</lastBuildDate>
-    <atom:link href="https://www.orechou.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI</title>
-      <link>https://www.orechou.com/categories/ai/</link>
-      <pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/ai/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MacBook</title>
-      <link>https://www.orechou.com/categories/macbook/</link>
-      <pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/macbook/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Writing</title>
-      <link>https://www.orechou.com/categories/writing/</link>
-      <pubDate>Sat, 16 May 2026 14:30:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/writing/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Life</title>
-      <link>https://www.orechou.com/categories/life/</link>
-      <pubDate>Thu, 14 May 2026 22:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/life/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reading</title>
-      <link>https://www.orechou.com/categories/reading/</link>
-      <pubDate>Wed, 13 May 2026 18:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/reading/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MacOS</title>
-      <link>https://www.orechou.com/categories/macos/</link>
-      <pubDate>Tue, 24 Mar 2026 20:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/categories/macos/</guid>
-      <description></description>
-    </item>
-  </channel>
+	<channel>
+		<title>Categories on 奥力手记</title>
+		<link>https://www.orechou.com/categories/</link>
+		<description>Recent content in Categories on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 21 May 2026 16:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/categories/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI</title>
+				<link>https://www.orechou.com/categories/ai/</link>
+				<pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/ai/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>MacBook</title>
+				<link>https://www.orechou.com/categories/macbook/</link>
+				<pubDate>Thu, 21 May 2026 16:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/macbook/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Writing</title>
+				<link>https://www.orechou.com/categories/writing/</link>
+				<pubDate>Sat, 16 May 2026 14:30:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/writing/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Life</title>
+				<link>https://www.orechou.com/categories/life/</link>
+				<pubDate>Thu, 14 May 2026 22:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/life/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Reading</title>
+				<link>https://www.orechou.com/categories/reading/</link>
+				<pubDate>Wed, 13 May 2026 18:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/reading/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>MacOS</title>
+				<link>https://www.orechou.com/categories/macos/</link>
+				<pubDate>Tue, 24 Mar 2026 20:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/categories/macos/</guid>
+				<description></description>
+			</item>
+	</channel>
 </rss>

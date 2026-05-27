@@ -20,28 +20,28 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2023/bcrypt-%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="Bcrypt 加密算法详解">
-  <meta property="og:description" content="最近在回顾中台系统的用户权限设计，在用户密码落库这块使用了 Bcrypt 算法来保证安全性，这篇文章是对该算法的一个详细介绍。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="Bcrypt 加密算法详解">
+	<meta property="og:description" content="最近在回顾中台系统的用户权限设计，在用户密码落库这块使用了 Bcrypt 算法来保证安全性，这篇文章是对该算法的一个详细介绍。
 什么是 Bcrypt 加密算法 Bcrypt 是一种密码哈希函数，用于加密用户密码。它是一种强大且安全的算法，用于存储用户密码，并在用户登录时进行验证。 Bcrypt 算法使用了 Blowfish 加密算法，它在对用户密码进行加密时需要一个随机的盐值，这样就可以避免暴力破解。此外，Bcrypt 算法还具有慢哈希的特性，即在加密过程中使用的复杂度可以通过 cost 参数来控制，从而使用户的密码更加安全。
 加密的过程 生成 Salt 首先，Bcrypt 会生成一个随机的 salt，这个 salt 会被用于密码加密过程。
 对密码和 salt 进行加密 然后，密码和 salt 会被结合在一起，并使用密码哈希函数进行加密。
 增加复杂度 在加密的过程中，Bcrypt 会使用指定的 cost 参数进行加密，这个参数代表加密的次数。通过增加 cost 参数，可以使加密过程更加复杂，从而提高密码的安全性。
 生成密文 Bcrypt 加密后的密文是一个长度为 60~100 个字符的字符串。它包含了以下几部分信息：
 版本标识：Bcrypt 的密文开头一般以 “$2y$” 或 “$2a$” 开头，这代表了 Bcrypt 的版本信息。 cost 参数：密文的下一个字符是数字，代表了 Bcrypt 加密过程中使用的 cost 参数。 salt：接下来的 22 个字符代表了随机生成的 salt。使用 Base64 编码。 哈希值：最后的字符串是加密后的哈希值，代表了密码的密文形式。使用 Base 64 编码。 一个加密后的密文可能如下所示：&#34;$2a$10$S8U6dsEjvAUtf7XuUzK8.eDmI.xMh7OJj0s8Q7WuOvZDz9XBk1PM2&#34;。 与 SHA-256 算法的对比 Bcrypt 和 SHA-256 都是常用的哈希算法，但它们的安全性是有所不同的。Bcrypt 有如下的优点：">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-02-12T18:00:00+00:00">
-    <meta property="article:modified_time" content="2023-02-12T18:00:00+00:00">
-    <meta property="article:tag" content="Spring">
-    <meta property="article:tag" content="Java">
-    <meta property="article:tag" content="密码学">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2023-02-12T18:00:00+00:00">
+		<meta property="article:modified_time" content="2023-02-12T18:00:00+00:00">
+		<meta property="article:tag" content="Spring">
+		<meta property="article:tag" content="Java">
+		<meta property="article:tag" content="密码学">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Bcrypt 加密算法详解">
-  <meta name="twitter:description" content="最近在回顾中台系统的用户权限设计，在用户密码落库这块使用了 Bcrypt 算法来保证安全性，这篇文章是对该算法的一个详细介绍。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Bcrypt 加密算法详解">
+	<meta name="twitter:description" content="最近在回顾中台系统的用户权限设计，在用户密码落库这块使用了 Bcrypt 算法来保证安全性，这篇文章是对该算法的一个详细介绍。
 什么是 Bcrypt 加密算法 Bcrypt 是一种密码哈希函数，用于加密用户密码。它是一种强大且安全的算法，用于存储用户密码，并在用户登录时进行验证。 Bcrypt 算法使用了 Blowfish 加密算法，它在对用户密码进行加密时需要一个随机的盐值，这样就可以避免暴力破解。此外，Bcrypt 算法还具有慢哈希的特性，即在加密过程中使用的复杂度可以通过 cost 参数来控制，从而使用户的密码更加安全。
 加密的过程 生成 Salt 首先，Bcrypt 会生成一个随机的 salt，这个 salt 会被用于密码加密过程。
 对密码和 salt 进行加密 然后，密码和 salt 会被结合在一起，并使用密码哈希函数进行加密。

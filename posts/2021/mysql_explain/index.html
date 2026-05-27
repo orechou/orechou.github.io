@@ -20,26 +20,26 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2021/mysql_explain/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="【MySQL】Explain">
-  <meta property="og:description" content="MySQL Explain Explain 是 MySQL 自带的查询优化器。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="【MySQL】Explain">
+	<meta property="og:description" content="MySQL Explain Explain 是 MySQL 自带的查询优化器。
 使用 Explain &#43; SQL 可查询出执行的相关信息，主要包含以下 10 个属性： id, select_type, table, type, possible_key, key, key_len, ref, row, filtered, Extra
 数据库性能瓶颈，主要关注 CPU 和 IO。
 id 反映的是表的读取顺序，或者查询中 SELECT 的执行顺序。
 小表永远驱动大表，三种情况： （1）id 相同，执行顺序是由上至下的 （2）id 不同，如果是子查询，id 序号会递增，id 值越大优先级越高，越先被执行 （3）id 存在相同的，也存在不同的，所有组中，id 越大越先执行，如果 id 相同的，从上往下顺序执行
 select_type 反映的是 MySQL 理解的查询类型，有几下几种：
 SIMPLE：简单的 SELECT 查询，查询中不包含子查询或 UNION PRIMARY：查询中若包含任何复杂的字部分，最外层查询标记为 PRIMARY SUBQUERY：SELECT 或 WHERE 列表中的子查询 DERIVED：在 FROM 列表中包含的子查询，MySQL 会递归执行这些子查询，把结果放在临时表里 UNION：若第二个 SELECT 出现在 UNION 后，则被标记为 UNION，若 UNION 包含在 FROM 字句的子查询中，外层 SELECT 将被标记为 DERIVED UNION RESULT：UNION 后的结果集 table 反映的是数据从哪张表中读取出来。">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2021-08-06T17:00:00+00:00">
-    <meta property="article:modified_time" content="2021-08-06T17:00:00+00:00">
-    <meta property="article:tag" content="MySQL">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-08-06T17:00:00+00:00">
+		<meta property="article:modified_time" content="2021-08-06T17:00:00+00:00">
+		<meta property="article:tag" content="MySQL">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="【MySQL】Explain">
-  <meta name="twitter:description" content="MySQL Explain Explain 是 MySQL 自带的查询优化器。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="【MySQL】Explain">
+	<meta name="twitter:description" content="MySQL Explain Explain 是 MySQL 自带的查询优化器。
 使用 Explain &#43; SQL 可查询出执行的相关信息，主要包含以下 10 个属性： id, select_type, table, type, possible_key, key, key_len, ref, row, filtered, Extra
 数据库性能瓶颈，主要关注 CPU 和 IO。
 id 反映的是表的读取顺序，或者查询中 SELECT 的执行顺序。

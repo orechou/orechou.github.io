@@ -20,9 +20,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2026/07-how-to-build-a-self-host-blog/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="如何搭建一个存在于世界终结的博客">
-  <meta property="og:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="如何搭建一个存在于世界终结的博客">
+	<meta property="og:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
 而这篇文章就是介绍如何搭建一个这样的 self-host 博客。
 方案 构建方案涉及到 4 个技术：Hugo、Github Pages、GoDaddy 以及 Cloudflare。
 Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 HTML 网页。它是目前最快的静态网站生成器，建一个站只需要几秒。 GitHub Pages：负责托管。把生成的网页文件放到 GitHub 仓库里，GitHub 自动变成一个可以访问的网站。 GoDaddy：全球最大的互联网域名注册商和网络托管服务提供商。其实任何一家域名注册商都行，不同的提供商可能有不同的价格优惠，但流程大同小异。 Cloudflare：负责 DNS 解析和加速。买了域名之后，需要告诉全世界这个域名指向哪里，Cloudflare 做的就是这件事，同时还能给网站加 CDN 加速和 HTTPS。 搭建本地站点 安装 Hugo macOS 用户 如果你是苹果电脑，那么安装非常简单，打开终端 app，直接用 brew 安装即可:
@@ -31,17 +31,17 @@ Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 
 非 macOS 用户 如果是非苹果电脑用户，直接去官网上下载对应的安装包手动安装。下载链接 其它平台我没操作过，大家就自行浏览官方的文档吧。
 创建博客站点 打开终端 app，进入你想放博客的目录，然后输入命令：
 1 2 3 hugo new site &lt;your-site-name&gt; cd &lt;your-site-name&gt; git init 这三条命令分别做了：创建一个新的 Hugo 站点、进入站点目录、初始化 Git 仓库。">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-05-16T14:30:00+08:00">
-    <meta property="article:modified_time" content="2026-05-16T14:30:00+08:00">
-    <meta property="article:tag" content="Writing">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-05-16T14:30:00+08:00">
+		<meta property="article:modified_time" content="2026-05-16T14:30:00+08:00">
+		<meta property="article:tag" content="Writing">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="如何搭建一个存在于世界终结的博客">
-  <meta name="twitter:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="如何搭建一个存在于世界终结的博客">
+	<meta name="twitter:description" content="我的博客 orechou.com，是我的数字自留地，上面内容的发表、监管不依赖于任何平台，只依赖于现在科技世界的基础设施的存在。也即是说它将存在于这个世界，直至人类文明的消失，如果我不会主动删除它的话。hhh。
 而这篇文章就是介绍如何搭建一个这样的 self-host 博客。
 方案 构建方案涉及到 4 个技术：Hugo、Github Pages、GoDaddy 以及 Cloudflare。
 Hugo：负责生成网页。用 Markdown 写文章，Hugo 把它变成漂亮的 HTML 网页。它是目前最快的静态网站生成器，建一个站只需要几秒。 GitHub Pages：负责托管。把生成的网页文件放到 GitHub 仓库里，GitHub 自动变成一个可以访问的网站。 GoDaddy：全球最大的互联网域名注册商和网络托管服务提供商。其实任何一家域名注册商都行，不同的提供商可能有不同的价格优惠，但流程大同小异。 Cloudflare：负责 DNS 解析和加速。买了域名之后，需要告诉全世界这个域名指向哪里，Cloudflare 做的就是这件事，同时还能给网站加 CDN 加速和 HTTPS。 搭建本地站点 安装 Hugo macOS 用户 如果你是苹果电脑，那么安装非常简单，打开终端 app，直接用 brew 安装即可:

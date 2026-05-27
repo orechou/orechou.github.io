@@ -20,25 +20,25 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2021/mysql_%E6%85%A2-sql-%E5%88%86%E6%9E%90/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="【MySQL】慢 SQL 分析">
-  <meta property="og:description" content="慢查询日志分析 设置慢查询 可以通过修改命令设置：
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="【MySQL】慢 SQL 分析">
+	<meta property="og:description" content="慢查询日志分析 设置慢查询 可以通过修改命令设置：
 设置开启：SET GLOBAL slow_query_log = 1; #默认未开启，开启会影响性能，mysql重启会失效 查看是否开启：SHOW VARIABLES LIKE ‘%slow_query_log%’; 设置阈值：SET GLOBAL long_query_time=3; 查看阈值：SHOW 【GLOBAL】 VARIABLES LIKE ’long_query_time%’; #重连或新开一个会话才能看到修改值 也可以通过修改配置文件设置，配置文件 my.conf 会一直生效，在[mysqld]下配置：
 [mysqld] slow_query_log = 1;　#开启 slow_query_log_file=/var/lib/mysql/atguigu-slow.log　#慢日志地址，缺省文件名host_name-slow.log long_query_time=3;　#运行时间超过该值的SQL会被记录，默认值&gt;10 log_output=FILE　获取慢 SQL 信息 查看慢查询日志记录数：SHOW GLOBAL STATUS LIKE ‘%Slow_queries%’;
 模拟语句：SELECT SLEEP(4);
 查看慢查询日志：
 $ cat /usr/local/var/mysql/OreChoudeMacBook-Pro-slow.log /usr/local/Cellar/mysql/8.0.25_1/bin/mysqld, Version: 8.0.25 (Homebrew). started with: Tcp port: 3306 Unix socket: /tmp/mysql.sock Time Id Command Argument # Time: 2021-08-10T06:29:53.513752Z # User@Host: root[root] @ localhost [127.0.0.1] Id: 11 # Query_time: 4.003605 Lock_time: 0.000000 Rows_sent: 1 Rows_examined: 1 use test; SET timestamp=1628576989; select sleep(4); 使用 mysqldumpslow 分析 使用样例：">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2021-08-10T12:30:00+00:00">
-    <meta property="article:modified_time" content="2021-08-10T12:30:00+00:00">
-    <meta property="article:tag" content="MySQL">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-08-10T12:30:00+00:00">
+		<meta property="article:modified_time" content="2021-08-10T12:30:00+00:00">
+		<meta property="article:tag" content="MySQL">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="【MySQL】慢 SQL 分析">
-  <meta name="twitter:description" content="慢查询日志分析 设置慢查询 可以通过修改命令设置：
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="【MySQL】慢 SQL 分析">
+	<meta name="twitter:description" content="慢查询日志分析 设置慢查询 可以通过修改命令设置：
 设置开启：SET GLOBAL slow_query_log = 1; #默认未开启，开启会影响性能，mysql重启会失效 查看是否开启：SHOW VARIABLES LIKE ‘%slow_query_log%’; 设置阈值：SET GLOBAL long_query_time=3; 查看阈值：SHOW 【GLOBAL】 VARIABLES LIKE ’long_query_time%’; #重连或新开一个会话才能看到修改值 也可以通过修改配置文件设置，配置文件 my.conf 会一直生效，在[mysqld]下配置：
 [mysqld] slow_query_log = 1;　#开启 slow_query_log_file=/var/lib/mysql/atguigu-slow.log　#慢日志地址，缺省文件名host_name-slow.log long_query_time=3;　#运行时间超过该值的SQL会被记录，默认值&gt;10 log_output=FILE　获取慢 SQL 信息 查看慢查询日志记录数：SHOW GLOBAL STATUS LIKE ‘%Slow_queries%’;
 模拟语句：SELECT SLEEP(4);

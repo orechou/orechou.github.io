@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>進撃の巨人 on 奥力手记</title>
-    <link>https://www.orechou.com/tags/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA/</link>
-    <description>Recent content in 進撃の巨人 on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 07 Nov 2023 20:50:00 +0000</lastBuildDate>
-    <atom:link href="https://www.orechou.com/tags/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>写在巨人完结之后</title>
-      <link>https://www.orechou.com/posts/2023/50-attack-on-titan/</link>
-      <pubDate>Tue, 07 Nov 2023 20:50:00 +0000</pubDate>
-      <guid>https://www.orechou.com/posts/2023/50-attack-on-titan/</guid>
-      <description>&lt;p&gt;我是听了&lt;a href=&#34;https://open.spotify.com/album/29zQboLwKEpVNb7s2yktqd&#34;&gt;《ltterasshai》&lt;/a&gt;这首歌之后才去看的最终季后篇。&#xA;我很难过，难过的是，我终于也走到了对时间感知很弱，不断目睹青春、年少逝去的年龄。&lt;/p&gt;&#xA;&lt;p&gt;巨人这部漫画给了我很好的回忆。我不认为他的结尾很差，也不认为作品本身有立场、价值观的问题。战争、人与人之间的不信任、不理解，始终贯穿了人类历史，至今也是这样。你也不能指望一个十几岁的中二热血青年，就能完美解决人类战争问题，哪怕是他能够窥探过去与未来的记忆。巨人中人们，都在与命运战斗，但又真实地，无奈、牺牲（无畏或无意义）。&lt;/p&gt;&#xA;&lt;p&gt;我想回到 10 年前的那时，兴奋地说着，&lt;/p&gt;&#xA;&lt;p&gt;戦い！&#xA;戦い！！&#xA;戦い！！！&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>進撃の巨人 on 奥力手记</title>
+		<link>https://www.orechou.com/tags/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA/</link>
+		<description>Recent content in 進撃の巨人 on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 07 Nov 2023 20:50:00 +0000</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/tags/%E9%80%B2%E6%92%83%E3%81%AE%E5%B7%A8%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>写在巨人完结之后</title>
+				<link>https://www.orechou.com/posts/2023/50-attack-on-titan/</link>
+				<pubDate>Tue, 07 Nov 2023 20:50:00 +0000</pubDate>
+				<guid>https://www.orechou.com/posts/2023/50-attack-on-titan/</guid>
+				<description>&lt;p&gt;我是听了&lt;a href=&#34;https://open.spotify.com/album/29zQboLwKEpVNb7s2yktqd&#34;&gt;《ltterasshai》&lt;/a&gt;这首歌之后才去看的最终季后篇。&#xA;我很难过，难过的是，我终于也走到了对时间感知很弱，不断目睹青春、年少逝去的年龄。&lt;/p&gt;&#xA;&lt;p&gt;巨人这部漫画给了我很好的回忆。我不认为他的结尾很差，也不认为作品本身有立场、价值观的问题。战争、人与人之间的不信任、不理解，始终贯穿了人类历史，至今也是这样。你也不能指望一个十几岁的中二热血青年，就能完美解决人类战争问题，哪怕是他能够窥探过去与未来的记忆。巨人中人们，都在与命运战斗，但又真实地，无奈、牺牲（无畏或无意义）。&lt;/p&gt;&#xA;&lt;p&gt;我想回到 10 年前的那时，兴奋地说着，&lt;/p&gt;&#xA;&lt;p&gt;戦い！&#xA;戦い！！&#xA;戦い！！！&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -20,9 +20,9 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/">
-  <meta property="og:site_name" content="奥力手记">
-  <meta property="og:title" content="无限 token？试试在 MacBook 上使用 Ollama">
-  <meta property="og:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
+	<meta property="og:site_name" content="奥力手记">
+	<meta property="og:title" content="无限 token？试试在 MacBook 上使用 Ollama">
+	<meta property="og:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
 前景介绍 电脑配置是 M2 max，64GB 版本。后续文中的一切效果均建立在该配置的基础上。
 我们使用的技术是 Ollama，它是一个&#34;本地模型运行器&#34;。它帮你把开源大模型下载到你的电脑里，并运行起来，不需要任何网络请求。
 Ollama 的安装 直接使用 brew 安装，指令：
@@ -30,18 +30,18 @@ Ollama 的安装 直接使用 brew 安装，指令：
 1 ollama pull gemma4@latest 执行后就等待模型的下载，模型会下载到 ~/.ollama/models 目录下。
 gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运行模型。如果想要看 token 的生成速度，可加上 --verbose 参数：
 1 ollama run gemma4@latest --verbose 如下截图我提了一个问题，小模型的输出速度还是挺快的： prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是&#34;读&#34;的速度 eval rate: 55.97 tokens/s — 这是生成回答的速度，就是&#34;写&#34;的速度 主观测试效果 对于模型的使用感受，很大程度上是主观的。模型吐 token 的速度快不快，输出的内容与你的预期差距大不大。如果速度快、内容和预期匹配，我们往往就会觉得模型不错，很好用。">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2026-05-21T16:00:00+08:00">
-    <meta property="article:modified_time" content="2026-05-21T16:00:00+08:00">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="Ollama">
+	<meta property="og:locale" content="en_us">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-05-21T16:00:00+08:00">
+		<meta property="article:modified_time" content="2026-05-21T16:00:00+08:00">
+		<meta property="article:tag" content="AI">
+		<meta property="article:tag" content="Ollama">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="无限 token？试试在 MacBook 上使用 Ollama">
-  <meta name="twitter:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="无限 token？试试在 MacBook 上使用 Ollama">
+	<meta name="twitter:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
 前景介绍 电脑配置是 M2 max，64GB 版本。后续文中的一切效果均建立在该配置的基础上。
 我们使用的技术是 Ollama，它是一个&#34;本地模型运行器&#34;。它帮你把开源大模型下载到你的电脑里，并运行起来，不需要任何网络请求。
 Ollama 的安装 直接使用 brew 安装，指令：

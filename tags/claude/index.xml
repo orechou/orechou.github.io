@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Claude on 奥力手记</title>
-    <link>https://www.orechou.com/tags/claude/</link>
-    <description>Recent content in Claude on 奥力手记</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 27 Apr 2026 20:00:00 +0800</lastBuildDate>
-    <atom:link href="https://www.orechou.com/tags/claude/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI 使用指南：如何用上最强的模型服务</title>
-      <link>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</link>
-      <pubDate>Mon, 27 Apr 2026 20:00:00 +0800</pubDate>
-      <guid>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</guid>
-      <description>&lt;p&gt;Anthropic 家的 Claude 和 OpenAI 家的 ChatGPT 是目前最强的两个 AI 模型，但国内用户想用上它们的付费版，门槛不低——不支持国内支付、虚拟信用卡容易封号、各种渠道鱼龙混杂。&#xA;这篇文章把从注册到订阅的完整流程讲清楚，苹果用户有一条相对最稳的路。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一先注册账号&#34;&gt;一、先注册账号&lt;/h2&gt;&#xA;&lt;h3 id=&#34;claude&#34;&gt;Claude&lt;/h3&gt;&#xA;&lt;p&gt;去 claude.ai 用 Gmail 注册，流程最标准。&lt;/p&gt;&#xA;&lt;p&gt;几个要注意的点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;注册前用美国 IP，网络环境稳定，别频繁切换出口，新账号容易触发风控&lt;/li&gt;&#xA;&lt;li&gt;用老 Gmail，别用新注册的邮箱&lt;/li&gt;&#xA;&lt;li&gt;账号一人一号，别合租别共用&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;chatgpt&#34;&gt;ChatGPT&lt;/h3&gt;&#xA;&lt;p&gt;去 chatgpt.com 注册，同样建议用 Gmail。手机号验证那步，如果收不到验证码，可以用接码平台，但建议优先用自己的海外手机号，稳定很多。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二订阅方案一览&#34;&gt;二、订阅方案一览&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Claude 分三档：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free：$0，基础对话，不含 Claude Code。&lt;/li&gt;&#xA;&lt;li&gt;Pro：$20/月，解锁 Claude Code，入门首选。适合普通用户，提供比免费版高出数倍的用量，通常每5小时可发送10-40个提示。&lt;/li&gt;&#xA;&lt;li&gt;Max：$100 或 $200/月，分别 5x 和 20x 用量，适合重度用户。专为对Claude依赖度极高的专业人士或深度用户设计。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;ChatGPT 分三档：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free：$0，基础对话，也可使用 Codex。&lt;/li&gt;&#xA;&lt;li&gt;Plus：$20/月，适合普通深度用户。更高的 Codex 使用量，更复杂、更精准的图像生成。&lt;/li&gt;&#xA;&lt;li&gt;Pro：$100/月，适合重度用户。5 倍或 20 倍的使用配额。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;三最稳的付费方式苹果内购&#34;&gt;三、最稳的付费方式：苹果内购&lt;/h2&gt;&#xA;&lt;p&gt;国内信用卡和 PayPal 都不好使，虚拟信用卡尤其是币圈渠道充值的秒封。最稳的方案是通过美区 App Store 内购——购买苹果礼品卡，充值到美区 Apple ID，然后在 App 里订阅。这条链路 Apple 自己背书，风险最低。&lt;/p&gt;&#xA;&lt;h3 id=&#34;第-1-步准备美区-apple-id&#34;&gt;第 1 步：准备美区 Apple ID&lt;/h3&gt;&#xA;&lt;p&gt;如果你还没有美区 Apple ID，按这个流程注册：&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Claude on 奥力手记</title>
+		<link>https://www.orechou.com/tags/claude/</link>
+		<description>Recent content in Claude on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 27 Apr 2026 20:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/tags/claude/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI 使用指南：如何用上最强的模型服务</title>
+				<link>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</link>
+				<pubDate>Mon, 27 Apr 2026 20:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/</guid>
+				<description>&lt;p&gt;Anthropic 家的 Claude 和 OpenAI 家的 ChatGPT 是目前最强的两个 AI 模型，但国内用户想用上它们的付费版，门槛不低——不支持国内支付、虚拟信用卡容易封号、各种渠道鱼龙混杂。&#xA;这篇文章把从注册到订阅的完整流程讲清楚，苹果用户有一条相对最稳的路。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;一先注册账号&#34;&gt;一、先注册账号&lt;/h2&gt;&#xA;&lt;h3 id=&#34;claude&#34;&gt;Claude&lt;/h3&gt;&#xA;&lt;p&gt;去 claude.ai 用 Gmail 注册，流程最标准。&lt;/p&gt;&#xA;&lt;p&gt;几个要注意的点：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;注册前用美国 IP，网络环境稳定，别频繁切换出口，新账号容易触发风控&lt;/li&gt;&#xA;&lt;li&gt;用老 Gmail，别用新注册的邮箱&lt;/li&gt;&#xA;&lt;li&gt;账号一人一号，别合租别共用&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;chatgpt&#34;&gt;ChatGPT&lt;/h3&gt;&#xA;&lt;p&gt;去 chatgpt.com 注册，同样建议用 Gmail。手机号验证那步，如果收不到验证码，可以用接码平台，但建议优先用自己的海外手机号，稳定很多。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;二订阅方案一览&#34;&gt;二、订阅方案一览&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Claude 分三档：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free：$0，基础对话，不含 Claude Code。&lt;/li&gt;&#xA;&lt;li&gt;Pro：$20/月，解锁 Claude Code，入门首选。适合普通用户，提供比免费版高出数倍的用量，通常每5小时可发送10-40个提示。&lt;/li&gt;&#xA;&lt;li&gt;Max：$100 或 $200/月，分别 5x 和 20x 用量，适合重度用户。专为对Claude依赖度极高的专业人士或深度用户设计。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;ChatGPT 分三档：&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Free：$0，基础对话，也可使用 Codex。&lt;/li&gt;&#xA;&lt;li&gt;Plus：$20/月，适合普通深度用户。更高的 Codex 使用量，更复杂、更精准的图像生成。&lt;/li&gt;&#xA;&lt;li&gt;Pro：$100/月，适合重度用户。5 倍或 20 倍的使用配额。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;三最稳的付费方式苹果内购&#34;&gt;三、最稳的付费方式：苹果内购&lt;/h2&gt;&#xA;&lt;p&gt;国内信用卡和 PayPal 都不好使，虚拟信用卡尤其是币圈渠道充值的秒封。最稳的方案是通过美区 App Store 内购——购买苹果礼品卡，充值到美区 Apple ID，然后在 App 里订阅。这条链路 Apple 自己背书，风险最低。&lt;/p&gt;&#xA;&lt;h3 id=&#34;第-1-步准备美区-apple-id&#34;&gt;第 1 步：准备美区 Apple ID&lt;/h3&gt;&#xA;&lt;p&gt;如果你还没有美区 Apple ID，按这个流程注册：&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>
