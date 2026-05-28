@@ -14,22 +14,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>奥力手记</title>
-  <link rel = 'canonical' href = 'https://www.orechou.com/tags/ai/'>
+  <link rel = 'canonical' href = 'https://www.orechou.com/neodb/'>
   <meta name="description" content="所有的文字，均致十年后的自己.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/tags/ai/">
+  <meta property="og:url" content="https://www.orechou.com/neodb/">
 	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="AI">
-	<meta property="og:description" content="所有的文字，均致十年后的自己.">
+	<meta property="og:title" content="Library">
+	<meta property="og:description" content="My reading, watching and listening log">
 	<meta property="og:locale" content="en_us">
 	<meta property="og:type" content="website">
 
   
 	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="AI">
-	<meta name="twitter:description" content="所有的文字，均致十年后的自己.">
+	<meta name="twitter:title" content="Library">
+	<meta name="twitter:description" content="My reading, watching and listening log">
 
   
   
@@ -52,7 +52,7 @@
 
   
   
-    <link href="https://www.orechou.com/tags/ai/index.xml" rel="alternate" type="application/rss+xml" title="奥力手记" />
+    <link href="https://www.orechou.com/neodb/index.xml" rel="alternate" type="application/rss+xml" title="奥力手记" />
   
   
   
@@ -132,84 +132,51 @@
 
 
     
-<div id="archive">
-  <ul class="post-list">
-
-  
-  
-
-  
-    
-    
-    
-    <h2>2026</h2>
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2026-05-21 16:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-05-21</time>
-      </div>
-      <span>    
-        <a class="" href="https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/"> 无限 token？试试在 MacBook 上使用 Ollama </a>
-      </span>
-    </li>
-    
-    
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2026-04-27 20:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-04-27</time>
-      </div>
-      <span>    
-        <a class="" href="https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/"> AI 使用指南：如何用上最强的模型服务 </a>
-      </span>
-    </li>
-    
-    
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2026-03-14 22:00:00 &#43;0000 UTC" itemprop="datePublished">2026-03-14</time>
-      </div>
-      <span>    
-        <a class="" href="https://www.orechou.com/posts/2026/02-why-claude-code-top-one/"> 8个月从零到第一！Claude Code为什么能颠覆AI编程界？ </a>
-      </span>
-    </li>
-    
-    
-    
-    
-    <h2>2023</h2>
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="2023-06-14 18:30:00 &#43;0000 UTC" itemprop="datePublished">2023-06-14</time>
-      </div>
-      <span>    
-        <a class="" href="https://www.orechou.com/posts/2023/use-chatgpt-program/"> 【AI 赋能小日常】使用 ChatGPT 辅助编程 </a>
-      </span>
-    </li>
-    
-    
-    
-    
-    <h2>0001</h2>
-    
-    <li class="post-item">
-      <div class="meta">
-        <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
-      </div>
-      <span>    
-        <a class="" href="https://www.orechou.com/books/2026/the-worlds-i-see-reading/"> 我看见的世界 </a>
-      </span>
-    </li>
-    
-  </ul>
-  
-    
 
 
-  
+
+<script>window.neodbConfig = {"apiUrl":"https://neodb-proxy.orechou.workers.dev","labels":{"error":"Failed to load. Please try again later.","filterAll":"All","filterBook":"Books","filterGame":"Games","filterMovie":"Movies","filterMusic":"Music","filterTV":"TV","loadMore":"Load More","loading":"Loading...","myRating":"My Rating","noResults":"No records found","rating":"Rating","typeComplete":"Completed","typeProgress":"In Progress","typeWishlist":"Wishlist","userComment":"Comment"}};
+if (typeof window.initNeoDB === 'function') {
+  window.initNeoDB();
+} else {
+  var s = document.createElement('script');
+  s.src = "/js/neodb.js";
+  s.onload = function() { window.initNeoDB(); };
+  document.body.appendChild(s);
+}
+</script>
+
+<div id="neodb">
+  <div class="neodb-header">
+    <h1>Library</h1>
+    <p class="neodb-subtitle">My reading, watching and listening log</p>
+  </div>
+
+  <div class="neodb-filters">
+    <div class="neodb-filter-group neodb-category-filter"></div>
+    <div class="neodb-filter-group neodb-type-filter"></div>
+  </div>
+
+  <div class="neodb-grid"></div>
+
+  <div class="neodb-status">
+    <div class="neodb-loader" hidden>
+      <span class="loader-spinner"></span>
+      <span class="loader-text"></span>
+    </div>
+    <button class="neodb-load-more" hidden></button>
+    <p class="neodb-error" hidden></p>
+    <p class="neodb-no-results" hidden></p>
+  </div>
 </div>
+
+<noscript>
+  <div class="neodb-noscript">
+    <p>No records found</p>
+  </div>
+</noscript>
+
+
 
 
     <footer id="footer">
