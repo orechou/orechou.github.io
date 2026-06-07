@@ -251,40 +251,5 @@
 				<guid>https://www.orechou.com/tags/swiftui/</guid>
 				<description></description>
 			</item>
-			<item>
-				<title>Psychology</title>
-				<link>https://www.orechou.com/tags/psychology/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://www.orechou.com/tags/psychology/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Self-Help</title>
-				<link>https://www.orechou.com/tags/self-help/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://www.orechou.com/tags/self-help/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Stock</title>
-				<link>https://www.orechou.com/tags/stock/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://www.orechou.com/tags/stock/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Work</title>
-				<link>https://www.orechou.com/tags/work/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://www.orechou.com/tags/work/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>传记</title>
-				<link>https://www.orechou.com/tags/%E4%BC%A0%E8%AE%B0/</link>
-				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-				<guid>https://www.orechou.com/tags/%E4%BC%A0%E8%AE%B0/</guid>
-				<description></description>
-			</item>
 	</channel>
 </rss>
