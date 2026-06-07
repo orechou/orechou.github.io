@@ -55,5 +55,19 @@
 				<guid>https://www.orechou.com/categories/macos/</guid>
 				<description></description>
 			</item>
+			<item>
+				<title>Tech</title>
+				<link>https://www.orechou.com/categories/tech/</link>
+				<pubDate>Mon, 11 Sep 2023 20:50:00 +0000</pubDate>
+				<guid>https://www.orechou.com/categories/tech/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Investment</title>
+				<link>https://www.orechou.com/categories/investment/</link>
+				<pubDate>Sun, 16 Apr 2023 23:30:00 +0000</pubDate>
+				<guid>https://www.orechou.com/categories/investment/</guid>
+				<description></description>
+			</item>
 	</channel>
 </rss>
