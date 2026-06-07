@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Mon, 01 Jun 2026 19:00:00 +0800</lastBuildDate>
+			<lastBuildDate>Sun, 07 Jun 2026 00:00:00 +0000</lastBuildDate>
 		
 			<atom:link href="https://www.orechou.com/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>《太阳照常升起》的故事</title>
+				<link>https://www.orechou.com/diary/2026/06-07-the-sun-also-rises/</link>
+				<pubDate>Sun, 07 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>https://www.orechou.com/diary/2026/06-07-the-sun-also-rises/</guid>
+				<description>&lt;p&gt;很早之前看过姜文《太阳照常升起》这部电影，但当时完全不理解电影所要表达的意义，几个跳脱的故事更是不明其意。只觉得久石让的《The Sun Also Rises》非常的好听。&lt;/p&gt;&#xA;&lt;p&gt;直到昨晚看陈冲的《猫鱼》里面提到的参与电影制作中的故事，我才了解到电影中几个故事之间的关联：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;影片的时空是自由和不连贯的，前三个故事发生在一九七六年，各有一个不期而遇的死亡：1.疯妈（周韵）消失了，她的衣服跟个活人一样顺河流漂向尽头；2.梁老师上吊了，蓝天下他双手插着裤兜，仿佛在微笑；3.疯妈的儿子村长被老唐用猎枪击毙了，村长似乎觉得值，因他睡了唐妻（孔维）。第四个故事则是这些人物十八年前对生命的狂欢，对未来的憧憬。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;以及故事的含义：&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;坐在影院里，我被姜文惊人的才华、勇气和野心所震撼——他企图用梦的逻辑，来叙述两代人在“大跃进”和“文革”时代的故事。人做梦时是最本质、最忠诚的自己；在梦里，我们的阴影最黑暗，创造力最狂野；在梦里，我们建筑和拆毁一个又一个的世界，无须对任何人解释；冥冥之中，一切魔幻、荒诞、意味深长。&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+			</item>
 			<item>
 				<title>如何快速搭建你的 Agent 团队，体验当老板的感觉</title>
 				<link>https://www.orechou.com/posts/2026/09-my-ai-agent-team/</link>

@@ -3,6 +3,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.orechou.com/diary/2026/06-07-the-sun-also-rises/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/diary/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.orechou.com/</loc>
+    <lastmod>2026-06-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.orechou.com/categories/ai/</loc>
     <lastmod>2026-06-01T19:00:00+08:00</lastmod>
   </url><url>
@@ -18,9 +27,6 @@
     <loc>https://www.orechou.com/tags/</loc>
     <lastmod>2026-06-01T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://www.orechou.com/</loc>
-    <lastmod>2026-06-01T19:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://www.orechou.com/posts/2026/09-my-ai-agent-team/</loc>
     <lastmod>2026-06-01T19:00:00+08:00</lastmod>
   </url><url>
@@ -32,9 +38,6 @@
   </url><url>
     <loc>https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/</loc>
     <lastmod>2026-05-21T16:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://www.orechou.com/diary/</loc>
-    <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.orechou.com/diary/2026/05-17-naturo/</loc>
     <lastmod>2026-05-17T00:00:00+00:00</lastmod>
