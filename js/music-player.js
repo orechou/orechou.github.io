@@ -105,17 +105,29 @@
     labelEl = btn.querySelector('.music-player-vinyl-label');
   }
 
+  var saveInterval = null;
+  function startSaveInterval() {
+    if (saveInterval) return;
+    saveInterval = setInterval(saveState, 5000);
+  }
+  function stopSaveInterval() {
+    if (saveInterval) {
+      clearInterval(saveInterval);
+      saveInterval = null;
+    }
+  }
+
   function bindAudioEvents() {
-    audio.addEventListener('play', updatePlayingState);
+    audio.addEventListener('play', function () { updatePlayingState(); startSaveInterval(); });
     audio.addEventListener('pause', function () {
       updatePlayingState();
+      stopSaveInterval();
       saveState();
     });
     audio.addEventListener('ended', function () {
       loadSong(currentIndex + 1);
       audio.play().catch(function () {});
     });
-    setInterval(saveState, 5000);
     window.addEventListener('beforeunload', saveState);
   }
 

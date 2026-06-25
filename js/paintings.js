@@ -1,4 +1,9 @@
-(function () {
+/**
+ * Paintings masonry + modal. Exposed as window.initPaintings; the template
+ * owns the call so that SPA re-init runs it after each navigation without
+ * leaking event listeners.
+ */
+window.initPaintings = function () {
   var container = document.getElementById('paintings');
   if (!container) return;
 
@@ -6,6 +11,10 @@
   var loader = container.querySelector('.paintings-loader');
   var filterBar = container.querySelector('.paintings-filter');
   var modal = document.getElementById('paintingModal');
+
+  // If we've already bound listeners to these DOM nodes, skip re-init.
+  if (masonry && masonry.dataset.paintingsBound === '1') return;
+  if (masonry) masonry.dataset.paintingsBound = '1';
 
   var paintingsData;
   var currentIndex = 0;
@@ -49,25 +58,42 @@
     card.setAttribute('data-index', index);
     card.setAttribute('data-tags', (item.tags || []).join(','));
 
-    var html = '<div class="painting-card-image">';
+    var cardImage = document.createElement('div');
+    cardImage.className = 'painting-card-image';
     if (item.image) {
-      html += '<img src="' + item.image + '" alt="' + item.title + '" loading="lazy" decoding="async">';
+      var img = document.createElement('img');
+      img.src = item.image;
+      img.alt = item.title || '';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      cardImage.appendChild(img);
     } else {
-      html += '<div class="painting-placeholder">🎨</div>';
+      var placeholder = document.createElement('div');
+      placeholder.className = 'painting-placeholder';
+      placeholder.textContent = '🎨';
+      cardImage.appendChild(placeholder);
     }
-    html += '</div>';
-    html += '<div class="painting-card-overlay">';
-    html += '<h3 class="painting-card-title">' + item.title + '</h3>';
-    if (item.tags && item.tags.length) {
-      html += '<div class="painting-card-tags">';
-      item.tags.slice(0, 3).forEach(function (t) {
-        html += '<span class="painting-tag">' + t + '</span>';
-      });
-      html += '</div>';
-    }
-    html += '</div>';
+    card.appendChild(cardImage);
 
-    card.innerHTML = html;
+    var overlay = document.createElement('div');
+    overlay.className = 'painting-card-overlay';
+    var title = document.createElement('h3');
+    title.className = 'painting-card-title';
+    title.textContent = item.title || '';
+    overlay.appendChild(title);
+    if (item.tags && item.tags.length) {
+      var tags = document.createElement('div');
+      tags.className = 'painting-card-tags';
+      item.tags.slice(0, 3).forEach(function (t) {
+        var tag = document.createElement('span');
+        tag.className = 'painting-tag';
+        tag.textContent = t;
+        tags.appendChild(tag);
+      });
+      overlay.appendChild(tags);
+    }
+    card.appendChild(overlay);
+
     return card;
   }
 
@@ -120,9 +146,7 @@
 
     if (!isAutoFill) return;
 
-    // Auto-fill: wait for images then check if we should load more
     waitForImages().then(function () {
-      // Force reflow before checking scrollHeight
       void document.documentElement.offsetHeight;
       if (document.documentElement.scrollHeight <= window.innerHeight + 300) {
         loadMore(true);
@@ -130,7 +154,6 @@
     });
   }
 
-  // Tag filtering
   function filterCards() {
     var cards = masonry.querySelectorAll('.painting-card');
     cards.forEach(function (card) {
@@ -168,70 +191,110 @@
     });
   }
 
-  // Modal
   function openModal(index) {
     var item = paintingsData[index];
     if (!item || !modal) return;
 
-    modal.querySelector('.painting-modal-image img').src = item.image || '';
-    modal.querySelector('.painting-modal-image img').alt = item.title || '';
+    var modalImg = modal.querySelector('.painting-modal-image img');
+    modalImg.src = item.image || '';
+    modalImg.alt = item.title || '';
     modal.querySelector('.painting-modal-title').textContent = item.title || '';
 
-    var metaHtml = '';
-    if (item.date) metaHtml += '<time>' + item.date + '</time>';
-    if (item.model) metaHtml += '<span class="meta-sep">·</span><span class="painting-model">' + item.model + '</span>';
-    modal.querySelector('.painting-modal-meta').innerHTML = metaHtml;
+    var metaEl = modal.querySelector('.painting-modal-meta');
+    metaEl.textContent = '';
+    if (item.date) {
+      var t = document.createElement('time');
+      t.textContent = item.date;
+      metaEl.appendChild(t);
+    }
+    if (item.model) {
+      var sep = document.createElement('span');
+      sep.className = 'meta-sep';
+      sep.textContent = '·';
+      var model = document.createElement('span');
+      model.className = 'painting-model';
+      model.textContent = item.model;
+      metaEl.appendChild(sep);
+      metaEl.appendChild(model);
+    }
 
     var descEl = modal.querySelector('.painting-description');
     descEl.textContent = item.description || '';
     descEl.style.display = item.description ? '' : 'none';
 
-    var infoHtml = '';
-
-    var infoHtml = '';
-    if (item.prompt) {
-      infoHtml += '<div class="painting-info-item"><h3>Prompt</h3><div class="painting-prompt">' + item.prompt + '</div></div>';
-    }
-    if (item.negative_prompt) {
-      infoHtml += '<div class="painting-info-item"><h3>Negative Prompt</h3><div class="painting-prompt">' + item.negative_prompt + '</div></div>';
-    }
-    if (item.parameters && Object.keys(item.parameters).length) {
-      infoHtml += '<table class="painting-params">';
-      for (var key in item.parameters) {
-        infoHtml += '<tr><td class="param-key">' + key + '</td><td class="param-val">' + item.parameters[key] + '</td></tr>';
-      }
-      infoHtml += '</table>';
-    }
     var infoEl = modal.querySelector('.painting-modal-info');
-    infoEl.innerHTML = infoHtml;
-    infoEl.style.display = infoHtml ? '' : 'none';
+    infoEl.textContent = '';
 
-    var tagsHtml = '';
+    var labels = window.paintingsConfig && window.paintingsConfig.labels ? window.paintingsConfig.labels : {};
+    function appendInfo(heading, body) {
+      var wrap = document.createElement('div');
+      wrap.className = 'painting-info-item';
+      var h = document.createElement('h3');
+      h.textContent = heading;
+      var d = document.createElement('div');
+      d.className = 'painting-prompt';
+      d.textContent = body;
+      wrap.appendChild(h);
+      wrap.appendChild(d);
+      infoEl.appendChild(wrap);
+    }
+
+    if (item.prompt) appendInfo(labels.prompt || 'Prompt', item.prompt);
+    if (item.negative_prompt) appendInfo(labels.negativePrompt || 'Negative Prompt', item.negative_prompt);
+    if (item.parameters && Object.keys(item.parameters).length) {
+      var table = document.createElement('table');
+      table.className = 'painting-params';
+      for (var key in item.parameters) {
+        var tr = document.createElement('tr');
+        var k = document.createElement('td');
+        k.className = 'param-key';
+        k.textContent = key;
+        var v = document.createElement('td');
+        v.className = 'param-val';
+        v.textContent = item.parameters[key];
+        tr.appendChild(k);
+        tr.appendChild(v);
+        table.appendChild(tr);
+      }
+      infoEl.appendChild(table);
+    }
+    infoEl.style.display = infoEl.children.length ? '' : 'none';
+
+    var tagsEl = modal.querySelector('.painting-modal-tags');
+    tagsEl.textContent = '';
     if (item.tags && item.tags.length) {
       item.tags.forEach(function (t) {
-        tagsHtml += '<span class="painting-tag">' + t + '</span>';
+        var tag = document.createElement('span');
+        tag.className = 'painting-tag';
+        tag.textContent = t;
+        tagsEl.appendChild(tag);
       });
     }
-    var tagsEl = modal.querySelector('.painting-modal-tags');
-    tagsEl.innerHTML = tagsHtml;
-    tagsEl.style.display = tagsHtml ? '' : 'none';
+    tagsEl.style.display = tagsEl.children.length ? '' : 'none';
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
-    if (!modal) return;
-    modal.classList.remove('active');
+    var active = document.getElementById('paintingModal');
+    if (!active) return;
+    active.classList.remove('active');
     document.body.style.overflow = '';
   }
 
   if (modal) {
     modal.querySelector('.painting-modal-overlay').addEventListener('click', closeModal);
     modal.querySelector('.painting-modal-close').addEventListener('click', closeModal);
+  }
+
+  // Single global Escape handler, only bound once. closeModal re-queries the
+  // live modal so it still works after SPA swaps replace the node.
+  if (!window._paintingsEscBound) {
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeModal();
     });
+    window._paintingsEscBound = true;
   }
 
   masonry.addEventListener('click', function (e) {
@@ -255,5 +318,16 @@
   if (paintingsData.length > 0) {
     window.addEventListener('scroll', onScroll, { passive: true });
     loadMore(true);
+  } else {
+    hideLoader();
   }
-})();
+};
+
+// Auto-init on first load. SPA re-init is handled by the template's inline
+// script which injects this file on navigation to /paintings and calls
+// window.initPaintings() after paintingsData is set.
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', window.initPaintings);
+} else {
+  window.initPaintings();
+}

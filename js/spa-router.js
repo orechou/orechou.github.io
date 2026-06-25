@@ -2,7 +2,30 @@
   'use strict';
 
   var CONTENT_SELECTOR = '.content.index.py4';
-  var isInitialLoad = true;
+  // Meta tags that should follow the incoming page.
+  var META_SELECTORS = [
+    'meta[name="description"]',
+    'meta[property="og:title"]',
+    'meta[property="og:description"]',
+    'meta[property="og:url"]',
+    'meta[property="og:type"]',
+    'meta[property="article:published_time"]',
+    'meta[property="article:modified_time"]',
+    'meta[name="twitter:title"]',
+    'meta[name="twitter:description"]',
+    'meta[name="twitter:url"]',
+    'link[rel="canonical"]'
+  ];
+
+  // Let the browser handle scroll position on back/forward; we only reset
+  // scroll on forward navigations (pushState).
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // Scroll Y per URL, so popstate can restore the user's position.
+  var scrollPositions = {};
+  var currentUrl = location.pathname + location.search;
 
   function normalizeUrl(url) {
     try {
@@ -34,11 +57,39 @@
   function reinitScripts(container) {
     var scripts = container.querySelectorAll('script');
     scripts.forEach(function (s) {
-      if (s.src) return; // skip external scripts
+      if (s.src) return; // external scripts are not re-executed via innerHTML
       var clone = document.createElement('script');
       clone.textContent = s.textContent;
       s.parentNode.replaceChild(clone, s);
     });
+  }
+
+  function updateHead(doc) {
+    var newTitle = doc.querySelector('title');
+    if (newTitle) document.title = newTitle.textContent;
+
+    META_SELECTORS.forEach(function (sel) {
+      var incoming = doc.querySelector('head ' + sel);
+      var current = document.head.querySelector(sel);
+      if (incoming) {
+        var clone = incoming.cloneNode(true);
+        if (current) {
+          current.parentNode.replaceChild(clone, current);
+        } else {
+          document.head.appendChild(clone);
+        }
+      }
+    });
+  }
+
+  function trackPageView(url) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('config', window.GA_TRACKING_ID, { page_path: url });
+      } else if (typeof window.ga === 'function') {
+        window.ga('send', 'pageview', url);
+      }
+    } catch (e) {}
   }
 
   function dispatchSpaEvent() {
@@ -47,7 +98,10 @@
 
   function navigateTo(url, isPop) {
     url = normalizeUrl(url);
+
+    // Remember scroll position of the page we're leaving.
     if (!isPop) {
+      scrollPositions[currentUrl] = window.scrollY;
       history.pushState({}, '', url);
     }
 
@@ -70,10 +124,23 @@
           return;
         }
 
+        updateHead(doc);
         current.innerHTML = incoming.innerHTML;
         reinitScripts(current);
         dispatchSpaEvent();
-        window.scrollTo(0, 0);
+        trackPageView(url);
+
+        var prevUrl = currentUrl;
+        currentUrl = url;
+
+        if (isPop && scrollPositions[url] != null) {
+          window.scrollTo(0, scrollPositions[url]);
+        } else {
+          window.scrollTo(0, 0);
+        }
+        // Clean up the stored position for the page we just left, unless we
+        // may come back to it via popstate (keep it).
+        if (!isPop) delete scrollPositions[prevUrl];
       })
       .catch(function () {
         location.href = url;
@@ -125,10 +192,5 @@
 
   window.addEventListener('popstate', function () {
     navigateTo(location.pathname + location.search + location.hash, true);
-  });
-
-  // Handle initial page load (browser back to first page)
-  window.addEventListener('load', function () {
-    isInitialLoad = false;
   });
 })();

@@ -278,8 +278,12 @@
         hideLoader();
 
         if (!data.data || data.data.length === 0) {
-          if (allItems.length === 0) {
+          // No items on this page. If we have nothing rendered at all,
+          // surface the "no results" state explicitly.
+          if (grid.querySelectorAll('.neodb-card').length === 0) {
             showNoResults();
+          } else if (loadMoreBtn) {
+            loadMoreBtn.hidden = true;
           }
           return;
         }

@@ -122,7 +122,7 @@
     initCopyButtons();
   }
 
-  // Re-initialize on page navigation (for SPA-like behavior)
-  window.addEventListener('hashchange', initCopyButtons);
+  // Re-initialize after SPA navigation.
+  window.addEventListener('spa-content-loaded', initCopyButtons);
 
 })();
