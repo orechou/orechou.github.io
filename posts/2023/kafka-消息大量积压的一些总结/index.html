@@ -21,24 +21,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2023/kafka-%E6%B6%88%E6%81%AF%E5%A4%A7%E9%87%8F%E7%A7%AF%E5%8E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="Kafka 消息大量积压的一些总结">
-	<meta property="og:description" content="本文主要总结一些 Kafka 作为消息队列使用时，当线上出现消息大量积压后的处理方法以及平时使用时应该注意的点。一般从三个方向排查分析问题，消费者的问题、分区设计的问题和网络问题。
+  
+<meta property="og:title" content="Kafka 消息大量积压的一些总结">
+<meta property="og:description" content="本文主要总结一些 Kafka 作为消息队列使用时，当线上出现消息大量积压后的处理方法以及平时使用时应该注意的点。一般从三个方向排查分析问题，消费者的问题、分区设计的问题和网络问题。
 消费者导致 大部分消息积压基本都是消费者出现了状况，消费者处理的速度慢、或者消费者出现了故障。确认消费者出现问题后，我们首先要做的就是恢复或者提高消费速度。
 提高消费速度 一般来说，我们会对消息队列里面消息数量做监控，当消息到达一定阈值的时候，自动化地去对消费者的数量扩容。但是因为 Kafka 的 Topic 的 Partition 数量是有限制的，当消费者的数量扩容到 Partition 数量之后，再对消费者数量进行增加就没有作用了。如果这时并没有解决消费者速度的问题，我们需要能够快速把消费的能力再放大，相应的步骤如下：
 问题修复: 先解决消费者的问题，以恢复消费速度，随后停止所有消费者。 新建 Topic: 创建一个新 Topic，其 Partition 数量是原先的 10 倍，并且创建相应数量的队列。一般不直接对原 Topic 的分区进行调整，因为分区增加之后没有办法去缩小。 数据分发: 编写并部署一个临时的消费者程序，此程序将积压的数据消费后，不进行耗时处理，而是均匀分发至新创建的队列中。 并发消费: 临时增加 10 倍的消费者机器，每一批消费者消费一个临时队列的数据，相当于以原本的10倍速度消费数据。 架构恢复: 在积压数据消费完后，恢复原始架构，重新用原先的消费者机器来消费消息。 上面的方法能够快速地解决线上堆积了大量的消息。除此之外，我们对消费者的设计也会影响到消费的速率。
 其他的注意点 控制消费者获取消息的数量 Kafka 支持批量消费数据。在消费者端，可以通过修改配置参数来改变每次从 Kafka 服务器获取的消息数量。 这主要通过以下两个配置参数控制：
 fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这个值，消费者会等待直到满足此值。 fetch.max.wait.ms: 消费者等待 Kafka 服务端积累数据的最长时间。 还有一个与之相关的参数： max.poll.records：它能够控制消费者每次调用 poll() 时返回的最大记录数。 以上三个参数都是在实时性和吞吐量之间进行权衡的，你可以根据业务需求，对这些参数进行适当的调整。在调整这些参数之前，最好先在测试环境中进行性能测试，以确定最佳的参数设置。
 如果你的业务场景对实时性要求较高，即希望消息一生成就能尽快被消费，那么 fetch.min.bytes 可以设置得较小，fetch.max.wait.ms 也可以设置得较小，这样可以确保消费者能够更快地获取到新的消息。 如果你的业务场景对吞吐量要求较高，即希望消费者能够以较高的速度处理大量的消息，那么 fetch.min.bytes 可以设置得较大，fetch.max.wait.ms 也可以设置得较大，这样可以通过增加每次获取的消息数量，提高消费者的处理效率。 max.poll.records 参数用于控制每次调用poll()时返回的最大记录数。如果你希望消费者每次能处理更多的消息，可以增大这个值。但是，这个值的增大可能会增加消费者处理消息的延迟。 优化消费者的处理逻辑 对于消费者的处理代码，优化其代码逻辑。有以下的点可以考虑：
-是否能够使用多线程来加快业务逻辑的处理速度； 是否能够减少数据库的调用次数； 是否能够减少下游 PRC 调用的次数。 分区设计不合理导致 观察 Kafka 的消费在不同的 Partition 上的消息堆积情况，如果消息主要分布在部分 Parition 上，那么我们也许要确认是否是分区设计不合理导致。如果是的话，可能需要重新设计分区策略。比如，考虑使用更细粒度的key进行分区，或者增加总的分区数。">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2023-06-03T16:30:00+00:00">
-		<meta property="article:modified_time" content="2023-06-03T16:30:00+00:00">
-		<meta property="article:tag" content="Middleware">
-		<meta property="article:tag" content="Kafka">
+是否能够使用多线程来加快业务逻辑的处理速度； 是否能够减少数据库的调用次数； 是否能够减少下游 PRC 调用的次数。 分区设计不合理导致 观察 Kafka 的消费在不同的 Partition 上的消息堆积情况，如果消息主要分布在部分 Parition 上，那么我们也许要确认是否是分区设计不合理导致。如果是的话，可能需要重新设计分区策略。比如，考虑使用更细粒度的key进行分区，或者增加总的分区数。
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2023/kafka-%E6%B6%88%E6%81%AF%E5%A4%A7%E9%87%8F%E7%A7%AF%E5%8E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="Middleware"><meta property="article:tag" content="Kafka"><meta property="article:published_time" content="2023-06-03T16:30:00Z"><meta property="article:modified_time" content="2023-06-03T16:30:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -52,6 +48,46 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
 如果你的业务场景对实时性要求较高，即希望消息一生成就能尽快被消费，那么 fetch.min.bytes 可以设置得较小，fetch.max.wait.ms 也可以设置得较小，这样可以确保消费者能够更快地获取到新的消息。 如果你的业务场景对吞吐量要求较高，即希望消费者能够以较高的速度处理大量的消息，那么 fetch.min.bytes 可以设置得较大，fetch.max.wait.ms 也可以设置得较大，这样可以通过增加每次获取的消息数量，提高消费者的处理效率。 max.poll.records 参数用于控制每次调用poll()时返回的最大记录数。如果你希望消费者每次能处理更多的消息，可以增大这个值。但是，这个值的增大可能会增加消费者处理消息的延迟。 优化消费者的处理逻辑 对于消费者的处理代码，优化其代码逻辑。有以下的点可以考虑：
 是否能够使用多线程来加快业务逻辑的处理速度； 是否能够减少数据库的调用次数； 是否能够减少下游 PRC 调用的次数。 分区设计不合理导致 观察 Kafka 的消费在不同的 Partition 上的消息堆积情况，如果消息主要分布在部分 Parition 上，那么我们也许要确认是否是分区设计不合理导致。如果是的话，可能需要重新设计分区策略。比如，考虑使用更细粒度的key进行分区，或者增加总的分区数。">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2023-06-03T16:30:00Z",
+  "datePublished": "2023-06-03T16:30:00Z",
+  "description": "本文主要总结一些 Kafka 作为消息队列使用时，当线上出现消息大量积压后的处理方法以及平时使用时应该注意的点。一般从三个方向排查分析问题，消费者的问题、分区设计的问题和网络问题。\n消费者导致 大部分消息积压基本都是消费者出现了状况，消费者处理的速度慢、或者消费者出现了故障。确认消费者出现问题后，我们首先要做的就是恢复或者提高消费速度。\n提高消费速度 一般来说，我们会对消息队列里面消息数量做监控，当消息到达一定阈值的时候，自动化地去对消费者的数量扩容。但是因为 Kafka 的 Topic 的 Partition 数量是有限制的，当消费者的数量扩容到 Partition 数量之后，再对消费者数量进行增加就没有作用了。如果这时并没有解决消费者速度的问题，我们需要能够快速把消费的能力再放大，相应的步骤如下：\n问题修复: 先解决消费者的问题，以恢复消费速度，随后停止所有消费者。 新建 Topic: 创建一个新 Topic，其 Partition 数量是原先的 10 倍，并且创建相应数量的队列。一般不直接对原 Topic 的分区进行调整，因为分区增加之后没有办法去缩小。 数据分发: 编写并部署一个临时的消费者程序，此程序将积压的数据消费后，不进行耗时处理，而是均匀分发至新创建的队列中。 并发消费: 临时增加 10 倍的消费者机器，每一批消费者消费一个临时队列的数据，相当于以原本的10倍速度消费数据。 架构恢复: 在积压数据消费完后，恢复原始架构，重新用原先的消费者机器来消费消息。 上面的方法能够快速地解决线上堆积了大量的消息。除此之外，我们对消费者的设计也会影响到消费的速率。\n其他的注意点 控制消费者获取消息的数量 Kafka 支持批量消费数据。在消费者端，可以通过修改配置参数来改变每次从 Kafka 服务器获取的消息数量。 这主要通过以下两个配置参数控制：\nfetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这个值，消费者会等待直到满足此值。 fetch.max.wait.ms: 消费者等待 Kafka 服务端积累数据的最长时间。 还有一个与之相关的参数： max.poll.records：它能够控制消费者每次调用 poll() 时返回的最大记录数。 以上三个参数都是在实时性和吞吐量之间进行权衡的，你可以根据业务需求，对这些参数进行适当的调整。在调整这些参数之前，最好先在测试环境中进行性能测试，以确定最佳的参数设置。\n如果你的业务场景对实时性要求较高，即希望消息一生成就能尽快被消费，那么 fetch.min.bytes 可以设置得较小，fetch.max.wait.ms 也可以设置得较小，这样可以确保消费者能够更快地获取到新的消息。 如果你的业务场景对吞吐量要求较高，即希望消费者能够以较高的速度处理大量的消息，那么 fetch.min.bytes 可以设置得较大，fetch.max.wait.ms 也可以设置得较大，这样可以通过增加每次获取的消息数量，提高消费者的处理效率。 max.poll.records 参数用于控制每次调用poll()时返回的最大记录数。如果你希望消费者每次能处理更多的消息，可以增大这个值。但是，这个值的增大可能会增加消费者处理消息的延迟。 优化消费者的处理逻辑 对于消费者的处理代码，优化其代码逻辑。有以下的点可以考虑：\n是否能够使用多线程来加快业务逻辑的处理速度； 是否能够减少数据库的调用次数； 是否能够减少下游 PRC 调用的次数。 分区设计不合理导致 观察 Kafka 的消费在不同的 Partition 上的消息堆积情况，如果消息主要分布在部分 Parition 上，那么我们也许要确认是否是分区设计不合理导致。如果是的话，可能需要重新设计分区策略。比如，考虑使用更细粒度的key进行分区，或者增加总的分区数。\n",
+  "headline": "Kafka 消息大量积压的一些总结",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "middleware, Kafka",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2023/kafka-%E6%B6%88%E6%81%AF%E5%A4%A7%E9%87%8F%E7%A7%AF%E5%8E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2023/kafka-%E6%B6%88%E6%81%AF%E5%A4%A7%E9%87%8F%E7%A7%AF%E5%8E%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/",
+  "wordCount": 83
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -100,10 +136,19 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -112,12 +157,12 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -145,9 +190,9 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       Kafka 消息大量积压的一些总结
     </h1>
     <div class="meta">
@@ -155,7 +200,7 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -163,7 +208,7 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
       
       <div class="postdate">
         
-        <time datetime="2023-06-03 16:30:00 &#43;0000 UTC" itemprop="datePublished">2023-06-03</time>
+        <time class="dt-published" datetime="2023-06-03 16:30:00 &#43;0000 UTC" itemprop="datePublished">2023-06-03</time>
         
       </div>
       
@@ -222,7 +267,7 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
 </nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>本文主要总结一些 Kafka 作为消息队列使用时，当线上出现消息大量积压后的处理方法以及平时使用时应该注意的点。一般从三个方向排查分析问题，消费者的问题、分区设计的问题和网络问题。</p>
 <h1 id="消费者导致">消费者导致</h1>
 <p>大部分消息积压基本都是消费者出现了状况，消费者处理的速度慢、或者消费者出现了故障。确认消费者出现问题后，我们首先要做的就是恢复或者提高消费速度。</p>
@@ -285,6 +330,12 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
 
 
 
+
+
+
+
+
+
   
     
   
@@ -332,13 +383,63 @@ fetch.min.bytes: 消费者从服务器获取的最小数据，如果不满足这
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

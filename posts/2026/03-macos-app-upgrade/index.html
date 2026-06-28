@@ -21,23 +21,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2026/03-macos-app-upgrade/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="如何管理 macOS 应用更新">
-	<meta property="og:description" content="我目前的主力生产电脑是 2023 年的 MacBook Pro，配置是 M2 Max，64GB 内存版本。我是一名 AI 软件工程师，所以平时折腾、安装各种软件也是高频的操作，并且我对数字产品有着更新洁癖：即总想要把所有的设备、以及设备中的软件都更新到最新的系统、版本。
+  
+<meta property="og:title" content="如何管理 macOS 应用更新">
+<meta property="og:description" content="我目前的主力生产电脑是 2023 年的 MacBook Pro，配置是 M2 Max，64GB 内存版本。我是一名 AI 软件工程师，所以平时折腾、安装各种软件也是高频的操作，并且我对数字产品有着更新洁癖：即总想要把所有的设备、以及设备中的软件都更新到最新的系统、版本。
 安装渠道 对于 macOS 的软件安装我制定了以下的优先级：
 如果有网页版就使用网页版，不安装本地客户端；例如 ChatGPT、Google 日历等。 如果 AppStore 支持下载，优先使用 AppStore 安装；例如 WeChat、Feishu 等； 如果 homebrew 支持下载，其次使用 brew 安装；例如 Claude Code、Chrome 等； 除此之外的不考虑安装（除非是有调研需求，必须要尝试的除外）。按照这个规则，基本能够满足大部分的软件安装使用需求。
 更新方式 我希望时刻保持软件最新。
-对于 AppStore 安装的软件，因为 AppStore 的更新推送是&#34;尽力而为&#34;的后台机制，不是实时推送。因为你总要进到 AppStore 里面去主动刷新看是否有更新。这个操作路径实在是太复杂了。所以我安装了 mas (Mac App Store command-line interface)这个工具，它可以通过命令行指令的方式，来触发 AppStore 软件更新下载。
+对于 AppStore 安装的软件，因为 AppStore 的更新推送是&quot;尽力而为&quot;的后台机制，不是实时推送。因为你总要进到 AppStore 里面去主动刷新看是否有更新。这个操作路径实在是太复杂了。所以我安装了 mas (Mac App Store command-line interface)这个工具，它可以通过命令行指令的方式，来触发 AppStore 软件更新下载。
 对于 homebrew 安装的软件就更好办了，直接通过 brew 指令完成更新。
 最后，将所有的指令组合打包，实现一个命令完成所有软件的更新下载。在 zsh 或者 bash 的配置文件做这样一行设置：
-alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cu -a -y &amp;&amp; brew cleanup&#34; 上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下：">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2026-03-24T20:00:00+08:00">
-		<meta property="article:modified_time" content="2026-03-24T20:00:00+08:00">
-		<meta property="article:tag" content="MacOS">
+alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cu -a -y &amp;&amp; brew cleanup&#34; 上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下： ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2026/03-macos-app-upgrade/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="MacOS"><meta property="article:published_time" content="2026-03-24T20:00:00&#43;08:00"><meta property="article:modified_time" content="2026-03-24T20:00:00&#43;08:00">
 
   
 	<meta name="twitter:card" content="summary">
@@ -51,6 +47,46 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
 最后，将所有的指令组合打包，实现一个命令完成所有软件的更新下载。在 zsh 或者 bash 的配置文件做这样一行设置：
 alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cu -a -y &amp;&amp; brew cleanup&#34; 上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下：">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2026-03-24T20:00:00+08:00",
+  "datePublished": "2026-03-24T20:00:00+08:00",
+  "description": "我目前的主力生产电脑是 2023 年的 MacBook Pro，配置是 M2 Max，64GB 内存版本。我是一名 AI 软件工程师，所以平时折腾、安装各种软件也是高频的操作，并且我对数字产品有着更新洁癖：即总想要把所有的设备、以及设备中的软件都更新到最新的系统、版本。\n安装渠道 对于 macOS 的软件安装我制定了以下的优先级：\n如果有网页版就使用网页版，不安装本地客户端；例如 ChatGPT、Google 日历等。 如果 AppStore 支持下载，优先使用 AppStore 安装；例如 WeChat、Feishu 等； 如果 homebrew 支持下载，其次使用 brew 安装；例如 Claude Code、Chrome 等； 除此之外的不考虑安装（除非是有调研需求，必须要尝试的除外）。按照这个规则，基本能够满足大部分的软件安装使用需求。\n更新方式 我希望时刻保持软件最新。\n对于 AppStore 安装的软件，因为 AppStore 的更新推送是\u0026quot;尽力而为\u0026quot;的后台机制，不是实时推送。因为你总要进到 AppStore 里面去主动刷新看是否有更新。这个操作路径实在是太复杂了。所以我安装了 mas (Mac App Store command-line interface)这个工具，它可以通过命令行指令的方式，来触发 AppStore 软件更新下载。\n对于 homebrew 安装的软件就更好办了，直接通过 brew 指令完成更新。\n最后，将所有的指令组合打包，实现一个命令完成所有软件的更新下载。在 zsh 或者 bash 的配置文件做这样一行设置：\nalias appupgrade=\u0026#34;mas list \u0026amp;\u0026amp; mas upgrade \u0026amp;\u0026amp; brew update \u0026amp;\u0026amp; brew outdated \u0026amp;\u0026amp; brew upgrade \u0026amp;\u0026amp; brew cu -a -y \u0026amp;\u0026amp; brew cleanup\u0026#34; 上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下： ",
+  "headline": "如何管理 macOS 应用更新",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "macOS",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2026/03-macos-app-upgrade/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2026/03-macos-app-upgrade/",
+  "wordCount": 92
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -99,10 +135,19 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -111,12 +156,12 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -144,9 +189,9 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       如何管理 macOS 应用更新
     </h1>
     <div class="meta">
@@ -154,7 +199,7 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -162,7 +207,7 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
       
       <div class="postdate">
         
-        <time datetime="2026-03-24 20:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-03-24</time>
+        <time class="dt-published" datetime="2026-03-24 20:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-03-24</time>
         
       </div>
       
@@ -213,7 +258,7 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
 </nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>我目前的主力生产电脑是 2023 年的 MacBook Pro，配置是 M2 Max，64GB 内存版本。我是一名 AI 软件工程师，所以平时折腾、安装各种软件也是高频的操作，并且我对数字产品有着更新洁癖：即总想要把所有的设备、以及设备中的软件都更新到最新的系统、版本。</p>
 <h2 id="安装渠道">安装渠道</h2>
 <p>对于 macOS 的软件安装我制定了以下的优先级：</p>
@@ -230,7 +275,9 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
 <p>最后，将所有的指令组合打包，实现一个命令完成所有软件的更新下载。在 zsh 或者 bash 的配置文件做这样一行设置：</p>
 <pre tabindex="0"><code>alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &amp;&amp; brew outdated &amp;&amp; brew upgrade &amp;&amp; brew cu -a -y &amp;&amp; brew cleanup&#34;
 </code></pre><p>上面重命名了一个叫 appupgrade 的指令，它组合了 mas 和 brew 的软件更新。效果如下：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/appupgrade.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/appupgrade.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>这样，我每天只要使用电脑的时候，在命令行中执行一下 appupgrade，就能保证所有的软件是最新的了。</p>
 
   </div>
@@ -250,6 +297,12 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
   </a>
   
 </nav>
+
+
+
+
+
+
 
 
 
@@ -301,13 +354,63 @@ alias appupgrade=&#34;mas list &amp;&amp; mas upgrade &amp;&amp; brew update &am
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

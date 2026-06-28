@@ -21,24 +21,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="无限 token？试试在 MacBook 上使用 Ollama">
-	<meta property="og:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
+  
+<meta property="og:title" content="无限 token？试试在 MacBook 上使用 Ollama">
+<meta property="og:description" content="近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。
 前景介绍 电脑配置是 M2 max，64GB 版本。后续文中的一切效果均建立在该配置的基础上。
-我们使用的技术是 Ollama，它是一个&#34;本地模型运行器&#34;。它帮你把开源大模型下载到你的电脑里，并运行起来，不需要任何网络请求。
+我们使用的技术是 Ollama，它是一个&quot;本地模型运行器&quot;。它帮你把开源大模型下载到你的电脑里，并运行起来，不需要任何网络请求。
 Ollama 的安装 直接使用 brew 安装，指令：
 1 brew install ollama 安装好之后就可以安装模型了，ollama 支持的模型可以上官网上查看。上面支持大部分的开源模型，deepseek、qwen 等。 这里，我选择的模型是 gemma4。它是 google 在今年四月推出的，安装指令：
 1 ollama pull gemma4@latest 执行后就等待模型的下载，模型会下载到 ~/.ollama/models 目录下。
 gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运行模型。如果想要看 token 的生成速度，可加上 --verbose 参数：
-1 ollama run gemma4@latest --verbose 如下截图我提了一个问题，小模型的输出速度还是挺快的： prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是&#34;读&#34;的速度 eval rate: 55.97 tokens/s — 这是生成回答的速度，就是&#34;写&#34;的速度 主观测试效果 对于模型的使用感受，很大程度上是主观的。模型吐 token 的速度快不快，输出的内容与你的预期差距大不大。如果速度快、内容和预期匹配，我们往往就会觉得模型不错，很好用。">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2026-05-21T16:00:00+08:00">
-		<meta property="article:modified_time" content="2026-05-21T16:00:00+08:00">
-		<meta property="article:tag" content="AI">
-		<meta property="article:tag" content="Ollama">
+1 ollama run gemma4@latest --verbose 如下截图我提了一个问题，小模型的输出速度还是挺快的： prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是&quot;读&quot;的速度 eval rate: 55.97 tokens/s — 这是生成回答的速度，就是&quot;写&quot;的速度 主观测试效果 对于模型的使用感受，很大程度上是主观的。模型吐 token 的速度快不快，输出的内容与你的预期差距大不大。如果速度快、内容和预期匹配，我们往往就会觉得模型不错，很好用。
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="AI"><meta property="article:tag" content="Ollama"><meta property="article:published_time" content="2026-05-21T16:00:00&#43;08:00"><meta property="article:modified_time" content="2026-05-21T16:00:00&#43;08:00">
 
   
 	<meta name="twitter:card" content="summary">
@@ -52,6 +48,46 @@ Ollama 的安装 直接使用 brew 安装，指令：
 gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运行模型。如果想要看 token 的生成速度，可加上 --verbose 参数：
 1 ollama run gemma4@latest --verbose 如下截图我提了一个问题，小模型的输出速度还是挺快的： prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是&#34;读&#34;的速度 eval rate: 55.97 tokens/s — 这是生成回答的速度，就是&#34;写&#34;的速度 主观测试效果 对于模型的使用感受，很大程度上是主观的。模型吐 token 的速度快不快，输出的内容与你的预期差距大不大。如果速度快、内容和预期匹配，我们往往就会觉得模型不错，很好用。">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2026-05-21T16:00:00+08:00",
+  "datePublished": "2026-05-21T16:00:00+08:00",
+  "description": "近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。\n前景介绍 电脑配置是 M2 max，64GB 版本。后续文中的一切效果均建立在该配置的基础上。\n我们使用的技术是 Ollama，它是一个\u0026quot;本地模型运行器\u0026quot;。它帮你把开源大模型下载到你的电脑里，并运行起来，不需要任何网络请求。\nOllama 的安装 直接使用 brew 安装，指令：\n1 brew install ollama 安装好之后就可以安装模型了，ollama 支持的模型可以上官网上查看。上面支持大部分的开源模型，deepseek、qwen 等。 这里，我选择的模型是 gemma4。它是 google 在今年四月推出的，安装指令：\n1 ollama pull gemma4@latest 执行后就等待模型的下载，模型会下载到 ~/.ollama/models 目录下。\ngemma4 的不同参数模型大小如下图： 安装好之后，使用命令运行模型。如果想要看 token 的生成速度，可加上 --verbose 参数：\n1 ollama run gemma4@latest --verbose 如下截图我提了一个问题，小模型的输出速度还是挺快的： prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是\u0026quot;读\u0026quot;的速度 eval rate: 55.97 tokens/s — 这是生成回答的速度，就是\u0026quot;写\u0026quot;的速度 主观测试效果 对于模型的使用感受，很大程度上是主观的。模型吐 token 的速度快不快，输出的内容与你的预期差距大不大。如果速度快、内容和预期匹配，我们往往就会觉得模型不错，很好用。\n",
+  "headline": "无限 token？试试在 MacBook 上使用 Ollama",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "AI, Ollama",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/",
+  "wordCount": 96
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -100,10 +136,19 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -112,12 +157,12 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -145,9 +190,9 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       无限 token？试试在 MacBook 上使用 Ollama
     </h1>
     <div class="meta">
@@ -155,7 +200,7 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -163,7 +208,7 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
       
       <div class="postdate">
         
-        <time datetime="2026-05-21 16:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-05-21</time>
+        <time class="dt-published" datetime="2026-05-21 16:00:00 &#43;0800 &#43;0800" itemprop="datePublished">2026-05-21</time>
         
       </div>
       
@@ -222,7 +267,7 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 </nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>近期在外部刷到一个帖子，大意是 gpt-3.5 模型套上 harness 也能干活。这一下打开了我的思路，或许我可以在本地上用 Ollama 试试效果。</p>
 <h2 id="前景介绍">前景介绍</h2>
 <p>电脑配置是 M2 max，64GB 版本。后续文中的一切效果均建立在该配置的基础上。</p>
@@ -238,7 +283,9 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>安装好之后就可以安装模型了，ollama 支持的模型可以上<a href="https://ollama.com/library">官网</a>上查看。上面支持大部分的开源模型，deepseek、qwen 等。
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-library.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-library.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>这里，我选择的模型是 gemma4。它是 google 在今年四月推出的，安装指令：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -250,7 +297,9 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 </div>
 </div><p>执行后就等待模型的下载，模型会下载到 <code>~/.ollama/models</code> 目录下。</p>
 <p>gemma4 的不同参数模型大小如下图：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-gemma4-model.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-gemma4-model.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>安装好之后，使用命令运行模型。如果想要看 token 的生成速度，可加上 <code>--verbose</code> 参数：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -261,7 +310,9 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如下截图我提了一个问题，小模型的输出速度还是挺快的：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-run-gemma4.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-run-gemma4.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <ol>
 <li>prompt eval rate: 325.14 tokens/s — 这是处理输入的速度，就是&quot;读&quot;的速度</li>
 <li>eval rate: 55.97 tokens/s — 这是生成回答的速度，就是&quot;写&quot;的速度</li>
@@ -271,11 +322,17 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 <p>我将 Ollama 配置到我的 Agent 应用 alma 中，尝试给几个任务，体验下来是即使套上了 harness，需要降低预期以及多加引导。</p>
 <p>举一个信息检索的例子：
 第一次，我让其去查询一下 tesla 昨晚的股价，可以看出它也有去调用工具做查询，但给出的信息内容是错误的：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-alma-use-02.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-alma-use-02.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>于是，第二次我调整了提示词，给出了明确的日期，模型给出了准确的信息：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-alma-use-03.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-alma-use-03.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>再看看模型运行时的资源占用情况：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-cpu-mem.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/ollama-cpu-mem.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>结论是：本地小模型在套上 harness 之后，是可以完成一些任务的，并且占用的资源也不算多。</p>
 <h2 id="最后">最后</h2>
 <p>目前只跑了一个比较小的模型，gemma4@latest 只有 4B 的参数。后续我会测试一些参数多一点的模型，例如 qwen3.6-35B。</p>
@@ -299,6 +356,30 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
   </a>
   
 </nav>
+
+<section class="related-posts">
+  <h2 class="related-heading">Related</h2>
+  <ul class="related-list"><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/09-my-ai-agent-team/" class="related-link">
+        <span class="related-title">如何快速搭建你的 Agent 团队，体验当老板的感觉</span>
+        <span class="related-date"><time datetime="2026-06-01 19:00:00 &#43;0800 &#43;0800">2026-06-01</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/" class="related-link">
+        <span class="related-title">AI 使用指南：如何用上最强的模型服务</span>
+        <span class="related-date"><time datetime="2026-04-27 20:00:00 &#43;0800 &#43;0800">2026-04-27</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/02-why-claude-code-top-one/" class="related-link">
+        <span class="related-title">8个月从零到第一！Claude Code为什么能颠覆AI编程界？</span>
+        <span class="related-date"><time datetime="2026-03-14 22:00:00 &#43;0000 UTC">2026-03-14</time></span>
+      </a>
+    </li></ul>
+</section>
+
+
+
+
 
 
 
@@ -350,13 +431,63 @@ gemma4 的不同参数模型大小如下图： 安装好之后，使用命令运
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

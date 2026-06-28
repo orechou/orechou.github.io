@@ -21,41 +21,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2026/02-why-claude-code-top-one/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="8个月从零到第一！Claude Code为什么能颠覆AI编程界？">
-	<meta property="og:description" content="2025年5月，Claude Code悄然发布，几乎没有人把它当回事。
+  
+<meta property="og:title" content="8个月从零到第一！Claude Code为什么能颠覆AI编程界？">
+<meta property="og:description" content="2025年5月，Claude Code悄然发布，几乎没有人把它当回事。
 彼时，GitHub Copilot已经深入企业血脉，Cursor凭借流畅的IDE体验赢得一大批开发者拥护，AI编程工具的格局看似已经固化。
 8个月后，Claude Code坐到了第一的位置。
 这不是营销数字，而是来自906位经验中位数超过11年、遍布欧美的资深工程师的真实调研结论。
 一张图读懂这场逆袭 《The Pragmatic Engineer》的调研负责人Gergely Orosz用了一句话来描述这个结果：
-“Claude Code在短短8个月内从零起步，成为最常用的工具。”
+&ldquo;Claude Code在短短8个月内从零起步，成为最常用的工具。&rdquo;
 这句话背后，是几个令人印象深刻的数字：
-46% 的受访者将Claude Code列为&#34;最喜爱&#34;的工具，而排名第二的Cursor只有19%，GitHub Copilot仅有9% 如果把Claude Code与独立版Claude模型加在一起，Anthropic系产品的&#34;最爱&#34;占比高达 57% 在最小规模的公司中，Claude Code的使用率达到 75%，远超同类工具 而9个月前，它根本不存在。
+46% 的受访者将Claude Code列为&quot;最喜爱&quot;的工具，而排名第二的Cursor只有19%，GitHub Copilot仅有9% 如果把Claude Code与独立版Claude模型加在一起，Anthropic系产品的&quot;最爱&quot;占比高达 57% 在最小规模的公司中，Claude Code的使用率达到 75%，远超同类工具 而9个月前，它根本不存在。
 它到底赢在哪里？ 1. 终端原生，而不是IDE插件 Claude Code最大的产品哲学差异，在于它不试图嵌入你的IDE，而是直接活在终端里。
-调研中，工程师们描述了一种最常见的工作姿势：一侧打开终端跑Claude Code，另一侧打开IDE做代码审查。这个组合听起来简单，却意味着Claude Code把自己定位成了一个&#34;驾驶员&#34;，而不是一个&#34;副驾&#34;。
+调研中，工程师们描述了一种最常见的工作姿势：一侧打开终端跑Claude Code，另一侧打开IDE做代码审查。这个组合听起来简单，却意味着Claude Code把自己定位成了一个&quot;驾驶员&quot;，而不是一个&quot;副驾&quot;。
 这个区别至关重要。IDE插件的本质是辅助——你在写代码，它帮你补全；而Claude Code的模式是代理——你描述任务，它去执行，跨文件、跨仓库、调命令行、写测试、提交代码。
 2. Opus/Sonnet模型的碾压性优势 工具的天花板，取决于背后的模型。
-调研显示，在&#34;最常用于编程的AI模型&#34;这一问题上，Anthropic的Opus 4.5和Sonnet 4.5获得的提及次数，超过了其余所有模型的总和。
+调研显示，在&quot;最常用于编程的AI模型&quot;这一问题上，Anthropic的Opus 4.5和Sonnet 4.5获得的提及次数，超过了其余所有模型的总和。
 这不是平台锁定，是真实能力的体现。当模型够强，工具就能把更难的任务接下来；任务完成得越好，用户就越愿意留下来。
 3. 高级工程师更买账 Claude Code的用户结构，藏着一个有趣的规律：越资深的工程师，越喜欢它。
-调研数据显示，在Director及以上级别的技术领导者中，Claude Code的&#34;最爱&#34;提及率是初级工程师的两倍。与此同时，Cursor的喜爱度随着职级的上升而下降。
+调研数据显示，在Director及以上级别的技术领导者中，Claude Code的&quot;最爱&quot;提及率是初级工程师的两倍。与此同时，Cursor的喜爱度随着职级的上升而下降。
 为什么会这样？
-资深工程师有更强的目标感，他们不需要IDE帮自己&#34;写代码&#34;，他们需要一个能独立完成任务的代理。Claude Code的模式天然契合这种需求——你给出目标，它去执行，你来验收。
+资深工程师有更强的目标感，他们不需要IDE帮自己&quot;写代码&quot;，他们需要一个能独立完成任务的代理。Claude Code的模式天然契合这种需求——你给出目标，它去执行，你来验收。
 Engineering Manager群体则是个例外：他们同等喜爱GitHub Copilot和Cursor，因为他们的日常更多是代码审查和上下文理解，而非大规模生产代码。
 对手们在哪里？ GitHub Copilot：靠企业采购续命 Copilot的使用率，在小公司和大公司之间呈现出戏剧性的分裂：
 小公司中，Copilot排名第四，使用率约35% 10000人以上的大公司中，Copilot逆势超越Claude Code，使用率接近56% 原因并不神秘：企业采购。大公司的IT流程、安全审查、工具授权周期往往以季度甚至年度计算，GitHub Copilot早已通过大量企业的安全合规审核，嵌入了采购清单。
 调研的一个隐含结论是：工具授权流程越繁琐的大公司，Claude Code的使用率越低，整体AI实验意愿也越保守。
 这解释了Copilot在大公司的强势，却也揭示了它的脆弱——它的市场地位更多依赖采购惯性，而不是工程师的真实偏好。
-Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率稳居第二，在中等规模公司中仍然有强劲的存在感。
-但它的问题同样明显：随着用户资历的提升，Cursor的吸引力在下降。IDE插件模式在&#34;结对编程&#34;场景下体验极佳，但在&#34;让AI独立执行任务&#34;的方向上，它的天花板低于Claude Code。">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2026-03-14T22:00:00+00:00">
-		<meta property="article:modified_time" content="2026-03-14T22:00:00+00:00">
-		<meta property="article:tag" content="AI">
-		<meta property="article:tag" content="Claude Code">
+Cursor：在中等规模企业的舒适区 Cursor以约19%的&quot;最爱&quot;率稳居第二，在中等规模公司中仍然有强劲的存在感。
+但它的问题同样明显：随着用户资历的提升，Cursor的吸引力在下降。IDE插件模式在&quot;结对编程&quot;场景下体验极佳，但在&quot;让AI独立执行任务&quot;的方向上，它的天花板低于Claude Code。
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2026/02-why-claude-code-top-one/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="AI"><meta property="article:tag" content="Claude Code"><meta property="article:published_time" content="2026-03-14T22:00:00Z"><meta property="article:modified_time" content="2026-03-14T22:00:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -86,6 +82,46 @@ Engineering Manager群体则是个例外：他们同等喜爱GitHub Copilot和Cu
 Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率稳居第二，在中等规模公司中仍然有强劲的存在感。
 但它的问题同样明显：随着用户资历的提升，Cursor的吸引力在下降。IDE插件模式在&#34;结对编程&#34;场景下体验极佳，但在&#34;让AI独立执行任务&#34;的方向上，它的天花板低于Claude Code。">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2026-03-14T22:00:00Z",
+  "datePublished": "2026-03-14T22:00:00Z",
+  "description": "2025年5月，Claude Code悄然发布，几乎没有人把它当回事。\n彼时，GitHub Copilot已经深入企业血脉，Cursor凭借流畅的IDE体验赢得一大批开发者拥护，AI编程工具的格局看似已经固化。\n8个月后，Claude Code坐到了第一的位置。\n这不是营销数字，而是来自906位经验中位数超过11年、遍布欧美的资深工程师的真实调研结论。\n一张图读懂这场逆袭 《The Pragmatic Engineer》的调研负责人Gergely Orosz用了一句话来描述这个结果：\n\u0026ldquo;Claude Code在短短8个月内从零起步，成为最常用的工具。\u0026rdquo;\n这句话背后，是几个令人印象深刻的数字：\n46% 的受访者将Claude Code列为\u0026quot;最喜爱\u0026quot;的工具，而排名第二的Cursor只有19%，GitHub Copilot仅有9% 如果把Claude Code与独立版Claude模型加在一起，Anthropic系产品的\u0026quot;最爱\u0026quot;占比高达 57% 在最小规模的公司中，Claude Code的使用率达到 75%，远超同类工具 而9个月前，它根本不存在。\n它到底赢在哪里？ 1. 终端原生，而不是IDE插件 Claude Code最大的产品哲学差异，在于它不试图嵌入你的IDE，而是直接活在终端里。\n调研中，工程师们描述了一种最常见的工作姿势：一侧打开终端跑Claude Code，另一侧打开IDE做代码审查。这个组合听起来简单，却意味着Claude Code把自己定位成了一个\u0026quot;驾驶员\u0026quot;，而不是一个\u0026quot;副驾\u0026quot;。\n这个区别至关重要。IDE插件的本质是辅助——你在写代码，它帮你补全；而Claude Code的模式是代理——你描述任务，它去执行，跨文件、跨仓库、调命令行、写测试、提交代码。\n2. Opus/Sonnet模型的碾压性优势 工具的天花板，取决于背后的模型。\n调研显示，在\u0026quot;最常用于编程的AI模型\u0026quot;这一问题上，Anthropic的Opus 4.5和Sonnet 4.5获得的提及次数，超过了其余所有模型的总和。\n这不是平台锁定，是真实能力的体现。当模型够强，工具就能把更难的任务接下来；任务完成得越好，用户就越愿意留下来。\n3. 高级工程师更买账 Claude Code的用户结构，藏着一个有趣的规律：越资深的工程师，越喜欢它。\n调研数据显示，在Director及以上级别的技术领导者中，Claude Code的\u0026quot;最爱\u0026quot;提及率是初级工程师的两倍。与此同时，Cursor的喜爱度随着职级的上升而下降。\n为什么会这样？\n资深工程师有更强的目标感，他们不需要IDE帮自己\u0026quot;写代码\u0026quot;，他们需要一个能独立完成任务的代理。Claude Code的模式天然契合这种需求——你给出目标，它去执行，你来验收。\nEngineering Manager群体则是个例外：他们同等喜爱GitHub Copilot和Cursor，因为他们的日常更多是代码审查和上下文理解，而非大规模生产代码。\n对手们在哪里？ GitHub Copilot：靠企业采购续命 Copilot的使用率，在小公司和大公司之间呈现出戏剧性的分裂：\n小公司中，Copilot排名第四，使用率约35% 10000人以上的大公司中，Copilot逆势超越Claude Code，使用率接近56% 原因并不神秘：企业采购。大公司的IT流程、安全审查、工具授权周期往往以季度甚至年度计算，GitHub Copilot早已通过大量企业的安全合规审核，嵌入了采购清单。\n调研的一个隐含结论是：工具授权流程越繁琐的大公司，Claude Code的使用率越低，整体AI实验意愿也越保守。\n这解释了Copilot在大公司的强势，却也揭示了它的脆弱——它的市场地位更多依赖采购惯性，而不是工程师的真实偏好。\nCursor：在中等规模企业的舒适区 Cursor以约19%的\u0026quot;最爱\u0026quot;率稳居第二，在中等规模公司中仍然有强劲的存在感。\n但它的问题同样明显：随着用户资历的提升，Cursor的吸引力在下降。IDE插件模式在\u0026quot;结对编程\u0026quot;场景下体验极佳，但在\u0026quot;让AI独立执行任务\u0026quot;的方向上，它的天花板低于Claude Code。\n",
+  "headline": "8个月从零到第一！Claude Code为什么能颠覆AI编程界？",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "AI, Claude Code",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2026/02-why-claude-code-top-one/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2026/02-why-claude-code-top-one/",
+  "wordCount": 124
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -134,10 +170,19 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -146,12 +191,12 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -179,9 +224,9 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       8个月从零到第一！Claude Code为什么能颠覆AI编程界？
     </h1>
     <div class="meta">
@@ -189,7 +234,7 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -197,7 +242,7 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
       
       <div class="postdate">
         
-        <time datetime="2026-03-14 22:00:00 &#43;0000 UTC" itemprop="datePublished">2026-03-14</time>
+        <time class="dt-published" datetime="2026-03-14 22:00:00 &#43;0000 UTC" itemprop="datePublished">2026-03-14</time>
         
       </div>
       
@@ -267,7 +312,7 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
 </nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>2025年5月，Claude Code悄然发布，几乎没有人把它当回事。</p>
 <p>彼时，GitHub Copilot已经深入企业血脉，Cursor凭借流畅的IDE体验赢得一大批开发者拥护，AI编程工具的格局看似已经固化。</p>
 <p>8个月后，Claude Code坐到了第一的位置。</p>
@@ -381,6 +426,30 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
   
 </nav>
 
+<section class="related-posts">
+  <h2 class="related-heading">Related</h2>
+  <ul class="related-list"><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/09-my-ai-agent-team/" class="related-link">
+        <span class="related-title">如何快速搭建你的 Agent 团队，体验当老板的感觉</span>
+        <span class="related-date"><time datetime="2026-06-01 19:00:00 &#43;0800 &#43;0800">2026-06-01</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/08-how-to-use-ollama-in-macbook/" class="related-link">
+        <span class="related-title">无限 token？试试在 MacBook 上使用 Ollama</span>
+        <span class="related-date"><time datetime="2026-05-21 16:00:00 &#43;0800 &#43;0800">2026-05-21</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2026/04-claude-code-codex-subscription/" class="related-link">
+        <span class="related-title">AI 使用指南：如何用上最强的模型服务</span>
+        <span class="related-date"><time datetime="2026-04-27 20:00:00 &#43;0800 &#43;0800">2026-04-27</time></span>
+      </a>
+    </li></ul>
+</section>
+
+
+
+
+
 
 
 
@@ -431,13 +500,63 @@ Cursor：在中等规模企业的舒适区 Cursor以约19%的&#34;最爱&#34;率
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

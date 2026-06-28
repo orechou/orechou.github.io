@@ -21,19 +21,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="自定义 Spring Security 鉴权">
-	<meta property="og:description" content="背景 当我们使用 Spring 技术栈搭建单体的系统或服务时，若系统涉及到登录鉴权等功能，一般会使用 SpringSecurity 搭配一个 RBAC 的权限模型，很容易实现一套 OAuth2 鉴权、授权的流程。 随着业务扩展，单体的服务作为一个微服务并入一个大的系统之后。我们为保证其他业务能够调用该单体服务，但是又无法让其他系统来使用该服务已有鉴权，从而引入其他微服务都用基础的鉴权服务。根据业务场景的区分，当单体服务内部使用的时候走 SpringSecurity 的鉴权，单体服务外部调用的时候使用基础鉴权服务鉴权。
+  
+<meta property="og:title" content="自定义 Spring Security 鉴权">
+<meta property="og:description" content="背景 当我们使用 Spring 技术栈搭建单体的系统或服务时，若系统涉及到登录鉴权等功能，一般会使用 SpringSecurity 搭配一个 RBAC 的权限模型，很容易实现一套 OAuth2 鉴权、授权的流程。 随着业务扩展，单体的服务作为一个微服务并入一个大的系统之后。我们为保证其他业务能够调用该单体服务，但是又无法让其他系统来使用该服务已有鉴权，从而引入其他微服务都用基础的鉴权服务。根据业务场景的区分，当单体服务内部使用的时候走 SpringSecurity 的鉴权，单体服务外部调用的时候使用基础鉴权服务鉴权。
 基础 要根据不同的场景启用或绕过 SpringSecurity。我们可以首先想到能否通过 URL 来区分不同的场景，使用 HttpSecurity 的 permitAll() 和 authenticated() 来让不同路径的接口是否需要走鉴权。除此之外，可以去修改 SpringSecurity 的 Filter ，使用自定义 Filter 或者用动态代理对 Filter 进行增强。
-实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 @Aspect @Component @Slf4j public class AuthorizationHeaderAspect { /** * 基础鉴权服务 Feign 调用业务 */ @Autowired private OauthFeignBiz oauthFeignBiz; @Pointcut(&#34;execution(* org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(..))&#34;) public void securityOauth2DoFilter() { } @Pointcut(&#34;execution(* org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(..))&#34;) public void securitySecurityInterceptor2DoFilter() { } @Around(&#34;securityOauth2DoFilter()&#34;) public void enhanceSecurityOauth2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } HttpServletRequest request = (HttpServletRequest) args[0]; String accessToken = request.getHeader(&#34;Authorization&#34;); if (StringUtils.isNotBlank(request.getParameter(&#34;sceneId&#34;)) &amp;&amp; StringUtils.isNotBlank(request.getParameter(&#34;sceneType&#34;))) { // 这里我们可以根据业务场景确定走哪种鉴权方式 SecurityUtils.setBaseAuth(true); } else { SecurityUtils.setBaseAuth(false); } if (SecurityUtils.isBaseAuth()) { Response&lt;CheckTokenResponse&gt; checkTokenResponse = oauthFeignBiz.checkToken(accessToken); if (checkTokenResponse.getCode() == 0) { SecurityUtils.setBaseAuth((true)); ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } else { throw new Exception(&#34;鉴权失败&#34;); } } else { // 让原 Filter 的逻辑继续执行 joinPoint.proceed(); } } @Around(&#34;securitySecurityInterceptor2DoFilter()&#34;) public void enhanceSecuritySecurityInterceptor2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } if (!SecurityUtils.isBaseOauth()) { joinPoint.proceed(); return; } ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } }">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2022-06-01T17:00:00+00:00">
-		<meta property="article:modified_time" content="2022-06-01T17:00:00+00:00">
-		<meta property="article:tag" content="Java">
-		<meta property="article:tag" content="Spring">
+实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 @Aspect @Component @Slf4j public class AuthorizationHeaderAspect { /** * 基础鉴权服务 Feign 调用业务 */ @Autowired private OauthFeignBiz oauthFeignBiz; @Pointcut(&#34;execution(* org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(..))&#34;) public void securityOauth2DoFilter() { } @Pointcut(&#34;execution(* org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(..))&#34;) public void securitySecurityInterceptor2DoFilter() { } @Around(&#34;securityOauth2DoFilter()&#34;) public void enhanceSecurityOauth2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } HttpServletRequest request = (HttpServletRequest) args[0]; String accessToken = request.getHeader(&#34;Authorization&#34;); if (StringUtils.isNotBlank(request.getParameter(&#34;sceneId&#34;)) &amp;&amp; StringUtils.isNotBlank(request.getParameter(&#34;sceneType&#34;))) { // 这里我们可以根据业务场景确定走哪种鉴权方式 SecurityUtils.setBaseAuth(true); } else { SecurityUtils.setBaseAuth(false); } if (SecurityUtils.isBaseAuth()) { Response&lt;CheckTokenResponse&gt; checkTokenResponse = oauthFeignBiz.checkToken(accessToken); if (checkTokenResponse.getCode() == 0) { SecurityUtils.setBaseAuth((true)); ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } else { throw new Exception(&#34;鉴权失败&#34;); } } else { // 让原 Filter 的逻辑继续执行 joinPoint.proceed(); } } @Around(&#34;securitySecurityInterceptor2DoFilter()&#34;) public void enhanceSecuritySecurityInterceptor2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } if (!SecurityUtils.isBaseOauth()) { joinPoint.proceed(); return; } ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } } ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="Java"><meta property="article:tag" content="Spring"><meta property="article:published_time" content="2022-06-01T17:00:00Z"><meta property="article:modified_time" content="2022-06-01T17:00:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -42,6 +37,46 @@
 基础 要根据不同的场景启用或绕过 SpringSecurity。我们可以首先想到能否通过 URL 来区分不同的场景，使用 HttpSecurity 的 permitAll() 和 authenticated() 来让不同路径的接口是否需要走鉴权。除此之外，可以去修改 SpringSecurity 的 Filter ，使用自定义 Filter 或者用动态代理对 Filter 进行增强。
 实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 @Aspect @Component @Slf4j public class AuthorizationHeaderAspect { /** * 基础鉴权服务 Feign 调用业务 */ @Autowired private OauthFeignBiz oauthFeignBiz; @Pointcut(&#34;execution(* org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(..))&#34;) public void securityOauth2DoFilter() { } @Pointcut(&#34;execution(* org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(..))&#34;) public void securitySecurityInterceptor2DoFilter() { } @Around(&#34;securityOauth2DoFilter()&#34;) public void enhanceSecurityOauth2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } HttpServletRequest request = (HttpServletRequest) args[0]; String accessToken = request.getHeader(&#34;Authorization&#34;); if (StringUtils.isNotBlank(request.getParameter(&#34;sceneId&#34;)) &amp;&amp; StringUtils.isNotBlank(request.getParameter(&#34;sceneType&#34;))) { // 这里我们可以根据业务场景确定走哪种鉴权方式 SecurityUtils.setBaseAuth(true); } else { SecurityUtils.setBaseAuth(false); } if (SecurityUtils.isBaseAuth()) { Response&lt;CheckTokenResponse&gt; checkTokenResponse = oauthFeignBiz.checkToken(accessToken); if (checkTokenResponse.getCode() == 0) { SecurityUtils.setBaseAuth((true)); ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } else { throw new Exception(&#34;鉴权失败&#34;); } } else { // 让原 Filter 的逻辑继续执行 joinPoint.proceed(); } } @Around(&#34;securitySecurityInterceptor2DoFilter()&#34;) public void enhanceSecuritySecurityInterceptor2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest &amp;&amp; args[1] instanceof javax.servlet.ServletResponse &amp;&amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } if (!SecurityUtils.isBaseOauth()) { joinPoint.proceed(); return; } ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } }">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2022-06-01T17:00:00Z",
+  "datePublished": "2022-06-01T17:00:00Z",
+  "description": "背景 当我们使用 Spring 技术栈搭建单体的系统或服务时，若系统涉及到登录鉴权等功能，一般会使用 SpringSecurity 搭配一个 RBAC 的权限模型，很容易实现一套 OAuth2 鉴权、授权的流程。 随着业务扩展，单体的服务作为一个微服务并入一个大的系统之后。我们为保证其他业务能够调用该单体服务，但是又无法让其他系统来使用该服务已有鉴权，从而引入其他微服务都用基础的鉴权服务。根据业务场景的区分，当单体服务内部使用的时候走 SpringSecurity 的鉴权，单体服务外部调用的时候使用基础鉴权服务鉴权。\n基础 要根据不同的场景启用或绕过 SpringSecurity。我们可以首先想到能否通过 URL 来区分不同的场景，使用 HttpSecurity 的 permitAll() 和 authenticated() 来让不同路径的接口是否需要走鉴权。除此之外，可以去修改 SpringSecurity 的 Filter ，使用自定义 Filter 或者用动态代理对 Filter 进行增强。\n实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 @Aspect @Component @Slf4j public class AuthorizationHeaderAspect { /** * 基础鉴权服务 Feign 调用业务 */ @Autowired private OauthFeignBiz oauthFeignBiz; @Pointcut(\u0026#34;execution(* org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter.doFilter(..))\u0026#34;) public void securityOauth2DoFilter() { } @Pointcut(\u0026#34;execution(* org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(..))\u0026#34;) public void securitySecurityInterceptor2DoFilter() { } @Around(\u0026#34;securityOauth2DoFilter()\u0026#34;) public void enhanceSecurityOauth2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest \u0026amp;\u0026amp; args[1] instanceof javax.servlet.ServletResponse \u0026amp;\u0026amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } HttpServletRequest request = (HttpServletRequest) args[0]; String accessToken = request.getHeader(\u0026#34;Authorization\u0026#34;); if (StringUtils.isNotBlank(request.getParameter(\u0026#34;sceneId\u0026#34;)) \u0026amp;\u0026amp; StringUtils.isNotBlank(request.getParameter(\u0026#34;sceneType\u0026#34;))) { // 这里我们可以根据业务场景确定走哪种鉴权方式 SecurityUtils.setBaseAuth(true); } else { SecurityUtils.setBaseAuth(false); } if (SecurityUtils.isBaseAuth()) { Response\u0026lt;CheckTokenResponse\u0026gt; checkTokenResponse = oauthFeignBiz.checkToken(accessToken); if (checkTokenResponse.getCode() == 0) { SecurityUtils.setBaseAuth((true)); ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } else { throw new Exception(\u0026#34;鉴权失败\u0026#34;); } } else { // 让原 Filter 的逻辑继续执行 joinPoint.proceed(); } } @Around(\u0026#34;securitySecurityInterceptor2DoFilter()\u0026#34;) public void enhanceSecuritySecurityInterceptor2DoFilter(ProceedingJoinPoint joinPoint) throws Throwable { Object[] args = joinPoint.getArgs(); if (args == null || args.length != 3 || !(args[0] instanceof HttpServletRequest \u0026amp;\u0026amp; args[1] instanceof javax.servlet.ServletResponse \u0026amp;\u0026amp; args[2] instanceof FilterChain)) { joinPoint.proceed(); return; } if (!SecurityUtils.isBaseOauth()) { joinPoint.proceed(); return; } ((FilterChain) args[2]).doFilter((ServletRequest) args[0], (ServletResponse) args[1]); } } ",
+  "headline": "自定义 Spring Security 鉴权",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "Java, Spring",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2022/java_%E8%87%AA%E5%AE%9A%E4%B9%89-spring-security-%E9%89%B4%E6%9D%83/",
+  "wordCount": 274
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -90,10 +125,19 @@
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -102,12 +146,12 @@
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -135,9 +179,9 @@
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       自定义 Spring Security 鉴权
     </h1>
     <div class="meta">
@@ -145,7 +189,7 @@
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -153,7 +197,7 @@
       
       <div class="postdate">
         
-        <time datetime="2022-06-01 17:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-01</time>
+        <time class="dt-published" datetime="2022-06-01 17:00:00 &#43;0000 UTC" itemprop="datePublished">2022-06-01</time>
         
       </div>
       
@@ -202,7 +246,7 @@
     <nav id="TableOfContents"></nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <h1 id="背景">背景</h1>
 <p>当我们使用 Spring 技术栈搭建单体的系统或服务时，若系统涉及到登录鉴权等功能，一般会使用 SpringSecurity 搭配一个 RBAC 的权限模型，很容易实现一套 OAuth2 鉴权、授权的流程。
 随着业务扩展，单体的服务作为一个微服务并入一个大的系统之后。我们为保证其他业务能够调用该单体服务，但是又无法让其他系统来使用该服务已有鉴权，从而引入其他微服务都用基础的鉴权服务。根据业务场景的区分，当单体服务内部使用的时候走 SpringSecurity 的鉴权，单体服务外部调用的时候使用基础鉴权服务鉴权。</p>
@@ -370,6 +414,30 @@
   
 </nav>
 
+<section class="related-posts">
+  <h2 class="related-heading">Related</h2>
+  <ul class="related-list"><li class="related-item">
+      <a href="https://www.orechou.com/posts/2023/juc-tools-locksupport/" class="related-link">
+        <span class="related-title">JUC 工具：LockSupport</span>
+        <span class="related-date"><time datetime="2023-06-09 17:00:00 &#43;0000 UTC">2023-06-09</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2023/bcrypt-%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E8%AF%A6%E8%A7%A3/" class="related-link">
+        <span class="related-title">Bcrypt 加密算法详解</span>
+        <span class="related-date"><time datetime="2023-02-12 18:00:00 &#43;0000 UTC">2023-02-12</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2023/%E5%85%B3%E4%BA%8E-priorityordered-%E5%92%8C-ordered-%E7%9A%84%E4%BD%BF%E7%94%A8/" class="related-link">
+        <span class="related-title">关于 PriorityOrdered 和 Ordered 的使用</span>
+        <span class="related-date"><time datetime="2023-02-09 23:00:00 &#43;0000 UTC">2023-02-09</time></span>
+      </a>
+    </li></ul>
+</section>
+
+
+
+
+
 
 
 
@@ -420,13 +488,63 @@
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

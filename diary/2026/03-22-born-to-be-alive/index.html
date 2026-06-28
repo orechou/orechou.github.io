@@ -21,18 +21,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/diary/2026/03-22-born-to-be-alive/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="终于看完《生命树》">
-	<meta property="og:description" content="在经历了多重剧透并知晓结局的情况下，今天下午终于和 yoyo 一起看完了《生命树》这部电视剧（从春节前就开始看这部剧了）。我是比较喜欢胡歌扮演的多杰这个角色，可能我比较喜欢胡歌，但是我看不出或者不觉得演技上很厉害的地方。当别人说胡歌演技好的时候，我有时会觉得是我感受不出来吗？因为我希望他好，但没有好到能够惊讶到我的地方，我觉得就是他的正常发挥。
+  
+<meta property="og:title" content="终于看完《生命树》">
+<meta property="og:description" content="在经历了多重剧透并知晓结局的情况下，今天下午终于和 yoyo 一起看完了《生命树》这部电视剧（从春节前就开始看这部剧了）。我是比较喜欢胡歌扮演的多杰这个角色，可能我比较喜欢胡歌，但是我看不出或者不觉得演技上很厉害的地方。当别人说胡歌演技好的时候，我有时会觉得是我感受不出来吗？因为我希望他好，但没有好到能够惊讶到我的地方，我觉得就是他的正常发挥。
 但我觉得胡歌的气质是比较合适的，对于他所承接的大部份角色来说，都很匹配。另外一点是，他遭遇过车祸，经历过生死。似乎他对戏里的角色或者戏外的生活，有更多的包容性，让人更容易接受。也可能这只是我的幻想。
 聊回这部电视剧，剧中似乎没有太多镜头让我感叹青藏高原的壮丽。我一直有一个想法，想要去青海、西藏、新疆去自驾走走。可能今年是比较有机会的一年，等到公司裁员之后，就出去。在剧情上，剧集的下半部分是围绕着找到多杰失踪死亡的原因，但留下了一个罗生门式的结局。当林培生自述去救多杰的车最后没停在大路上，而是导演给了一个停在戈壁，而不远处就是大路的远景镜头，这里就很值得玩味。
-就聊这么多吧。">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="diary">
-		<meta property="article:published_time" content="2026-03-22T00:00:00+00:00">
-		<meta property="article:modified_time" content="2026-03-22T00:00:00+00:00">
+就聊这么多吧。
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/diary/2026/03-22-born-to-be-alive/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:published_time" content="2026-03-22T00:00:00Z"><meta property="article:modified_time" content="2026-03-22T00:00:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -42,6 +40,11 @@
 聊回这部电视剧，剧中似乎没有太多镜头让我感叹青藏高原的壮丽。我一直有一个想法，想要去青海、西藏、新疆去自驾走走。可能今年是比较有机会的一年，等到公司裁员之后，就出去。在剧情上，剧集的下半部分是围绕着找到多杰失踪死亡的原因，但留下了一个罗生门式的结局。当林培生自述去救多杰的车最后没停在大路上，而是导演给了一个停在戈壁，而不远处就是大路的远景镜头，这里就很值得玩味。
 就聊这么多吧。">
 
+  
+
+
+  
+  
   
   
     
@@ -90,10 +93,19 @@
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -102,12 +114,12 @@
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -198,13 +210,63 @@
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

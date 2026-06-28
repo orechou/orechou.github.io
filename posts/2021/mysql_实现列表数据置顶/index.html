@@ -21,19 +21,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2021/mysql_%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BD%AE%E9%A1%B6/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="【MySQL】实现列表数据置顶">
-	<meta property="og:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
+  
+<meta property="og:title" content="【MySQL】实现列表数据置顶">
+<meta property="og:description" content="有的列表获取的业务场景，需要根据一些条件将数据置顶。
 例如有一张表有 id 和 name 两个字段。数据表如下。
 id name 1 1_name 2 2_name 3 3_name 4 4_name 5 5_name 6 6_name 7 7_name 8 8_name 9 9_name 10 10_name 若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：
-SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2021-08-16T14:46:00+00:00">
-		<meta property="article:modified_time" content="2021-08-16T14:46:00+00:00">
-		<meta property="article:tag" content="MySQL">
+SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5 ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2021/mysql_%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BD%AE%E9%A1%B6/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="MySQL"><meta property="article:published_time" content="2021-08-16T14:46:00Z"><meta property="article:modified_time" content="2021-08-16T14:46:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -43,6 +39,46 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
 id name 1 1_name 2 2_name 3 3_name 4 4_name 5 5_name 6 6_name 7 7_name 8 8_name 9 9_name 10 10_name 若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：
 SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2021-08-16T14:46:00Z",
+  "datePublished": "2021-08-16T14:46:00Z",
+  "description": "有的列表获取的业务场景，需要根据一些条件将数据置顶。\n例如有一张表有 id 和 name 两个字段。数据表如下。\nid name 1 1_name 2 2_name 3 3_name 4 4_name 5 5_name 6 6_name 7 7_name 8 8_name 9 9_name 10 10_name 若需要将 id 为 5 和 7 的数据置顶，并且分页的 size 是 5 的话，我们的 SQL 可以这样写：\nSELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999 ELSE id END LIMIT 0, 5 ",
+  "headline": "【MySQL】实现列表数据置顶",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "77, 121, 83, 81, 76",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2021/mysql_%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BD%AE%E9%A1%B6/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2021/mysql_%E5%AE%9E%E7%8E%B0%E5%88%97%E8%A1%A8%E6%95%B0%E6%8D%AE%E7%BD%AE%E9%A1%B6/",
+  "wordCount": 66
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -91,10 +127,19 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -103,12 +148,12 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -136,9 +181,9 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       【MySQL】实现列表数据置顶
     </h1>
     <div class="meta">
@@ -146,7 +191,7 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -154,7 +199,7 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
       
       <div class="postdate">
         
-        <time datetime="2021-08-16 14:46:00 &#43;0000 UTC" itemprop="datePublished">2021-08-16</time>
+        <time class="dt-published" datetime="2021-08-16 14:46:00 &#43;0000 UTC" itemprop="datePublished">2021-08-16</time>
         
       </div>
       
@@ -200,7 +245,7 @@ SELECT * FROM goods ORDER BY CASE WHEN id = 5 THEN -10000 WHEN id = 7 THEN -9999
     <nav id="TableOfContents"></nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>有的列表获取的业务场景，需要根据一些条件将数据置顶。</p>
 <p>例如有一张表有 id 和 name 两个字段。数据表如下。</p>
 <table>
@@ -280,6 +325,30 @@ LIMIT 0, 5
   
 </nav>
 
+<section class="related-posts">
+  <h2 class="related-heading">Related</h2>
+  <ul class="related-list"><li class="related-item">
+      <a href="https://www.orechou.com/posts/2023/mysql-master-slave-practice/" class="related-link">
+        <span class="related-title">【DevOps】使用 Docker 搭建 MySQL 主从复制架构</span>
+        <span class="related-date"><time datetime="2023-06-28 18:30:00 &#43;0000 UTC">2023-06-28</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2021/mysql_%E6%85%A2-sql-%E5%88%86%E6%9E%90/" class="related-link">
+        <span class="related-title">【MySQL】慢 SQL 分析</span>
+        <span class="related-date"><time datetime="2021-08-10 12:30:00 &#43;0000 UTC">2021-08-10</time></span>
+      </a>
+    </li><li class="related-item">
+      <a href="https://www.orechou.com/posts/2021/mysql_explain/" class="related-link">
+        <span class="related-title">【MySQL】Explain</span>
+        <span class="related-date"><time datetime="2021-08-06 17:00:00 &#43;0000 UTC">2021-08-06</time></span>
+      </a>
+    </li></ul>
+</section>
+
+
+
+
+
 
 
 
@@ -330,13 +399,63 @@ LIMIT 0, 5
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

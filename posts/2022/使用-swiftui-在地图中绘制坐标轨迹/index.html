@@ -21,18 +21,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2022/%E4%BD%BF%E7%94%A8-swiftui-%E5%9C%A8%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%BB%98%E5%88%B6%E5%9D%90%E6%A0%87%E8%BD%A8%E8%BF%B9/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="使用 SwiftUI 在地图中绘制坐标轨迹">
-	<meta property="og:description" content="一直有想做属于自己的 App 的想法，零零散散地有学习一些内容，现在决定开启一个记录学习过程的系列博文，以此来巩固自己所学到的 iOS 开发知识和激励自己把第一个 App 实现出来。 脑海中一直有个做地图类应用的想法，本科做移动轨迹相关的毕业设计。此类应用主要包括地图（Map）、坐标点（Location）、绘制轨迹（Polyline）几个要素。这篇博文将会使用 SwiftUI 在地图上连接坐标点绘制出轨迹。GPS 坐标数据可以在 microsoft 上下载。效果如下： 首先创建一个 SwiftUI 工程的项目，项目的文件组织如下： 先定义坐标点的数据结构，代码如下：
-1 2 3 4 5 6 7 8 9 10 import Foundation struct Location: Hashable, Codable, Identifiable { var id: Int // 经度 var longitude: Double // 纬度 var latitude: Double var isValid: Bool } 坐标数据的 ViewModel，我们将从 location.json 中加载所有的坐标点，代码如下：">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2022-03-27T17:43:00+00:00">
-		<meta property="article:modified_time" content="2022-03-27T17:43:00+00:00">
-		<meta property="article:tag" content="IOS">
-		<meta property="article:tag" content="SwiftUI">
+  
+<meta property="og:title" content="使用 SwiftUI 在地图中绘制坐标轨迹">
+<meta property="og:description" content="一直有想做属于自己的 App 的想法，零零散散地有学习一些内容，现在决定开启一个记录学习过程的系列博文，以此来巩固自己所学到的 iOS 开发知识和激励自己把第一个 App 实现出来。 脑海中一直有个做地图类应用的想法，本科做移动轨迹相关的毕业设计。此类应用主要包括地图（Map）、坐标点（Location）、绘制轨迹（Polyline）几个要素。这篇博文将会使用 SwiftUI 在地图上连接坐标点绘制出轨迹。GPS 坐标数据可以在 microsoft 上下载。效果如下： 首先创建一个 SwiftUI 工程的项目，项目的文件组织如下： 先定义坐标点的数据结构，代码如下：
+1 2 3 4 5 6 7 8 9 10 import Foundation struct Location: Hashable, Codable, Identifiable { var id: Int // 经度 var longitude: Double // 纬度 var latitude: Double var isValid: Bool } 坐标数据的 ViewModel，我们将从 location.json 中加载所有的坐标点，代码如下：
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2022/%E4%BD%BF%E7%94%A8-swiftui-%E5%9C%A8%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%BB%98%E5%88%B6%E5%9D%90%E6%A0%87%E8%BD%A8%E8%BF%B9/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="IOS"><meta property="article:tag" content="SwiftUI"><meta property="article:published_time" content="2022-03-27T17:43:00Z"><meta property="article:modified_time" content="2022-03-27T17:43:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -40,6 +36,46 @@
 	<meta name="twitter:description" content="一直有想做属于自己的 App 的想法，零零散散地有学习一些内容，现在决定开启一个记录学习过程的系列博文，以此来巩固自己所学到的 iOS 开发知识和激励自己把第一个 App 实现出来。 脑海中一直有个做地图类应用的想法，本科做移动轨迹相关的毕业设计。此类应用主要包括地图（Map）、坐标点（Location）、绘制轨迹（Polyline）几个要素。这篇博文将会使用 SwiftUI 在地图上连接坐标点绘制出轨迹。GPS 坐标数据可以在 microsoft 上下载。效果如下： 首先创建一个 SwiftUI 工程的项目，项目的文件组织如下： 先定义坐标点的数据结构，代码如下：
 1 2 3 4 5 6 7 8 9 10 import Foundation struct Location: Hashable, Codable, Identifiable { var id: Int // 经度 var longitude: Double // 纬度 var latitude: Double var isValid: Bool } 坐标数据的 ViewModel，我们将从 location.json 中加载所有的坐标点，代码如下：">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2022-03-27T17:43:00Z",
+  "datePublished": "2022-03-27T17:43:00Z",
+  "description": "一直有想做属于自己的 App 的想法，零零散散地有学习一些内容，现在决定开启一个记录学习过程的系列博文，以此来巩固自己所学到的 iOS 开发知识和激励自己把第一个 App 实现出来。 脑海中一直有个做地图类应用的想法，本科做移动轨迹相关的毕业设计。此类应用主要包括地图（Map）、坐标点（Location）、绘制轨迹（Polyline）几个要素。这篇博文将会使用 SwiftUI 在地图上连接坐标点绘制出轨迹。GPS 坐标数据可以在 microsoft 上下载。效果如下： 首先创建一个 SwiftUI 工程的项目，项目的文件组织如下： 先定义坐标点的数据结构，代码如下：\n1 2 3 4 5 6 7 8 9 10 import Foundation struct Location: Hashable, Codable, Identifiable { var id: Int // 经度 var longitude: Double // 纬度 var latitude: Double var isValid: Bool } 坐标数据的 ViewModel，我们将从 location.json 中加载所有的坐标点，代码如下：\n",
+  "headline": "使用 SwiftUI 在地图中绘制坐标轨迹",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "iOS, SwiftUI",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2022/%E4%BD%BF%E7%94%A8-swiftui-%E5%9C%A8%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%BB%98%E5%88%B6%E5%9D%90%E6%A0%87%E8%BD%A8%E8%BF%B9/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2022/%E4%BD%BF%E7%94%A8-swiftui-%E5%9C%A8%E5%9C%B0%E5%9B%BE%E4%B8%AD%E7%BB%98%E5%88%B6%E5%9D%90%E6%A0%87%E8%BD%A8%E8%BF%B9/",
+  "wordCount": 521
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -88,10 +124,19 @@
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -100,12 +145,12 @@
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -133,9 +178,9 @@
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       使用 SwiftUI 在地图中绘制坐标轨迹
     </h1>
     <div class="meta">
@@ -143,7 +188,7 @@
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -151,7 +196,7 @@
       
       <div class="postdate">
         
-        <time datetime="2022-03-27 17:43:00 &#43;0000 UTC" itemprop="datePublished">2022-03-27</time>
+        <time class="dt-published" datetime="2022-03-27 17:43:00 &#43;0000 UTC" itemprop="datePublished">2022-03-27</time>
         
       </div>
       
@@ -200,12 +245,16 @@
     <nav id="TableOfContents"></nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>一直有想做属于自己的 App 的想法，零零散散地有学习一些内容，现在决定开启一个记录学习过程的系列博文，以此来巩固自己所学到的 iOS 开发知识和激励自己把第一个 App 实现出来。
 脑海中一直有个做地图类应用的想法，本科做移动轨迹相关的毕业设计。此类应用主要包括地图（Map）、坐标点（Location）、绘制轨迹（Polyline）几个要素。这篇博文将会使用 SwiftUI 在地图上连接坐标点绘制出轨迹。GPS 坐标数据可以在 <a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=52367">microsoft</a> 上下载。效果如下：
-<img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/polyline_demo.png" alt="">
+<figure class="content-figure">
+  <img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/polyline_demo.png" alt="" loading="lazy" decoding="async" /></figure>
+
 首先创建一个 SwiftUI 工程的项目，项目的文件组织如下：
-<img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/SwiftUIPolyline_Project.png" alt="">
+<figure class="content-figure">
+  <img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/SwiftUIPolyline_Project.png" alt="" loading="lazy" decoding="async" /></figure>
+
 先定义坐标点的数据结构，代码如下：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -299,7 +348,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>接下来我们将利用 <code>UIViewRepresentable</code> 这个协议实现将 UIKit 的 UIView 集成到 SwiftUI 中使用。<code>UIViewRepresentable</code> 只包含四个方法。其中 <code>makeUIView</code> , <code>updateUIView</code> 用于创建和更新视图。<code>makeCoordinator</code> 创建协调器，用于通知其它 UI 与该 View 之间的变化更新。<code>dismantleUIView</code> 用于在移除 View 时做一些善后操作。四个方法在 <code>UIViewRepresentable</code> 生命周期中的调用顺序如下：
-<img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/UIViewRepresentable_lifecycle.png" alt="">
+<figure class="content-figure">
+  <img src="https://raw.githubusercontent.com/OreChou/PicBed/main/img/UIViewRepresentable_lifecycle.png" alt="" loading="lazy" decoding="async" /></figure>
+
 我们的 MapView 代码如下：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -491,6 +542,12 @@
 
 
 
+
+
+
+
+
+
   
     
   
@@ -538,13 +595,63 @@
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>

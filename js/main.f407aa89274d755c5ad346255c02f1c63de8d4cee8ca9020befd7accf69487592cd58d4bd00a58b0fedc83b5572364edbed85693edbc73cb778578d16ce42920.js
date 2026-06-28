@@ -27,42 +27,40 @@
     } catch (e) {}
   }
 
-  function updateThemeSwitch(checkbox, theme) {
-    const thumb = checkbox.parentElement.querySelector('.switch-thumb');
-    checkbox.checked = (theme === 'dark');
-    if (thumb) {
-      thumb.textContent = theme === 'dark' ? '🌙' : '☀️';
-    }
+  function themeIconClass(theme) {
+    return theme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+
+  // Update the toggle button's icon + aria to reflect `theme`. The button is
+  // styled identically to the search trigger (see theme-toggle.scss) so the
+  // two corner tools look like a matched pair.
+  function updateThemeSwitch(button, theme) {
+    if (!button) return;
+    button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    var icon = button.querySelector('i');
+    if (icon) icon.className = themeIconClass(theme);
   }
 
   function createThemeToggleBtn(currentTheme, systemTheme) {
-    const label = document.createElement('label');
-    label.className = 'theme-toggle-switch';
-    label.setAttribute('aria-label', 'Toggle dark/light theme');
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-toggle';
+    button.setAttribute('aria-label', 'Toggle dark/light theme');
 
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.setAttribute('aria-label', 'Dark mode');
+    var icon = document.createElement('i');
+    icon.className = 'fas fa-sun';
+    icon.setAttribute('aria-hidden', 'true');
+    button.appendChild(icon);
 
-    const track = document.createElement('span');
-    track.className = 'switch-track';
-
-    const thumb = document.createElement('span');
-    thumb.className = 'switch-thumb';
-
-    track.appendChild(thumb);
-    label.appendChild(checkbox);
-    label.appendChild(track);
-
-    checkbox.addEventListener('change', function() {
-      applyTheme(this.checked ? 'dark' : 'light');
+    button.addEventListener('click', function () {
+      var goingDark = !document.documentElement.classList.contains('theme-dark');
+      applyTheme(goingDark ? 'dark' : 'light');
       try { localStorage.setItem('manual-theme-selection', 'true'); } catch (e) {}
+      updateThemeSwitch(button, goingDark ? 'dark' : 'light');
     });
 
-    const theme = currentTheme || systemTheme;
-    updateThemeSwitch(checkbox, theme);
-
-    return label;
+    updateThemeSwitch(button, currentTheme || systemTheme);
+    return button;
   }
 
   function handleSystemThemeChange(e) {
@@ -73,8 +71,8 @@
 
     const newTheme = e.matches ? 'dark' : 'light';
     applyTheme(newTheme);
-    const checkbox = document.querySelector('.theme-toggle-switch input');
-    if (checkbox) updateThemeSwitch(checkbox, newTheme);
+    const button = document.querySelector('.theme-toggle');
+    if (button) updateThemeSwitch(button, newTheme);
   }
 
   function initThemeSwitcher() {
@@ -153,15 +151,30 @@
     }
   }
 
+  // Click-to-zoom for inline content images (those rendered by the
+  // render-image hook as <figure class="content-figure">). Reuses openLightbox.
+  function initContentImages() {
+    document.querySelectorAll('.content-figure img').forEach(function(img) {
+      if (img.dataset.lightboxBound) return;
+      img.dataset.lightboxBound = '1';
+      img.addEventListener('click', function(e) {
+        e.preventDefault();
+        openLightbox(img.currentSrc || img.src, img.alt);
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     initThemeSwitcher();
     initGallery();
     initMobileNav();
+    initContentImages();
   });
 
-  // Reinitialize gallery after SPA navigation
+  // Reinitialize gallery + content images after SPA navigation
   window.addEventListener('spa-content-loaded', function() {
     initGallery();
+    initContentImages();
   });
 
 })();

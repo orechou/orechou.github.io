@@ -21,24 +21,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="https://www.orechou.com/posts/2023/grafana-prometheus-practice/">
-	<meta property="og:site_name" content="奥力手记">
-	<meta property="og:title" content="【DevOps】使用 Grafana 和 Prometheus 做服务监控">
-	<meta property="og:description" content="最近需要对自己的一些服务做监控，于是想要动手实践使用一下 Grafana 和 Prometheus。这篇文章就主要介绍搭建 Grafana 和 Prometheus 对 MySQL 做监控的过程。
+  
+<meta property="og:title" content="【DevOps】使用 Grafana 和 Prometheus 做服务监控">
+<meta property="og:description" content="最近需要对自己的一些服务做监控，于是想要动手实践使用一下 Grafana 和 Prometheus。这篇文章就主要介绍搭建 Grafana 和 Prometheus 对 MySQL 做监控的过程。
 工具介绍 Prometheus 是一个开源的系统监控和警报工具包，由 SoundCloud 启动。它的设计目标是对大规模的服务容器和微服务体系结构提供稳健的可靠性和实时的度量。Prometheus 提供了多种数据收集机制，包括通过 HTTP 拉取目标应用程序暴露的 metrics，通过服务发现或者静态配置去发现新的目标，或者接受推送的时间序列数据。Prometheus 还提供了一种灵活的查询语言（PromQL），以便在其数据上进行切片和切块，生成聚合，预测等操作。 Prometheus 服务器以一个独立的服务器形式运行，它从被配置的位置定期拉取度量数据，将数据存储在它的时间序列数据库中，并运行定义的警报规则以生成新的警报。它的核心组件是一个多维数据模型和一套灵活的查询语言。在数据收集方面，它主要采用了一种拉模式的设计，也支持推模式的数据收集。
-Grafana 是一个开源的度量分析和可视化套件。它通常被用于时间序列数据的可视化，这种数据通常来源于如今在软件开发中广泛使用的实时监控系统，如 Prometheus。Grafana 主要用于可视化和探索度量数据。它可以通过一种查询编辑器（这种编辑器支持数据源特定的语言）来创建可视化的图表，并通过一种灵活的方式将这些图表组织在一个或多个&#34;仪表板&#34;上。此外，Grafana 还支持警报和通知功能，以及丰富的插件生态系统。 Grafana 是一个前后端分离的 Web 应用程序。其前端部分使用 AngularJS 和 Later.js 构建，后端部分则使用 Go 语言编写。在运行时，Grafana 服务器将请求时间序列数据，然后运行查询并将结果绘制成图表。
+Grafana 是一个开源的度量分析和可视化套件。它通常被用于时间序列数据的可视化，这种数据通常来源于如今在软件开发中广泛使用的实时监控系统，如 Prometheus。Grafana 主要用于可视化和探索度量数据。它可以通过一种查询编辑器（这种编辑器支持数据源特定的语言）来创建可视化的图表，并通过一种灵活的方式将这些图表组织在一个或多个&quot;仪表板&quot;上。此外，Grafana 还支持警报和通知功能，以及丰富的插件生态系统。 Grafana 是一个前后端分离的 Web 应用程序。其前端部分使用 AngularJS 和 Later.js 构建，后端部分则使用 Go 语言编写。在运行时，Grafana 服务器将请求时间序列数据，然后运行查询并将结果绘制成图表。
 搭建过程 docker 运行 MySQL 首先，我们用 docker 启动一个 MySQL 8.0 的容器，来充当我们需要被监控的服务。
 创建 MySQL 8.0 配置文件 my.conf，该配置文件需要放在 conf 文件夹下，配置如下：
 [mysqld] user=mysql character-set-server=utf8 collation-server=utf8_unicode_ci default_authentication_plugin=mysql_native_password secure_file_priv=/var/lib/mysql expire_logs_days=7 sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION max_connections=1000 [client] default-character-set=utf8 [mysql] default-character-set=utf8 docker 命令如下：
-1 2 3 4 5 6 7 8 docker pull mysql/mysql-server docker run -p 3306:3306 --name mysql-8.0 \ -v /Users/orechou/docker/mysql8/logs:/var/log/mysql \ -v /Users/orechou/docker/mysql8/data:/var/lib/mysql \ -v /Users/orechou/docker/mysql8/conf:/etc/mysql \ -e MYSQL_ROOT_PASSWORD=root \ -d mysql/mysql-server:latest 注意，你需要把命令中的本地挂载路径改成你自己机器上的路径。容器启动起来之后，远程连接 MySQL 的时候出现如下异常：HY000][1130] null, message from server: “Host ‘172.17.0.1’ is not allowed to connect to this MySQL server”. 则是需要配置mysql对外开放连接权限，操作如下：">
-	<meta property="og:locale" content="en_us">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2023-06-27T15:45:00+00:00">
-		<meta property="article:modified_time" content="2023-06-27T15:45:00+00:00">
-		<meta property="article:tag" content="DevOps">
-		<meta property="article:tag" content="Grafana">
-		<meta property="article:tag" content="Prometheus">
+1 2 3 4 5 6 7 8 docker pull mysql/mysql-server docker run -p 3306:3306 --name mysql-8.0 \ -v /Users/orechou/docker/mysql8/logs:/var/log/mysql \ -v /Users/orechou/docker/mysql8/data:/var/lib/mysql \ -v /Users/orechou/docker/mysql8/conf:/etc/mysql \ -e MYSQL_ROOT_PASSWORD=root \ -d mysql/mysql-server:latest 注意，你需要把命令中的本地挂载路径改成你自己机器上的路径。容器启动起来之后，远程连接 MySQL 的时候出现如下异常：HY000][1130] null, message from server: &ldquo;Host &lsquo;172.17.0.1&rsquo; is not allowed to connect to this MySQL server&rdquo;. 则是需要配置mysql对外开放连接权限，操作如下：
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.orechou.com/posts/2023/grafana-prometheus-practice/">
+<meta property="og:site_name" content="奥力手记"><meta property="article:tag" content="DevOps"><meta property="article:tag" content="Grafana"><meta property="article:tag" content="Prometheus"><meta property="article:published_time" content="2023-06-27T15:45:00Z"><meta property="article:modified_time" content="2023-06-27T15:45:00Z">
 
   
 	<meta name="twitter:card" content="summary">
@@ -51,6 +46,46 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
 [mysqld] user=mysql character-set-server=utf8 collation-server=utf8_unicode_ci default_authentication_plugin=mysql_native_password secure_file_priv=/var/lib/mysql expire_logs_days=7 sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION max_connections=1000 [client] default-character-set=utf8 [mysql] default-character-set=utf8 docker 命令如下：
 1 2 3 4 5 6 7 8 docker pull mysql/mysql-server docker run -p 3306:3306 --name mysql-8.0 \ -v /Users/orechou/docker/mysql8/logs:/var/log/mysql \ -v /Users/orechou/docker/mysql8/data:/var/lib/mysql \ -v /Users/orechou/docker/mysql8/conf:/etc/mysql \ -e MYSQL_ROOT_PASSWORD=root \ -d mysql/mysql-server:latest 注意，你需要把命令中的本地挂载路径改成你自己机器上的路径。容器启动起来之后，远程连接 MySQL 的时候出现如下异常：HY000][1130] null, message from server: “Host ‘172.17.0.1’ is not allowed to connect to this MySQL server”. 则是需要配置mysql对外开放连接权限，操作如下：">
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "author": {
+    "@type": "Person",
+    "name": "奥力手记",
+    "url": "https://www.orechou.com/"
+  },
+  "dateModified": "2023-06-27T15:45:00Z",
+  "datePublished": "2023-06-27T15:45:00Z",
+  "description": "最近需要对自己的一些服务做监控，于是想要动手实践使用一下 Grafana 和 Prometheus。这篇文章就主要介绍搭建 Grafana 和 Prometheus 对 MySQL 做监控的过程。\n工具介绍 Prometheus 是一个开源的系统监控和警报工具包，由 SoundCloud 启动。它的设计目标是对大规模的服务容器和微服务体系结构提供稳健的可靠性和实时的度量。Prometheus 提供了多种数据收集机制，包括通过 HTTP 拉取目标应用程序暴露的 metrics，通过服务发现或者静态配置去发现新的目标，或者接受推送的时间序列数据。Prometheus 还提供了一种灵活的查询语言（PromQL），以便在其数据上进行切片和切块，生成聚合，预测等操作。 Prometheus 服务器以一个独立的服务器形式运行，它从被配置的位置定期拉取度量数据，将数据存储在它的时间序列数据库中，并运行定义的警报规则以生成新的警报。它的核心组件是一个多维数据模型和一套灵活的查询语言。在数据收集方面，它主要采用了一种拉模式的设计，也支持推模式的数据收集。\nGrafana 是一个开源的度量分析和可视化套件。它通常被用于时间序列数据的可视化，这种数据通常来源于如今在软件开发中广泛使用的实时监控系统，如 Prometheus。Grafana 主要用于可视化和探索度量数据。它可以通过一种查询编辑器（这种编辑器支持数据源特定的语言）来创建可视化的图表，并通过一种灵活的方式将这些图表组织在一个或多个\u0026quot;仪表板\u0026quot;上。此外，Grafana 还支持警报和通知功能，以及丰富的插件生态系统。 Grafana 是一个前后端分离的 Web 应用程序。其前端部分使用 AngularJS 和 Later.js 构建，后端部分则使用 Go 语言编写。在运行时，Grafana 服务器将请求时间序列数据，然后运行查询并将结果绘制成图表。\n搭建过程 docker 运行 MySQL 首先，我们用 docker 启动一个 MySQL 8.0 的容器，来充当我们需要被监控的服务。\n创建 MySQL 8.0 配置文件 my.conf，该配置文件需要放在 conf 文件夹下，配置如下：\n[mysqld] user=mysql character-set-server=utf8 collation-server=utf8_unicode_ci default_authentication_plugin=mysql_native_password secure_file_priv=/var/lib/mysql expire_logs_days=7 sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION max_connections=1000 [client] default-character-set=utf8 [mysql] default-character-set=utf8 docker 命令如下：\n1 2 3 4 5 6 7 8 docker pull mysql/mysql-server docker run -p 3306:3306 --name mysql-8.0 \\ -v /Users/orechou/docker/mysql8/logs:/var/log/mysql \\ -v /Users/orechou/docker/mysql8/data:/var/lib/mysql \\ -v /Users/orechou/docker/mysql8/conf:/etc/mysql \\ -e MYSQL_ROOT_PASSWORD=root \\ -d mysql/mysql-server:latest 注意，你需要把命令中的本地挂载路径改成你自己机器上的路径。容器启动起来之后，远程连接 MySQL 的时候出现如下异常：HY000][1130] null, message from server: \u0026ldquo;Host \u0026lsquo;172.17.0.1\u0026rsquo; is not allowed to connect to this MySQL server\u0026rdquo;. 则是需要配置mysql对外开放连接权限，操作如下：\n",
+  "headline": "【DevOps】使用 Grafana 和 Prometheus 做服务监控",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://www.orechou.com/images/logo.png"
+  },
+  "inLanguage": "en",
+  "keywords": "DevOps, Grafana, Prometheus",
+  "mainEntityOfPage": {
+    "@id": "https://www.orechou.com/posts/2023/grafana-prometheus-practice/",
+    "@type": "WebPage"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.orechou.com/images/logo.png"
+    },
+    "name": "奥力手记"
+  },
+  "url": "https://www.orechou.com/posts/2023/grafana-prometheus-practice/",
+  "wordCount": 559
+}
+</script>
+
+
+
+  
+  
   
   
     
@@ -99,10 +134,19 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
   <script>
     document.documentElement.dataset.copyLabel = "Copy";
     document.documentElement.dataset.copiedLabel = "Copied!";
+    document.documentElement.dataset.searchTitle = "Search";
+    document.documentElement.dataset.searchLoading = "Loading…";
+    document.documentElement.dataset.searchNoResults = "No results found";
+    document.documentElement.dataset.searchError = "Search index failed to load.";
+    document.documentElement.dataset.webmentionsEmpty = "No mentions yet";
+    document.documentElement.dataset.webmentionsAnon = "Mention";
   </script>
 </head>
 
 <body class="max-width mx-auto px3 ltr">
+  
+  <div id="reading-progress" class="reading-progress" aria-hidden="true" hidden></div>
+
   
   <div class="theme-switcher">
     
@@ -111,12 +155,12 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
   <div class="content index py4">
 
     <header id="header">
-  <a href="https://www.orechou.com/">
+  <a href="https://www.orechou.com/" class="h-card" rel="me">
   
     <div id="logo" style="background-image: url(https://www.orechou.com/images/logo.png)"></div>
   
   <div id="title">
-    <h1>奥力手记</h1>
+    <h1 class="p-name">奥力手记</h1>
   </div>
   </a>
   <div id="nav">
@@ -144,9 +188,9 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
 
 
     
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 class="posttitle" itemprop="name headline">
+    <h1 class="posttitle p-name" itemprop="name headline">
       【DevOps】使用 Grafana 和 Prometheus 做服务监控
     </h1>
     <div class="meta">
@@ -154,7 +198,7 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
       
       
       
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author p-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span itemprop="name">
           奥力手记
         </span>
@@ -162,7 +206,7 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
       
       <div class="postdate">
         
-        <time datetime="2023-06-27 15:45:00 &#43;0000 UTC" itemprop="datePublished">2023-06-27</time>
+        <time class="dt-published" datetime="2023-06-27 15:45:00 &#43;0000 UTC" itemprop="datePublished">2023-06-27</time>
         
       </div>
       
@@ -227,7 +271,7 @@ Grafana 是一个开源的度量分析和可视化套件。它通常被用于时
 </nav>
   </div>
   
-  <div class="content" itemprop="articleBody">
+  <div class="content e-content" itemprop="articleBody">
     <p>最近需要对自己的一些服务做监控，于是想要动手实践使用一下 Grafana 和 Prometheus。这篇文章就主要介绍搭建 Grafana 和 Prometheus 对 MySQL 做监控的过程。</p>
 <h1 id="工具介绍">工具介绍</h1>
 <p>Prometheus 是一个开源的系统监控和警报工具包，由 SoundCloud 启动。它的设计目标是对大规模的服务容器和微服务体系结构提供稳健的可靠性和实时的度量。Prometheus 提供了多种数据收集机制，包括通过 HTTP 拉取目标应用程序暴露的 metrics，通过服务发现或者静态配置去发现新的目标，或者接受推送的时间序列数据。Prometheus 还提供了一种灵活的查询语言（PromQL），以便在其数据上进行切片和切块，生成聚合，预测等操作。
@@ -401,7 +445,9 @@ host = 192.168.52.59
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>然后我们访问地址：http://localhost:9090/targets ，截图如下：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/prometheus-target.png" alt="">
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/prometheus-target.png" alt="" loading="lazy" decoding="async" /></figure>
+
 会看到 Prometheus 正在监控的所有目标（targets）。这些目标代表 Prometheus 正在监控的数据源。在 Prometheus 的术语中，一个 &ldquo;target&rdquo; 通常指的是一个被监控的服务的实例。例如，一个运行在某个主机上的 MySQL 数据库、一个 Node Exporter 进程，或者一个 HTTP 服务器都可以是一个 target。包括最后一次从该 target 抓取数据的时间、抓取状态（是否成功）、抓取时长以及该 target 对应的 endpoint。</p>
 <h2 id="运行-grafana">运行 Grafana</h2>
 <p>Grafana 我没有使用 docker 运行，因为 docker 的 Grafana 镜像版本没有 10 的最新版本。于是我使用 brew 进行的安装。安装、启动和停止的命令如下：</p>
@@ -426,13 +472,21 @@ host = 192.168.52.59
 </div><p>启动起来之后，Grafana 的地址是：http://localhost:3000/。</p>
 <h3 id="添加-prometheus-数据源">添加 Prometheus 数据源</h3>
 <p>第一步是添加 Prometheus 数据源，添加的截图如下：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-datasource.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-datasource.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <h3 id="导入监控模板">导入监控模板</h3>
 <p>第二步是导入监控模板，我们选择社区里面 <a href="https://grafana.com/grafana/dashboards/7362-mysql-overview/">https://grafana.com/grafana/dashboards/7362-mysql-overview/</a> 这个模板，其模板 ID 是 7362。操作截图如下：
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-dashboard-01.png" alt=""></p>
-<p><img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-dashboard-02.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-dashboard-01.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
+<p><figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-add-dashboard-02.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <p>完事之后，打开监控模板就能出现监控信息了。
-<img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-mysql-dashboard.png" alt=""></p>
+<figure class="content-figure">
+  <img src="https://orechou.oss-cn-shenzhen.aliyuncs.com/images/grafana-mysql-dashboard.png" alt="" loading="lazy" decoding="async" /></figure>
+</p>
 <h3 id="观察监控数据变化">观察监控数据变化</h3>
 <p>到这里整个实践操作的过程基本已经结束了。我为了观察 MySQL 监控数据的变化，还写了一个 Python 脚本来测试数据库查询，从而观察监控面版的数据变化。相关的代码也贴在下面：</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;">
@@ -553,6 +607,20 @@ host = 192.168.52.59
   
 </nav>
 
+<section class="related-posts">
+  <h2 class="related-heading">Related</h2>
+  <ul class="related-list"><li class="related-item">
+      <a href="https://www.orechou.com/posts/2023/mysql-master-slave-practice/" class="related-link">
+        <span class="related-title">【DevOps】使用 Docker 搭建 MySQL 主从复制架构</span>
+        <span class="related-date"><time datetime="2023-06-28 18:30:00 &#43;0000 UTC">2023-06-28</time></span>
+      </a>
+    </li></ul>
+</section>
+
+
+
+
+
 
 
 
@@ -603,13 +671,63 @@ host = 192.168.52.59
 
 <script>window.musicData = [{"artist":"毛不易/中岛美嘉","cover":"/images/music/another-me.jpg","src":"/music/another-me.mp3","title":"生活在别处的你"}];</script>
 <audio id="music-player-audio" style="display:none"></audio>
-<script src=/js/music-player.js defer></script>
+<script src="/js/music-player.363af8e07eccb517a07132da2f898711db12356c6b1779c992e2e3096769d51c9863d4941fc35d9bc9908359129d1347b34583667896494e48ece9ef4a9bbfbc.js" integrity="sha512-Njr44H7MtRegcTLaL4mHEdsSNWxrF3nJkuLjCWdp1RyYY9SUH8Ndm8mQg1kSnRNHs0WDZniWSU5I7OnvSpu/vA==" crossorigin="anonymous" defer></script>
 
 
 
 
-  <script src=/js/spa-router.js defer></script>
-  <script src=/js/code-copy.js defer></script>
-  <script src=/js/main.js defer></script>
+  
+
+<div class="search-modal" id="search-modal" hidden aria-hidden="true" data-index-url="/searchindex.json">
+  <div class="search-modal-overlay" data-search-close></div>
+  <div class="search-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+    <span id="search-modal-title" class="sr-only">Search</span>
+    <div class="search-modal-header">
+      <i class="fas fa-search search-modal-icon" aria-hidden="true"></i>
+      <input
+        type="search"
+        class="search-modal-input"
+        id="search-modal-input"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        placeholder="Search posts…"
+        aria-label="Search"
+        role="combobox"
+        aria-expanded="true"
+        aria-controls="search-modal-results"
+        aria-autocomplete="list"
+      >
+      <kbd class="search-modal-esc" data-search-close>ESC</kbd>
+    </div>
+    <div class="search-modal-body">
+      <ul class="search-modal-results" id="search-modal-results" role="listbox" aria-label="Search"></ul>
+      <div class="search-modal-status" id="search-modal-status" role="status" aria-live="polite"></div>
+    </div>
+    <div class="search-modal-footer">
+      <span class="search-modal-hint"><kbd>&#8593;</kbd><kbd>&#8595;</kbd> navigate</span>
+      <span class="search-modal-hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-modal-hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+
+
+  <script src="/js/spa-router.637fb8d1996ee2706d24be5bfd0c84d094823e34cc6b64ae75e659a08a1dd5ace5e70ab5e1a405f4eef6eb3517e482131d3cbdc790307d24cf4b06fe2ed41cc1.js" integrity="sha512-Y3&#43;40Zlu4nBtJL5b/QyE0JSCPjTMa2SudeZZoIod1azl5wq14aQF9O726zUX5IITHTy9x5AwfSTPSwb&#43;LtQcwQ==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/code-copy.c82195537f40dd8bba694424c2362c9bf5e9835816ddab480870f7753608648c2e99b169bc9ddbeada4a47087bbbc54a829bf01d8e7a962b9b72c2386a27bf38.js" integrity="sha512-yCGVU39A3Yu6aUQkwjYsm/Xpg1gW3atICHD3dTYIZIwumbFpvJ3b6tpKRwh7u8VKgpvwHY56liubcsI4aie/OA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/main.f407aa89274d755c5ad346255c02f1c63de8d4cee8ca9020befd7accf69487592cd58d4bd00a58b0fedc83b5572364edbed85693edbc73cb778578d16ce42920.js" integrity="sha512-9AeqiSdNdVxa00YlXALxxj3o1M7oypAgvv16zPaUh1ks1Y1L0ApYsP7cg7VXI2TtvthWk&#43;28c8t3hXjRbOQpIA==" crossorigin="anonymous" defer></script>
+
+  <script src="/js/reading-progress.617d26a5b6ebdc1eac7cd9669c3c9a1a83ac3feaa01bee9d10752b58333f41c701e54ee8050fa09eb93cfacc18ee0f49664323ae5c5fd7b16fd5912184e21751.js" integrity="sha512-YX0mpbbr3B6sfNlmnDyaGoOsP&#43;qgG&#43;6dEHUrWDM/QccB5U7oBQ&#43;gnrk8&#43;swY7g9JZkMjrlxf17Fv1ZEhhOIXUQ==" crossorigin="anonymous" defer></script>
+
+  
+  <script src=/lib/fuse/fuse.basic.min.js defer></script>
+  <script src="/js/search.0f172585ba9983cc1e7de57509b556c4e8485b25f3ffa869bb4d7c83f057496698fd0c4ff4e4a40aa9aea252cd74852c7e5122624822068a98ebc7b248b7cc43.js" integrity="sha512-DxclhbqZg8wefeV1CbVWxOhIWyXz/6hpu018g/BXSWaY/QxP9OSkCqmuolLNdIUsflEiYkgiBoqY68eySLfMQw==" crossorigin="anonymous" defer></script>
+
+  
+  
 </body>
 </html>
