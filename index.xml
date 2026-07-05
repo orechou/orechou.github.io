@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Wed, 01 Jul 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Sun, 05 Jul 2026 22:00:00 +0800</lastBuildDate>
 		
 			<atom:link href="https://www.orechou.com/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>七日书 Vol.1</title>
+				<link>https://www.orechou.com/weekly/the-sennight-vol-001/</link>
+				<pubDate>Sun, 05 Jul 2026 22:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/weekly/the-sennight-vol-001/</guid>
+				<description>七日书，起刊！</description>
+			</item>
 			<item>
 				<title>下半年想要做什么</title>
 				<link>https://www.orechou.com/diary/2026/07-01-some-target/</link>

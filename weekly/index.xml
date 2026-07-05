@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Weekly on 奥力手记</title>
+		<link>https://www.orechou.com/weekly/</link>
+		<description>Recent content in Weekly on 奥力手记</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 05 Jul 2026 22:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://www.orechou.com/weekly/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>七日书 Vol.1</title>
+				<link>https://www.orechou.com/weekly/the-sennight-vol-001/</link>
+				<pubDate>Sun, 05 Jul 2026 22:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/weekly/the-sennight-vol-001/</guid>
+				<description>七日书，起刊！</description>
+			</item>
+	</channel>
+</rss>
