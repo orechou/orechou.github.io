@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sun, 05 Jul 2026 22:00:00 +0800</lastBuildDate>
+			<lastBuildDate>Sun, 19 Jul 2026 17:00:00 +0800</lastBuildDate>
 		
 			<atom:link href="https://www.orechou.com/weekly/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>七日书 Vol.2</title>
+				<link>https://www.orechou.com/weekly/the-sennight-vol-002/</link>
+				<pubDate>Sun, 19 Jul 2026 17:00:00 +0800</pubDate>
+				<guid>https://www.orechou.com/weekly/the-sennight-vol-002/</guid>
+				<description>&lt;p&gt;&lt;figure class=&#34;content-figure&#34;&gt;&#xA;  &lt;img src=&#34;https://orechou.oss-cn-shenzhen.aliyuncs.com/images/the-sennight-vol-002-cover.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34; decoding=&#34;async&#34; /&gt;&lt;/figure&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;周刊第二期就鸽了一周。hhh。照片拍摄于嘉美公园，右边是蔡家大桥。&lt;/p&gt;&#xA;&lt;h2 id=&#34;洞见---insights&#34;&gt;洞见 - Insights&lt;/h2&gt;&#xA;&lt;h3 id=&#34;chatgpt--codex-合并&#34;&gt;ChatGPT &amp;amp; Codex 合并&lt;/h3&gt;&#xA;&lt;p&gt;上周四 OpenAI 家的桌面版 ChatGPT 和 Codex 两个 app 合并了，先前是手机端的 ChatGPT 放入了 Codex，现在桌面版的也合并了。现在老桌面 ChatGPT 应用更新之后显示叫 ChatGPT Classic，而 Codex 更新之后直接就叫 ChatGPT 了。&lt;/p&gt;&#xA;&lt;p&gt;这两个入口的合并对于 OpenAI 企业和用户都是好事。对于企业来说品牌统一回 ChatGPT，可以利用回 ChatGPT 的传播广泛度吸引到那些只知道 ChatGPT 用户接触、使用 Coding Agent 的功能。对于用户来说，少了一个入口，就是简化了操作。而且在现在 Chat 应用泛滥的 2026 年，老 ChatGPT 应用确实是比较鸡肋了。&lt;/p&gt;&#xA;&lt;h3 id=&#34;musk-的开源&#34;&gt;Musk 的开源&lt;/h3&gt;&#xA;&lt;p&gt;这周，Musk 前后分别宣布开源 X（也就是之前的 twitter），以及 Grok build 的源代码。前者应该是之前一直作出的承诺？后者则是对 Grok 拉取用户代码舆论的应对。&lt;/p&gt;&#xA;&lt;p&gt;先前 SpaceX 花 600 亿收购 Cursor，当时觉得 Musk 买亏了，现在觉得 Musk 真是厉害。因为 Coding Agent 就是现在 AI 应用的最通用场景，而 Cursor 应该是最早的 Coding Agent 产品，积累了很多的用户使用数据。其实挺希望 Grok 能做好，让我们在 OpenAI、Anthropic 之外还能有比较好的选择。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>七日书 Vol.1</title>
 				<link>https://www.orechou.com/weekly/the-sennight-vol-001/</link>
